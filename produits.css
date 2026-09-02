@@ -6,16 +6,94 @@
 .product-story-label{display:none !important;}
 .product-story-visual{display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 50% 38%,#b12b39 0,#6b0c15 48%,#3b070c 100%);border:1px solid rgba(199,154,59,.45);}
 
-/* Catalogue hero: remove the remaining background photo and keep the space intentionally clean. */
-.products-hero{background:radial-gradient(circle at 72% 38%,rgba(226,189,105,.2),transparent 34%),linear-gradient(135deg,#fffdf8 0%,#f7f1e7 58%,#eadcc6 100%) !important;}
+/* Catalogue hero: remove the old pale/dead background and use the same glazed petroleum-teal language as the homepage. */
+.products-hero{background-color:#123d43 !important;background-image:radial-gradient(circle at 50% 18%,rgba(223,244,230,.18),transparent 34%),linear-gradient(90deg,rgba(7,34,37,.20),transparent 24%,transparent 76%,rgba(7,34,37,.20)),repeating-conic-gradient(from 22.5deg at 50% 50%,rgba(199,154,59,.24) 0deg 2.5deg,transparent 2.5deg 45deg),repeating-conic-gradient(from 0deg at 50% 50%,transparent 0deg 42deg,rgba(235,211,137,.07) 42deg 45deg) !important;background-size:auto,auto,86px 86px,86px 86px;border-bottom:1px solid rgba(224,193,104,.30);}
+.products-hero:after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,transparent 0%,rgba(255,255,255,.06) 28%,rgba(255,255,255,.16) 38%,transparent 48%,transparent 70%,rgba(255,255,255,.05) 80%,transparent 88%);pointer-events:none;mix-blend-mode:screen;}
+.products-hero-copy{position:relative;z-index:2;}
+.products-hero-eyebrow{color:#e3c263 !important;}
+.products-hero h1{color:#f5ead8 !important;}
+.products-hero h1 em{color:#f0d27c !important;}
+.products-hero p{color:#d7ddd8 !important;}
+.products-hero-rule{background:#e3c263 !important;}
 
-/* Épicerie: deliberately use the SAME outer geometry as Café, Épices, Fruits secs and Argan. */
-.category-pantry{width:min(1380px,88%);margin:auto;padding:60px 0 100px;background:var(--p-cream) !important;}
-.category-pantry .category-inner{width:100%;margin:0;}
-.category-pantry .category-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:40px;margin-bottom:32px;border-bottom:1px solid var(--p-line);padding-bottom:20px;}
-.category-pantry .product-items{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
-.category-pantry .product-item{width:100%;}
-.category-pantry .product-item-image{height:220px;display:flex;align-items:center;justify-content:center;}
+/* The entire catalogue body now lives in one continuous teal material. */
+.products-page{background:#123d43 !important;color:#f3ead5 !important;}
+.product-categories{background:#0e3338 !important;background-image:linear-gradient(90deg,rgba(7,34,37,.24),transparent 22%,transparent 78%,rgba(7,34,37,.24)),repeating-conic-gradient(from 22.5deg at 50% 50%,rgba(199,154,59,.16) 0deg 2.5deg,transparent 2.5deg 45deg) !important;background-size:auto,76px 76px;border-top:1px solid rgba(224,193,104,.22);border-bottom:1px solid rgba(224,193,104,.25);}
+.product-category-nav button{border-color:rgba(224,193,104,.35) !important;color:#eee3d0 !important;background:rgba(255,255,255,.025) !important;}
+.product-category-nav button:hover,.product-category-nav button.active{background:#f0d27c !important;color:#173b3e !important;border-color:#f0d27c !important;}
+
+.products-intro{position:relative;isolation:isolate;color:#f3ead5;}
+.products-intro:before,.products-intro:after{content:"";position:absolute;top:38px;bottom:18px;width:38%;z-index:-1;opacity:.55;background:repeating-conic-gradient(from 22.5deg at 50% 50%,rgba(199,154,59,.16) 0deg 2.5deg,transparent 2.5deg 45deg);background-size:74px 74px;}
+.products-intro:before{left:0;mask-image:linear-gradient(90deg,#000,transparent);}
+.products-intro:after{right:0;transform:scaleX(-1);mask-image:linear-gradient(90deg,#000,transparent);}
+.products-intro .eyebrow{color:#e3c263 !important;}
+.products-intro h2{color:#f5ead8 !important;}
+.products-intro h2 em{color:#f0d27c !important;}
+.products-intro p{color:#d7ddd8 !important;}
+.products-intro strong{color:#f0d27c !important;}
+
+/* Every product-family section uses the same teal field, with mirrored light around the centerline. */
+.product-category-section,.category-spices,.category-pantry{background-color:#123d43 !important;background-image:radial-gradient(circle at 50% 42%,rgba(223,244,230,.075),transparent 30%),linear-gradient(90deg,rgba(7,34,37,.16),transparent 20%,transparent 80%,rgba(7,34,37,.16)),repeating-conic-gradient(from 22.5deg at 50% 50%,rgba(199,154,59,.14) 0deg 2.5deg,transparent 2.5deg 45deg) !important;background-size:auto,auto,82px 82px;}
+.category-spices{width:100%;}
+.category-spices .category-inner{width:min(1380px,88%);margin:auto;}
+.category-heading{border-bottom-color:rgba(224,193,104,.25) !important;}
+.category-heading h2{color:#f5ead8 !important;}
+.category-heading p{color:#d1d9d4 !important;}
+.category-heading .product-item-tag{color:#e3c263 !important;}
+.category-number{background:#0b2b2f !important;color:#f0d27c !important;border:1px solid rgba(224,193,104,.55);}
+.spice-note{background:rgba(255,255,255,.045) !important;border-color:rgba(224,193,104,.25) !important;color:#d4ddd8 !important;}
+.spice-note strong{color:#f0d27c !important;}
+
+/* Product cards: dark glazed teal instead of pale pink/cream blocks. */
+.product-item{background:linear-gradient(145deg,#174c53,#0c3035) !important;border-color:rgba(224,193,104,.18) !important;box-shadow:0 16px 42px rgba(0,0,0,.24),inset 0 1px 0 rgba(255,255,255,.06) !important;}
+.product-item:hover{border-color:rgba(224,193,104,.48) !important;box-shadow:0 24px 55px rgba(0,0,0,.30),inset 0 1px 0 rgba(255,255,255,.10) !important;}
+.product-item-image{background:radial-gradient(circle at 50% 35%,#245d63,#0d3035) !important;}
+.product-item-image:after{background:linear-gradient(145deg,rgba(255,255,255,.12),transparent 45%,rgba(0,0,0,.16)) !important;}
+.product-placeholder{background:linear-gradient(155deg,#1d4d52,#09262a) !important;border-color:rgba(224,193,104,.45) !important;box-shadow:0 18px 30px rgba(0,0,0,.28),inset 0 1px 0 rgba(255,255,255,.06) !important;color:#f8eedf !important;}
+.product-placeholder span{color:#f0d27c !important;}
+.product-placeholder small{color:#d7ddd8 !important;}
+.product-item-content{color:#f3ead5;}
+.product-item-tag{color:#e3c263 !important;}
+.product-item h3{color:#f5ead8 !important;}
+.product-item p{color:#d0d9d4 !important;}
+.product-formats{border-top-color:rgba(224,193,104,.20) !important;}
+.formats-label{color:#d8c183 !important;}
+.format-button{background:rgba(255,255,255,.06) !important;color:#f0e8da !important;border-color:rgba(224,193,104,.20) !important;}
+.format-button:hover,.format-button.selected{background:#f0d27c !important;color:#173b3e !important;border-color:#f0d27c !important;}
+.format-button.custom-format{background:transparent !important;color:#f0d27c !important;border-color:rgba(224,193,104,.48) !important;}
+
+/* Keep the catalogue story and origin/CTA in the same family too. */
+.product-story{background:#0d3338 !important;background-image:linear-gradient(90deg,rgba(7,34,37,.22),transparent 22%,transparent 78%,rgba(7,34,37,.22)),repeating-conic-gradient(from 22.5deg at 50% 50%,rgba(199,154,59,.14) 0deg 2.5deg,transparent 2.5deg 45deg) !important;background-size:auto,88px 88px;border-top:1px solid rgba(224,193,104,.22);}
+.product-story-copy h2{color:#f5ead8 !important;}
+.product-story-copy>p{color:#d4ddd8 !important;}
+.product-story-copy .eyebrow{color:#e3c263 !important;}
+.product-story-visual{background:radial-gradient(circle at 50% 40%,#1b555c 0,#0b2b30 70%,#082226 100%) !important;border-color:rgba(224,193,104,.45) !important;}
+.process-step-number{border-color:rgba(224,193,104,.55) !important;color:#f0d27c !important;}
+.process-step strong{color:#f5ead8 !important;}
+.process-step span{color:#c6d0cc !important;}
+.origin-section{background:#123d43 !important;background-image:radial-gradient(circle at 50% 50%,rgba(223,244,230,.08),transparent 35%),repeating-conic-gradient(from 22.5deg at 50% 50%,rgba(199,154,59,.12) 0deg 2.5deg,transparent 2.5deg 45deg) !important;background-size:auto,94px 94px;border-top:1px solid rgba(224,193,104,.18);}
+.origin-inner h2{color:#f5ead8 !important;}
+.origin-inner h2 em{color:#f0d27c !important;}
+.origin-inner>p{color:#d2dad6 !important;}
+.origin-point{border-top-color:rgba(224,193,104,.24) !important;}
+.origin-point strong{color:#f0d27c !important;}
+.origin-point b{color:#f4eadf !important;}
+.origin-point span{color:#c4ceca !important;}
+.products-cta{background:#0e3338 !important;background-image:radial-gradient(circle at 50% 20%,rgba(223,244,230,.10),transparent 35%),repeating-conic-gradient(from 22.5deg at 50% 50%,rgba(199,154,59,.15) 0deg 2.5deg,transparent 2.5deg 45deg) !important;background-size:auto,88px 88px;border-top:1px solid rgba(224,193,104,.24);}
+.products-cta h2{color:#f5ead8 !important;}
+.products-cta h2 em{color:#f0d27c !important;}
+.products-cta p{color:#d2dad6 !important;}
+.cta-button{background:#f0d27c !important;color:#173b3e !important;}
+.footer{background:#082327 !important;border-top:1px solid rgba(224,193,104,.20);}
+
+/* Format modal follows the same material rather than returning to cream. */
+.format-modal-box{background:#123d43 !important;border:1px solid rgba(224,193,104,.28);color:#f3ead5;}
+.format-modal-box h2{color:#f5ead8 !important;}
+.format-modal-box>p:not(.eyebrow):not(.format-confirmation){color:#d2dad6 !important;}
+.format-modal-box label{color:#f0e8da !important;}
+.format-modal-box input{background:#0b2b30 !important;color:#f4eadf !important;border-color:rgba(224,193,104,.25) !important;}
+.format-modal-close{color:#f0d27c !important;}
+.format-confirmation{color:#f0d27c !important;}
 
 @media(max-width:1150px){.category-pantry .product-items{grid-template-columns:repeat(3,1fr);}}
 @media(max-width:850px){.category-pantry .category-heading{align-items:flex-start;flex-direction:column;gap:15px;}.category-pantry .product-items{grid-template-columns:1fr 1fr;}}
