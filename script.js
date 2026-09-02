@@ -108,3 +108,28 @@ $('#contactForm')?.addEventListener('submit', e => {
   if(msg) msg.textContent = 'Merci. Votre demande est prête à être transmise à l’équipe ARAOUAA.';
   e.currentTarget.reset();
 });
+
+/* Catalogue additions: only add references that are not already present. */
+(function addRequestedNutProducts(){
+  const grid = document.querySelector('#noix-graines .product-items');
+  if(!grid) return;
+  const existing = [...grid.querySelectorAll('[data-product-name], h3')].map(el => (el.dataset.productName || el.textContent).trim().toLowerCase());
+  const requested = [
+    ['Amande grillée','AMANDE GRILLÉE'],
+    ['Amande effilée','AMANDE EFFILÉE'],
+    ['Amande hachée','AMANDE HACHÉE'],
+    ['Amande en poudre','AMANDE EN POUDRE'],
+    ['Arachides','ARACHIDES']
+  ];
+  const makeCard = (name,label) => {
+    const article=document.createElement('article');
+    article.className='product-item catalog-added-item';
+    article.dataset.productName=name;
+    article.innerHTML=`<div class="product-item-image"><div class="product-placeholder"><span>ARAOUAA</span><strong>${label}</strong><small>NOIX &amp; GRAINES</small></div></div><div class="product-item-content"><span class="product-item-tag">NOIX &amp; GRAINES</span><h3>${name}</h3><p>Une référence délicate au profil naturellement généreux et raffiné.</p><div class="product-formats"><span class="formats-label">FORMATS DISPONIBLES</span><div class="format-list"><button class="format-button" data-weight="50 g">50 g</button><button class="format-button" data-weight="100 g">100 g</button><button class="format-button" data-weight="250 g">250 g</button><button class="format-button" data-weight="500 g">500 g</button><button class="format-button" data-weight="1 kg">1 kg</button><button class="format-button" data-weight="5 kg">5 kg</button><button class="format-button custom-format">+ Sur demande</button></div></div></div>`;
+    return article;
+  };
+  requested.forEach(([name,label])=>{
+    if(!existing.includes(name.toLowerCase())) grid.appendChild(makeCard(name,label));
+  });
+  grid.querySelectorAll('.catalog-added-item .format-button:not(.custom-format)').forEach(b=>b.addEventListener('click',()=>{b.classList.add('selected');setTimeout(()=>b.classList.remove('selected'),650);}));
+})();
