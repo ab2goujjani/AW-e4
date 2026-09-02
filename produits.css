@@ -24,10 +24,12 @@
 .category-pantry .product-item{width:100%;}
 .category-pantry .product-item-image{height:220px;display:flex;align-items:center;justify-content:center;}
 
-/* Keep the navigation + "Nos univers" intro in the new teal family, as requested. */
-.product-categories{background:#0e3338 !important;background-image:linear-gradient(90deg,rgba(7,34,37,.24),transparent 22%,transparent 78%,rgba(7,34,37,.24)),repeating-conic-gradient(from 22.5deg at 50% 50%,rgba(199,154,59,.16) 0deg 2.5deg,transparent 2.5deg 45deg) !important;background-size:auto,76px 76px;border-top:1px solid rgba(224,193,104,.22);border-bottom:1px solid rgba(224,193,104,.25);}
-.product-category-nav button{border-color:rgba(224,193,104,.35) !important;color:#eee3d0 !important;background:rgba(255,255,255,.025) !important;}
-.product-category-nav button:hover,.product-category-nav button.active{background:#f0d27c !important;color:#173b3e !important;border-color:#f0d27c !important;}
+/* Category navigation strip: use the same warm cream / dried-pink tone as the main website background. */
+.product-categories{background:var(--p-cream) !important;background-image:none !important;border-top:1px solid rgba(23,21,19,.08);border-bottom:1px solid rgba(23,21,19,.10);}
+.product-category-nav button{border-color:rgba(23,21,19,.16) !important;color:var(--p-ink) !important;background:rgba(255,255,255,.18) !important;}
+.product-category-nav button:hover,.product-category-nav button.active{background:var(--p-burgundy) !important;color:#fff8ed !important;border-color:var(--p-burgundy) !important;}
+
+/* Keep the "Nos univers" intro in the teal family. */
 .products-intro{position:relative;isolation:isolate;color:#f3ead5;background:#123d43 !important;width:100%;max-width:none;padding-left:6%;padding-right:6%;}
 .products-intro:before,.products-intro:after{content:"";position:absolute;top:38px;bottom:18px;width:38%;z-index:-1;opacity:.55;background:repeating-conic-gradient(from 22.5deg at 50% 50%,rgba(199,154,59,.16) 0deg 2.5deg,transparent 2.5deg 45deg);background-size:74px 74px;}
 .products-intro:before{left:0;mask-image:linear-gradient(90deg,#000,transparent);}
