@@ -34,9 +34,9 @@
 .header-contact:hover{background:var(--gold-light) !important;color:var(--ink) !important;border-color:var(--gold-light) !important;}
 .cart-badge{background:var(--gold-light) !important;color:var(--burgundy-deep) !important;border-color:var(--ink) !important;}
 .menu-toggle span{background:#f7eddb !important;}
-/* Move the search / Instagram / cart / contact cluster a little closer to the right edge. */
-.header-actions{margin-left:auto;transform:translateX(24px);}
-.search-panel{top:94px;right:calc(5.8% - 24px);}
+/* Move the search / Instagram / cart / contact cluster clearly closer to the right edge. */
+.header-actions{margin-left:auto;transform:translateX(60px);}
+.search-panel{top:94px;right:calc(5.8% - 60px);}
 
 /* Keep the quality band below “L’excellence de la nature” in its original dark/burgundy treatment. */
 .quality-strip{background:var(--ink) !important;background-image:none !important;color:#fff !important;border:0;box-shadow:none;}
