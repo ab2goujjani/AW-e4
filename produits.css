@@ -38,6 +38,13 @@
 .products-intro p{color:#d7ddd8 !important;}
 .products-intro strong{color:#f0d27c !important;}
 
+/* Bottom footer: keep the same blue/teal material beside the logo, navigation and univers links. */
+.footer{background:#0e3338 !important;background-image:radial-gradient(circle at 50% 0%,rgba(223,244,230,.10),transparent 38%),repeating-conic-gradient(from 22.5deg at 50% 50%,rgba(199,154,59,.12) 0deg 2.5deg,transparent 2.5deg 45deg) !important;background-size:auto,88px 88px;border-top:1px solid rgba(224,193,104,.24);}
+.footer-nav strong{color:#e3c263 !important;}
+.footer-nav a{color:#cfd8d4 !important;}
+.footer-brand p{color:#d1d9d5 !important;}
+.footer-bottom{border-top-color:rgba(224,193,104,.20) !important;color:#aebbb6 !important;}
+
 @media(max-width:1150px){.category-pantry .product-items{grid-template-columns:repeat(3,1fr);}}
 @media(max-width:850px){.category-pantry .category-heading{align-items:flex-start;flex-direction:column;gap:15px;}.category-pantry .product-items{grid-template-columns:1fr 1fr;}}
 @media(max-width:560px){.product-story-visual img{width:160px;height:160px;}.category-pantry .product-items{grid-template-columns:1fr;}}
