@@ -57,6 +57,34 @@
 .menu-toggle span{background:#f0d27c !important;}
 .search-panel{top:94px;}
 
+/* Extend the new zellij direction to the quality band: deep glazed teal, ivory type and brass details. */
+.quality-strip{background-color:#123d43 !important;background-image:
+  radial-gradient(circle at 50% 50%,rgba(220,240,229,.12),transparent 42%),
+  linear-gradient(135deg,rgba(255,255,255,.035),transparent 32%,rgba(0,0,0,.18) 100%),
+  repeating-conic-gradient(from 22.5deg at 50% 50%,rgba(199,154,59,.20) 0deg 3deg,transparent 3deg 45deg),
+  repeating-conic-gradient(from 0deg at 50% 50%,transparent 0deg 42deg,rgba(235,211,137,.07) 42deg 45deg) !important;
+  background-size:auto,auto,72px 72px,72px 72px;border-top:1px solid rgba(224,193,104,.22);border-bottom:1px solid rgba(224,193,104,.28);box-shadow:inset 0 1px 0 rgba(255,255,255,.08),inset 0 -18px 35px rgba(4,28,31,.18);}
+.quality-item b{color:#f4ead5;}
+.quality-item small{color:#d7ddd6;}
+.quality-icon{border-color:rgba(226,189,105,.82);color:#f0d27c;box-shadow:0 0 18px rgba(199,154,59,.10);}
+.quality-mark:before{background:radial-gradient(circle at 45% 35%,#18515a 0,#0d343a 62%,#09272b 100%);border-color:rgba(226,189,105,.82);box-shadow:0 0 0 14px rgba(18,61,67,.92),0 0 0 16px rgba(226,189,105,.12),inset 0 0 30px rgba(255,255,255,.06);}
+
+/* The “Plus qu’une collection” statement now becomes the darker companion tile instead of a flat red block. */
+.values{background-color:#0d3338 !important;background-image:
+  radial-gradient(circle at 50% 8%,rgba(223,244,230,.12),transparent 35%),
+  linear-gradient(135deg,rgba(255,255,255,.035),transparent 28%,rgba(0,0,0,.22) 100%),
+  repeating-conic-gradient(from 22.5deg at 50% 50%,rgba(199,154,59,.16) 0deg 3deg,transparent 3deg 45deg),
+  repeating-conic-gradient(from 0deg at 50% 50%,transparent 0deg 42deg,rgba(235,211,137,.055) 42deg 45deg) !important;
+  background-size:auto,auto,84px 84px,84px 84px;border-top:1px solid rgba(224,193,104,.25);border-bottom:1px solid rgba(224,193,104,.18);box-shadow:inset 0 1px 0 rgba(255,255,255,.07);}
+.values .section-heading-light h2{color:#fff8ed;}
+.values .section-heading-light h2 em{color:#f0d27c;}
+.values .section-heading-light .eyebrow{color:#e3c263;}
+.value-card{background:rgba(18,61,67,.68) !important;border-color:rgba(226,189,105,.20) !important;box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 18px 45px rgba(0,0,0,.18);}
+.value-card:hover{border-color:rgba(226,189,105,.48) !important;background:rgba(23,76,83,.78) !important;}
+.value-card .value-icon{color:#f0d27c;border-color:rgba(226,189,105,.55);}
+.value-card h3{color:#fff8ed;}
+.value-card p{color:#d6ddd8;}
+
 @keyframes zellijSheen{0%,100%{transform:translateX(-22%);opacity:.35}50%{transform:translateX(22%);opacity:.7}}
 
 @media(max-width:720px){.story-visual img{width:160px;height:160px;}}
