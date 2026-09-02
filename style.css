@@ -13,14 +13,13 @@
 .story-badge{display:none !important;}
 .story-visual{background:var(--cream) !important;border:1px solid rgba(199,154,59,.38);}
 
-/* Partner square: now use the same warm website background, without altering the logo. */
+/* Partner square: same warm website background, keeping only the crystal logo. */
 .partner-card{position:relative;overflow:hidden;background:var(--cream) !important;border-color:rgba(199,154,59,.42) !important;box-shadow:inset 0 1px 0 rgba(255,255,255,.65),0 24px 55px rgba(35,24,17,.10);}
 .partner-card:before,.partner-card:after{display:none !important;}
-.partner-card .partner-ring,.partner-card strong,.partner-card>span,.partner-tags{position:relative;z-index:2;}
-.partner-card .partner-ring{border-color:rgba(87,7,13,.24);box-shadow:0 0 0 28px rgba(139,16,24,.05),0 0 0 58px rgba(199,154,59,.05),inset 0 0 24px rgba(139,16,24,.04);}
-.partner-card strong{color:var(--ink);text-shadow:none;}
-.partner-card>span{color:var(--muted);}
-.partner-tags b{border-color:rgba(87,7,13,.20);color:var(--burgundy-deep);background:rgba(255,255,255,.35);}
+.partner-card .partner-ring{border:0 !important;box-shadow:none !important;background:none !important;}
+.partner-card .partner-ring:before,.partner-card .partner-ring:after{display:none !important;}
+.partner-card strong,.partner-card>span,.partner-tags{display:none !important;}
+.partner-card>img{position:relative;z-index:2;width:190px;height:190px;object-fit:contain;opacity:1;filter:drop-shadow(0 18px 28px rgba(0,0,0,.28));}
 
 /* Homepage header: clean, solid premium tone — no zellij/pattern background. */
 .site-header{background:var(--ink) !important;background-image:none !important;border-bottom:1px solid rgba(226,189,105,.22);box-shadow:0 10px 30px rgba(0,0,0,.18);backdrop-filter:blur(14px);}
@@ -35,9 +34,9 @@
 .header-contact:hover{background:var(--gold-light) !important;color:var(--ink) !important;border-color:var(--gold-light) !important;}
 .cart-badge{background:var(--gold-light) !important;color:var(--burgundy-deep) !important;border-color:var(--ink) !important;}
 .menu-toggle span{background:#f7eddb !important;}
-/* Pull the search / Instagram / action cluster slightly inward from the far-right edge. */
-.header-actions{margin-left:auto;transform:translateX(-48px);}
-.search-panel{top:94px;right:calc(5.8% + 48px);}
+/* Move the search / Instagram / cart / contact cluster a little closer to the right edge. */
+.header-actions{margin-left:auto;transform:translateX(24px);}
+.search-panel{top:94px;right:calc(5.8% - 24px);}
 
 /* Keep the quality band below “L’excellence de la nature” in its original dark/burgundy treatment. */
 .quality-strip{background:var(--ink) !important;background-image:none !important;color:#fff !important;border:0;box-shadow:none;}
@@ -54,4 +53,4 @@
 .footer-bottom{border-top-color:rgba(224,193,104,.20) !important;color:#aebbb6 !important;}
 
 @media(max-width:900px){.header-actions{transform:none;}.search-panel{right:5.8%;}}
-@media(max-width:720px){.story-visual img{width:160px;height:160px;}}
+@media(max-width:720px){.story-visual img{width:160px;height:160px;}.partner-card>img{width:160px;height:160px;}}
