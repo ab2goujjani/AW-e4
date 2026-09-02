@@ -34,9 +34,9 @@
 .header-contact:hover{background:var(--gold-light) !important;color:var(--ink) !important;border-color:var(--gold-light) !important;}
 .cart-badge{background:var(--gold-light) !important;color:var(--burgundy-deep) !important;border-color:var(--ink) !important;}
 .menu-toggle span{background:#f7eddb !important;}
-/* Move the search / Instagram / cart / contact cluster clearly closer to the right edge. */
-.header-actions{margin-left:auto;transform:translateX(60px);}
-.search-panel{top:94px;right:calc(5.8% - 60px);}
+/* Anchor the search / Instagram / cart / contact cluster to the right side of the header. */
+.header-actions{position:absolute;right:5.8%;margin-left:0;transform:none;}
+.search-panel{top:94px;right:5.8%;}
 
 /* Keep the quality band below “L’excellence de la nature” in its original dark/burgundy treatment. */
 .quality-strip{background:var(--ink) !important;background-image:none !important;color:#fff !important;border:0;box-shadow:none;}
@@ -52,5 +52,5 @@
 .footer-brand p{color:#d1d9d5 !important;}
 .footer-bottom{border-top-color:rgba(224,193,104,.20) !important;color:#aebbb6 !important;}
 
-@media(max-width:900px){.header-actions{transform:none;}.search-panel{right:5.8%;}}
+@media(max-width:900px){.header-actions{position:relative;right:auto;transform:none;margin-left:auto;}.search-panel{right:5.8%;}}
 @media(max-width:720px){.story-visual img{width:160px;height:160px;}.partner-card>img{width:160px;height:160px;}}
