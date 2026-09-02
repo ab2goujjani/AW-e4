@@ -9,7 +9,14 @@
 /* Catalogue hero: remove the remaining background photo and keep the space intentionally clean. */
 .products-hero{background:radial-gradient(circle at 72% 38%,rgba(226,189,105,.2),transparent 34%),linear-gradient(135deg,#fffdf8 0%,#f7f1e7 58%,#eadcc6 100%) !important;}
 
-/* Keep Épicerie visually consistent with the other catalogue families. */
-.category-pantry{background:var(--p-cream) !important;}
+/* Épicerie uses the exact same section geometry as the other catalogue families. */
+.category-pantry{width:100%;padding:60px 0 100px;background:var(--p-cream) !important;}
+.category-pantry .category-inner{width:min(1380px,88%);margin:auto;}
+.category-pantry .category-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:40px;margin-bottom:32px;border-bottom:1px solid var(--p-line);padding-bottom:20px;}
+.category-pantry .product-items{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+.category-pantry .product-item{width:100%;}
+.category-pantry .product-item-image{height:220px;display:flex;align-items:center;justify-content:center;}
 
-@media(max-width:560px){.product-story-visual img{width:160px;height:160px;}}
+@media(max-width:1150px){.category-pantry .product-items{grid-template-columns:repeat(3,1fr);}}
+@media(max-width:850px){.category-pantry .category-heading{align-items:flex-start;flex-direction:column;gap:15px;}.category-pantry .product-items{grid-template-columns:1fr 1fr;}}
+@media(max-width:560px){.product-story-visual img{width:160px;height:160px;}.category-pantry .product-items{grid-template-columns:1fr;}}
