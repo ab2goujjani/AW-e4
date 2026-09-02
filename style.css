@@ -38,6 +38,9 @@
 .header-actions{position:absolute;right:5.8%;margin-left:0;transform:none;}
 .search-panel{top:94px;right:5.8%;}
 
+/* WhatsApp: restore its recognizable original green instead of the gold theme color. */
+.announcement-socials a[aria-label="WhatsApp"]{color:#25D366 !important;}
+
 /* Keep the quality band below “L’excellence de la nature” in its original dark/burgundy treatment. */
 .quality-strip{background:var(--ink) !important;background-image:none !important;color:#fff !important;border:0;box-shadow:none;}
 .quality-item b{color:#fff !important;}
