@@ -21,18 +21,18 @@
 .partner-card strong,.partner-card>span,.partner-tags{display:none !important;}
 .partner-card>img{position:relative;z-index:2;width:190px;height:190px;object-fit:contain;opacity:1;filter:drop-shadow(0 18px 28px rgba(0,0,0,.28));}
 
-/* Homepage header: burnished copper-ochre test — red + yellow, deep and premium. */
-.site-header{background:#8F4F2A !important;background-image:none !important;border-bottom:1px solid rgba(226,189,105,.30);box-shadow:0 10px 30px rgba(0,0,0,.18);backdrop-filter:blur(14px);}
+/* Homepage header: warm charcoal/champagne test — understated luxury instead of a saturated block. */
+.site-header{background:linear-gradient(115deg,#24211E 0%,#2D2924 48%,#3A3025 100%) !important;background-image:linear-gradient(115deg,#24211E 0%,#2D2924 48%,#3A3025 100%) !important;border-bottom:1px solid rgba(226,189,105,.34);box-shadow:0 10px 30px rgba(0,0,0,.18),inset 0 1px 0 rgba(255,255,255,.035);backdrop-filter:blur(14px);}
 .site-header:before,.site-header:after{display:none !important;}
 .site-header>*{position:relative;z-index:2;}
-.site-header.scrolled{background:#8F4F2A !important;background-image:none !important;box-shadow:0 14px 38px rgba(0,0,0,.26),inset 0 1px 0 rgba(255,255,255,.04);}
+.site-header.scrolled{background:linear-gradient(115deg,#24211E 0%,#2D2924 48%,#3A3025 100%) !important;background-image:linear-gradient(115deg,#24211E 0%,#2D2924 48%,#3A3025 100%) !important;box-shadow:0 14px 38px rgba(0,0,0,.26),inset 0 1px 0 rgba(255,255,255,.04);}
 .main-nav a{color:#f7f0e4 !important;text-shadow:none;}
 .main-nav a:hover,.main-nav a.active{color:var(--gold-light) !important;}
 .main-nav a:after{background:var(--gold-light) !important;box-shadow:none;}
 .icon-button{color:var(--gold-light) !important;}
 .header-contact{border-color:rgba(226,189,105,.58) !important;color:#f7eddb !important;background:transparent;box-shadow:none;}
 .header-contact:hover{background:var(--gold-light) !important;color:var(--ink) !important;border-color:var(--gold-light) !important;}
-.cart-badge{background:var(--gold-light) !important;color:var(--burgundy-deep) !important;border-color:#8F4F2A !important;}
+.cart-badge{background:var(--gold-light) !important;color:var(--burgundy-deep) !important;border-color:#24211E !important;}
 .menu-toggle span{background:#f7eddb !important;}
 /* Anchor the search / Instagram / cart / contact cluster to the right side of the header. */
 .header-actions{position:absolute;right:5.8%;margin-left:0;transform:none;}
@@ -45,12 +45,12 @@
 .whatsapp{background:#25D366 !important;color:#fff !important;border-color:#25D366 !important;}
 .whatsapp svg{color:#fff !important;fill:none !important;stroke:#fff !important;}
 
-/* Quality band: burnished saffron test — a warmer red/yellow counterpart to the header. */
-.quality-strip{background:#A65F22 !important;background-image:none !important;color:#fff !important;border:0;box-shadow:none;}
+/* Quality band: warm charcoal with a subtle champagne-toned gradient. */
+.quality-strip{background:linear-gradient(115deg,#29251F 0%,#302B25 52%,#3A3025 100%) !important;background-image:linear-gradient(115deg,#29251F 0%,#302B25 52%,#3A3025 100%) !important;color:#fff !important;border:0;box-shadow:inset 0 1px 0 rgba(226,189,105,.07),inset 0 -1px 0 rgba(0,0,0,.12);}
 .quality-item b{color:#fff !important;}
-.quality-item small{color:#f0dfce !important;}
-.quality-icon{border-color:rgba(226,189,105,.8) !important;color:var(--gold-light) !important;box-shadow:none !important;}
-.quality-mark:before{background:#8F4F2A !important;border-color:rgba(226,189,105,.8) !important;box-shadow:0 0 0 14px rgba(166,95,34,.9) !important;}
+.quality-item small{color:#d9d1c6 !important;}
+.quality-icon{border-color:rgba(226,189,105,.8) !important;color:var(--gold-light) !important;box-shadow:0 0 22px rgba(226,189,105,.06) !important;}
+.quality-mark:before{background:#57070D !important;border-color:rgba(226,189,105,.8) !important;box-shadow:0 0 0 14px rgba(41,37,31,.9) !important;}
 
 /* Bottom footer: same blue/teal material as the navigation + univers area. */
 .footer{background:#0e3338 !important;background-image:radial-gradient(circle at 50% 0%,rgba(223,244,230,.10),transparent 38%),repeating-conic-gradient(from 22.5deg at 50% 50%,rgba(199,154,59,.12) 0deg 2.5deg,transparent 2.5deg 45deg) !important;background-size:auto,88px 88px;border-top:1px solid rgba(224,193,104,.24);}
