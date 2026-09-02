@@ -1,12 +1,23 @@
 @import url("style-base.css");
 
-/* Precision visual corrections — keep all existing layout and colors intact. */
+/* Precision visual corrections — only the requested homepage details. */
 .hero-visual .hero-arch,
 .hero-visual .visual-frame{display:none !important;}
+
+/* Add Épicerie to the hero product-family line without changing the layout. */
+.hero-lead:after{content:"  •  Épicerie";font-weight:500;color:var(--burgundy);}
 
 /* Homepage story visual: logo only, no door/photo, badge, or dark overlay. */
 .story-visual img{content:url("assets/logo-crystal-4k.png");width:190px;height:190px;object-fit:contain;opacity:1;position:relative;z-index:1;filter:drop-shadow(0 18px 28px rgba(0,0,0,.28));}
 .story-visual:after{display:none !important;}
 .story-badge{display:none !important;}
 .story-visual{background:radial-gradient(circle at 50% 40%,#a92835 0,#650b14 52%,#171513 100%);border:1px solid rgba(199,154,59,.45);}
+
+/* Second giant logo panel: warm, luminous premium yellow instead of black. */
+.partner-card{background:radial-gradient(circle at 50% 35%,#ffe9a3 0,#e8bc4f 42%,#c9972d 72%,#a87618 100%) !important;border-color:rgba(87,55,8,.3) !important;box-shadow:inset 0 1px 0 rgba(255,255,255,.42),0 24px 55px rgba(101,72,20,.16);}
+.partner-card .partner-ring{border-color:rgba(87,55,8,.2);box-shadow:0 0 0 28px rgba(255,255,255,.08),0 0 0 58px rgba(87,55,8,.045);}
+.partner-card strong{color:#5b3b08;}
+.partner-card>span{color:#4f3b19;}
+.partner-tags b{border-color:rgba(87,55,8,.28);color:#5b3b08;}
+
 @media(max-width:720px){.story-visual img{width:160px;height:160px;}}
