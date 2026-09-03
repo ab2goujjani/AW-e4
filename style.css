@@ -3,7 +3,6 @@
 /* Precision visual corrections — only the requested homepage details. */
 .hero-visual .hero-arch,
 .hero-visual .visual-frame{display:none !important;}
-.hero-lead:after{content:"";}
 .hero-lead{font-size:0;max-width:640px;}
 .hero-lead:before{content:"Café, épices, fruits secs, épicerie et huile d’argan : une sélection inspirée par la richesse du terroir marocain, présentée avec une identité premium.";font-size:15px;line-height:1.9;color:var(--ink-soft);}
 
@@ -21,11 +20,11 @@
 .partner-card strong,.partner-card>span,.partner-tags{display:none !important;}
 .partner-card>img{position:relative;z-index:2;width:190px;height:190px;object-fit:contain;opacity:1;filter:drop-shadow(0 18px 28px rgba(0,0,0,.28));}
 
-/* Homepage header: warm charcoal/champagne test — understated luxury instead of a saturated block. */
-.site-header{background:linear-gradient(115deg,#24211E 0%,#2D2924 48%,#3A3025 100%) !important;background-image:linear-gradient(115deg,#24211E 0%,#2D2924 48%,#3A3025 100%) !important;border-bottom:1px solid rgba(226,189,105,.34);box-shadow:0 10px 30px rgba(0,0,0,.18),inset 0 1px 0 rgba(255,255,255,.035);backdrop-filter:blur(14px);}
+/* Homepage header: warm charcoal/champagne — understated luxury instead of a saturated block. */
+.site-header{background:linear-gradient(115deg,#24211E 0%,#2D2924 48%,#3A3025 100%) !important;border-bottom:1px solid rgba(226,189,105,.34);box-shadow:0 10px 30px rgba(0,0,0,.18),inset 0 1px 0 rgba(255,255,255,.035);backdrop-filter:blur(14px);}
 .site-header:before,.site-header:after{display:none !important;}
 .site-header>*{position:relative;z-index:2;}
-.site-header.scrolled{background:linear-gradient(115deg,#24211E 0%,#2D2924 48%,#3A3025 100%) !important;background-image:linear-gradient(115deg,#24211E 0%,#2D2924 48%,#3A3025 100%) !important;box-shadow:0 14px 38px rgba(0,0,0,.26),inset 0 1px 0 rgba(255,255,255,.04);}
+.site-header.scrolled{background:linear-gradient(115deg,#24211E 0%,#2D2924 48%,#3A3025 100%) !important;box-shadow:0 14px 38px rgba(0,0,0,.26),inset 0 1px 0 rgba(255,255,255,.04);}
 .main-nav a{color:#f7f0e4 !important;text-shadow:none;}
 .main-nav a:hover,.main-nav a.active{color:var(--gold-light) !important;}
 .main-nav a:after{background:var(--gold-light) !important;box-shadow:none;}
@@ -46,7 +45,7 @@
 .whatsapp svg{color:#fff !important;fill:none !important;stroke:#fff !important;}
 
 /* Quality band: warm charcoal with a subtle champagne-toned gradient. */
-.quality-strip{background:linear-gradient(115deg,#29251F 0%,#302B25 52%,#3A3025 100%) !important;background-image:linear-gradient(115deg,#29251F 0%,#302B25 52%,#3A3025 100%) !important;color:#fff !important;border:0;box-shadow:inset 0 1px 0 rgba(226,189,105,.07),inset 0 -1px 0 rgba(0,0,0,.12);}
+.quality-strip{background:linear-gradient(115deg,#29251F 0%,#302B25 52%,#3A3025 100%) !important;color:#fff !important;border:0;box-shadow:inset 0 1px 0 rgba(226,189,105,.07),inset 0 -1px 0 rgba(0,0,0,.12);}
 .quality-item b{color:#fff !important;}
 .quality-item small{color:#d9d1c6 !important;}
 .quality-icon{border-color:rgba(226,189,105,.8) !important;color:var(--gold-light) !important;box-shadow:0 0 22px rgba(226,189,105,.06) !important;}
