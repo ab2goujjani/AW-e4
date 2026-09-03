@@ -1,3 +1,4 @@
+(() => {
 const $ = (selector, root = document) => root.querySelector(selector);
 const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
 
@@ -132,4 +133,5 @@ $('#contactForm')?.addEventListener('submit', e => {
     if(!existing.includes(name.toLowerCase())) grid.appendChild(makeCard(name,label));
   });
   grid.querySelectorAll('.catalog-added-item .format-button:not(.custom-format)').forEach(b=>b.addEventListener('click',()=>{b.classList.add('selected');setTimeout(()=>b.classList.remove('selected'),650);}));
+})();
 })();
