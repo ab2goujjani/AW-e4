@@ -32,7 +32,7 @@
   filter:drop-shadow(0 18px 28px rgba(0,0,0,.28)) !important;
 }
 
-/* Clean black-cocoa category bars. */
+/* Clean black-cocoa catalogue bands. */
 .category-heading{
   position:relative !important;
   overflow:hidden !important;
@@ -50,31 +50,32 @@
 .category-heading p{color:#e9ded2 !important;}
 .category-number{background:#211713 !important;color:var(--atelier-gold-soft) !important;}
 
-/* Visible moving light sweep shared by every black-cocoa band on this page. */
+/* One shared, clearly visible light sweep for every cocoa band on this page. */
 @keyframes ara-cocoa-shine{
-  0%{left:-45%;opacity:0;}
-  8%{opacity:.9;}
-  42%{opacity:.95;}
-  50%{opacity:.95;}
-  92%{opacity:.9;}
-  100%{left:145%;opacity:0;}
+  0%{transform:translateX(-170%) skewX(-18deg);opacity:0;}
+  12%{opacity:.95;}
+  38%{opacity:1;}
+  52%{opacity:1;}
+  88%{opacity:.95;}
+  100%{transform:translateX(620%) skewX(-18deg);opacity:0;}
 }
 .category-heading:after,
-.products-header:after{
+.products-header:after,
+.footer:after{
   content:"" !important;
   position:absolute !important;
-  top:-35% !important;
-  bottom:-35% !important;
-  left:-45% !important;
-  width:16% !important;
-  background:linear-gradient(90deg,transparent 0%,rgba(225,201,143,.2) 28%,rgba(255,255,255,.92) 50%,rgba(225,201,143,.2) 72%,transparent 100%) !important;
-  transform:skewX(-20deg) !important;
+  top:-60% !important;
+  bottom:-60% !important;
+  left:-22% !important;
+  width:15% !important;
+  background:linear-gradient(90deg,transparent 0%,rgba(225,201,143,.18) 24%,rgba(255,255,255,.95) 50%,rgba(225,201,143,.18) 76%,transparent 100%) !important;
+  transform:translateX(-170%) skewX(-18deg) !important;
   opacity:0 !important;
   pointer-events:none !important;
-  z-index:5 !important;
+  z-index:20 !important;
   animation:ara-cocoa-shine 3.8s linear infinite !important;
 }
-.category-heading > *{position:relative !important;z-index:6 !important;}
+.category-heading > *{position:relative !important;z-index:21 !important;}
 
 /* Black-cocoa products header stays visible while scrolling. */
 .products-header{
@@ -97,9 +98,9 @@
   height:1px !important;
   background:rgba(255,250,242,.12) !important;
   pointer-events:none !important;
-  z-index:4 !important;
+  z-index:19 !important;
 }
-.products-header > *{position:relative !important;z-index:6 !important;}
+.products-header > *{position:relative !important;z-index:21 !important;}
 .products-main-nav a{color:#fffaf2 !important;}
 .products-header-contact{
   border-color:rgba(255,250,242,.42) !important;
@@ -108,9 +109,18 @@
 }
 .menu-toggle span{background:#fffaf2 !important;}
 
+/* Matching cocoa footer with the same single sweep. */
+.footer{
+  position:relative !important;
+  isolation:isolate !important;
+  overflow:hidden !important;
+}
+.footer > *{position:relative !important;z-index:21 !important;}
+
 @media(prefers-reduced-motion:reduce){
   .category-heading:after,
-  .products-header:after{animation:none !important;}
+  .products-header:after,
+  .footer:after{animation:none !important;}
 }
 
 @media(max-width:900px){
