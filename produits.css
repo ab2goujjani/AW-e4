@@ -1,6 +1,7 @@
 @import url("produits-original.css");
 
-/* Products hero — Arabic brand signature stacked, with each line on its own side. */
+/* Arabic hero signature: keep the original right-side area and only change
+   the horizontal relationship between the two stacked Arabic lines. */
 .products-hero:before,
 .products-hero:after,
 .hero-arabic-rule{
@@ -9,71 +10,70 @@
 
 .hero-arabic-signature{
   position:absolute !important;
-  inset:0 !important;
-  width:100% !important;
+  top:0 !important;
+  right:0 !important;
+  width:min(38%,460px) !important;
   height:100% !important;
-  transform:none !important;
-  display:block !important;
+  margin:0 !important;
   padding:0 !important;
-  box-sizing:border-box !important;
+  display:block !important;
   pointer-events:none !important;
-  isolation:isolate !important;
+  transform:none !important;
 }
 
-/* Brand name — LEFT, while staying above the second Arabic line. */
+/* Upper line: RIGHT side of the original Arabic area. */
 .hero-arabic-signature:before{
   content:"الروعة" !important;
   position:absolute !important;
-  left:5% !important;
-  top:34% !important;
-  width:auto !important;
-  height:auto !important;
+  top:39% !important;
+  right:0 !important;
+  left:auto !important;
   margin:0 !important;
-  border:0 !important;
-  box-shadow:none !important;
-  background:none !important;
-  transform:none !important;
   font-family:"Amiri Quran","Amiri",serif !important;
-  font-size:clamp(84px,7.6vw,120px) !important;
+  font-size:clamp(78px,6.8vw,108px) !important;
   font-weight:400 !important;
-  line-height:.9 !important;
+  line-height:.86 !important;
   color:#171513 !important;
   letter-spacing:0 !important;
-  opacity:1 !important;
-  white-space:nowrap !important;
-  text-align:left !important;
-}
-
-/* Arabic equivalent of "Nos produits." — RIGHT, directly below the brand name. */
-.hero-arabic-word{
-  position:absolute !important;
-  right:5% !important;
-  top:51% !important;
-  width:auto !important;
-  margin:0 !important;
-  padding:0 !important;
-  font-size:0 !important;
-  line-height:1 !important;
-  color:var(--atelier-espresso) !important;
-  text-shadow:none !important;
-  transform:none !important;
   white-space:nowrap !important;
   text-align:right !important;
+  background:none !important;
+  border:0 !important;
+  box-shadow:none !important;
 }
+
+/* Lower line: LEFT of the brand name, directly underneath it. */
+.hero-arabic-word{
+  position:absolute !important;
+  top:51% !important;
+  left:0 !important;
+  right:auto !important;
+  margin:0 !important;
+  padding:0 !important;
+  width:auto !important;
+  font-size:0 !important;
+  line-height:1 !important;
+  white-space:nowrap !important;
+  text-align:left !important;
+  color:transparent !important;
+  text-shadow:none !important;
+  transform:none !important;
+}
+
 .hero-arabic-word:after{
   content:"منتجاتنا." !important;
   display:block !important;
   font-family:"Amiri Quran","Amiri",serif !important;
-  font-size:clamp(60px,6.1vw,94px) !important;
+  font-size:clamp(58px,5.8vw,88px) !important;
   font-weight:400 !important;
-  line-height:.92 !important;
+  line-height:.88 !important;
   color:var(--atelier-terracotta) !important;
   letter-spacing:0 !important;
-  text-shadow:none !important;
   white-space:nowrap !important;
+  text-shadow:none !important;
 }
 
-/* Product story logo — shifted left for a more balanced composition. */
+/* Keep the product-story plaque treatment already approved. */
 .product-story-visual{
   background:var(--p-cream) !important;
   background-image:none !important;
@@ -100,36 +100,29 @@
 }
 
 @media(max-width:900px){
-  .hero-arabic-signature:before{
-    left:4% !important;
-    top:34% !important;
-    font-size:clamp(74px,8.2vw,98px) !important;
-  }
-  .hero-arabic-word{
-    right:4% !important;
-    top:51% !important;
-  }
-  .hero-arabic-word:after{font-size:clamp(49px,6.1vw,72px) !important;}
+  .hero-arabic-signature{width:min(42%,400px) !important;}
+  .hero-arabic-signature:before{font-size:clamp(68px,7.6vw,94px) !important;}
+  .hero-arabic-word:after{font-size:clamp(51px,6.2vw,76px) !important;}
   .product-story-visual{transform:translateX(-9%) !important;}
 }
 
 @media(max-width:650px){
   .hero-arabic-signature{
     position:relative !important;
-    inset:auto !important;
+    top:auto !important;
+    right:auto !important;
     width:100% !important;
-    height:auto !important;
-    min-height:210px !important;
-    margin-top:-10px !important;
+    height:150px !important;
+    margin-top:-25px !important;
   }
   .hero-arabic-signature:before{
-    left:4% !important;
-    top:28% !important;
+    top:18% !important;
+    right:4% !important;
     font-size:58px !important;
   }
   .hero-arabic-word{
-    right:4% !important;
-    top:55% !important;
+    top:52% !important;
+    left:4% !important;
   }
   .hero-arabic-word:after{font-size:42px !important;}
   .product-story-visual{transform:translateX(-5%) !important;}
