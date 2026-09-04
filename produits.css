@@ -1,17 +1,30 @@
 @import url("produits-original.css");
 
 /* ================================================================
-   ARABIC HERO SIGNATURE
-   Keep both lines in the same compact area on the RIGHT side of the
-   hero. "الروعة" stays upper-right; "منتجاتنا." sits underneath it,
-   deliberately offset to the left. French hero copy stays untouched.
+   FINAL PRODUCTS HERO
+   The hero keeps its original composition. No added geometry.
    ================================================================ */
+.products-hero{
+  min-height:470px !important;
+  background:
+    linear-gradient(90deg,rgba(247,241,231,.98),rgba(247,241,231,.9) 34%,rgba(247,241,231,.28) 60%,rgba(247,241,231,.04)),
+    url("assets/hero-products-final.png") center/cover no-repeat !important;
+  border-bottom:0 !important;
+}
+
+.products-hero:before,
+.products-hero:after{
+  content:none !important;
+  display:none !important;
+}
+
+/* One compact Arabic composition on the original RIGHT side. */
 .hero-arabic-signature{
   position:absolute !important;
   top:50% !important;
   right:0 !important;
   left:auto !important;
-  width:min(430px,38vw) !important;
+  width:390px !important;
   height:190px !important;
   margin:0 !important;
   padding:0 !important;
@@ -21,6 +34,7 @@
   pointer-events:none !important;
 }
 
+/* الروعة — upper/right */
 .hero-arabic-signature:before{
   content:"الروعة" !important;
   position:absolute !important;
@@ -29,28 +43,29 @@
   left:auto !important;
   margin:0 !important;
   font-family:"Amiri Quran","Amiri",serif !important;
-  font-size:clamp(72px,6vw,104px) !important;
+  font-size:clamp(48px,4.2vw,68px) !important;
   font-weight:400 !important;
-  line-height:.9 !important;
-  color:#f3e7d3 !important;
+  line-height:1 !important;
+  color:var(--p-ink) !important;
   letter-spacing:0 !important;
   white-space:nowrap !important;
   text-align:right !important;
 }
 
+/* منتجاتنا. — underneath, shifted left */
 .hero-arabic-word{
   position:absolute !important;
-  top:92px !important;
-  left:34px !important;
+  top:78px !important;
+  left:45px !important;
   right:auto !important;
   width:auto !important;
   margin:0 !important;
   padding:0 !important;
   font-family:"Amiri Quran","Amiri",serif !important;
-  font-size:clamp(54px,5vw,82px) !important;
+  font-size:clamp(32px,3vw,50px) !important;
   font-weight:400 !important;
-  line-height:.9 !important;
-  color:#d98b70 !important;
+  line-height:1 !important;
+  color:var(--p-ink) !important;
   letter-spacing:0 !important;
   white-space:nowrap !important;
   text-align:left !important;
@@ -58,12 +73,11 @@
   transform:none !important;
 }
 
-.hero-arabic-word:after{
+.hero-arabic-word:after,
+.hero-arabic-rule{
   display:none !important;
   content:none !important;
 }
-
-.hero-arabic-rule{display:none !important;}
 
 /* Keep the approved product-story plaque treatment. */
 .product-story-visual{
@@ -95,39 +109,40 @@
 
 @media(max-width:900px){
   .hero-arabic-signature{
-    width:min(370px,40vw) !important;
-    height:170px !important;
+    width:300px !important;
+    height:160px !important;
   }
   .hero-arabic-signature:before{
-    font-size:clamp(64px,7vw,90px) !important;
+    font-size:52px !important;
   }
   .hero-arabic-word{
-    top:82px !important;
-    left:28px !important;
-    font-size:clamp(48px,6vw,70px) !important;
+    top:68px !important;
+    left:25px !important;
+    font-size:38px !important;
   }
   .product-story-visual{transform:translateX(-9%) !important;}
 }
 
 @media(max-width:650px){
   .hero-arabic-signature{
-    position:relative !important;
-    top:auto !important;
-    right:auto !important;
-    width:100% !important;
-    height:135px !important;
-    margin-top:-20px !important;
-    transform:none !important;
+    position:absolute !important;
+    top:62% !important;
+    right:0 !important;
+    left:auto !important;
+    width:220px !important;
+    height:115px !important;
+    margin:0 !important;
+    transform:translateY(-50%) !important;
   }
   .hero-arabic-signature:before{
     top:0 !important;
-    right:4% !important;
-    font-size:58px !important;
+    right:0 !important;
+    font-size:42px !important;
   }
   .hero-arabic-word{
-    top:67px !important;
-    left:12% !important;
-    font-size:42px !important;
+    top:50px !important;
+    left:15px !important;
+    font-size:29px !important;
   }
   .product-story-visual{transform:translateX(-5%) !important;}
   .product-story-visual img{width:160px !important;height:160px !important;}
