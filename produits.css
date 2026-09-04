@@ -47,11 +47,32 @@
 .category-heading p{color:#f4e8dc !important;}
 .category-number{background:var(--atelier-terracotta) !important;color:var(--atelier-gold-soft) !important;}
 
-/* Restore the original black-cocoa header. */
+/* Black-cocoa products header with a restrained premium light sweep. */
 .products-header{
+  position:relative !important;
+  isolation:isolate !important;
+  overflow:hidden !important;
   background:var(--atelier-espresso) !important;
   border-bottom-color:rgba(225,201,143,.28) !important;
   box-shadow:0 10px 35px rgba(0,0,0,.24) !important;
+}
+.products-header:after{
+  content:"" !important;
+  position:absolute !important;
+  top:-70% !important;
+  left:-35% !important;
+  width:26% !important;
+  height:240% !important;
+  transform:rotate(18deg) translateX(-180%) !important;
+  background:linear-gradient(90deg,transparent 0%,rgba(255,250,242,.015) 25%,rgba(225,201,143,.16) 50%,rgba(255,250,242,.025) 75%,transparent 100%) !important;
+  filter:blur(2px) !important;
+  pointer-events:none !important;
+  z-index:0 !important;
+  animation:productsHeaderShine 7s ease-in-out infinite !important;
+}
+.products-header > *{
+  position:relative !important;
+  z-index:1 !important;
 }
 .products-main-nav a{color:#fffaf2 !important;}
 .products-header-contact{
@@ -60,6 +81,12 @@
   background:rgba(255,250,242,.04) !important;
 }
 .menu-toggle span{background:#fffaf2 !important;}
+@keyframes productsHeaderShine{
+  0%,22%{transform:rotate(18deg) translateX(-180%);opacity:0;}
+  30%{opacity:1;}
+  58%{transform:rotate(18deg) translateX(560%);opacity:.9;}
+  68%,100%{transform:rotate(18deg) translateX(560%);opacity:0;}
+}
 
 @media(max-width:900px){
   .product-story-visual{transform:translateX(-9%) !important;}
@@ -67,4 +94,7 @@
 @media(max-width:650px){
   .product-story-visual{transform:translateX(-5%) !important;}
   .product-story-visual img{width:160px !important;height:160px !important;}
+}
+@media(prefers-reduced-motion:reduce){
+  .products-header:after{animation:none !important;opacity:.5 !important;transform:rotate(18deg) translateX(80%) !important;}
 }
