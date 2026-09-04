@@ -32,20 +32,21 @@
   filter:drop-shadow(0 18px 28px rgba(0,0,0,.28)) !important;
 }
 
-/* Approved terracotta category bars. */
+/* Clean black-cocoa category bars. */
 .category-heading{
   width:calc(100% + 12%) !important;
   margin-left:-6% !important;
-  background:var(--atelier-terracotta) !important;
-  border-bottom:0 !important;
+  background:#211713 !important;
+  background-image:none !important;
+  border-bottom:1px solid rgba(225,201,143,.28) !important;
   padding:24px 6% !important;
   border-radius:0 !important;
 }
 .category-heading h2,
 .category-heading p{color:#fffaf2 !important;}
 .category-heading h2 em{color:var(--atelier-gold-soft) !important;}
-.category-heading p{color:#f4e8dc !important;}
-.category-number{background:var(--atelier-terracotta) !important;color:var(--atelier-gold-soft) !important;}
+.category-heading p{color:#e9ded2 !important;}
+.category-number{background:#211713 !important;color:var(--atelier-gold-soft) !important;}
 
 /* Clean black-cocoa products header. No gradients, wallpaper, or decorative geometry. */
 .products-header{
