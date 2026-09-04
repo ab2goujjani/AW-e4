@@ -1,69 +1,26 @@
 @import url("produits-original.css");
 
-/* Final page-specific corrections. Keep these rules limited to elements that are intentionally different from the base catalogue. */
+/* Final page-specific corrections. */
 .products-hero:before,
 .products-hero:after,
-.hero-arabic-rule{
-  display:none !important;
-}
-
-/* Remove the Arabic hero signature completely. */
-.hero-arabic-signature{
-  display:none !important;
-}
-
-.hero-arabic-signature{
-  right:calc(-3.5% - 6cm) !important;
-  top:calc(40% - 1cm) !important;
-  width:min(450px,40vw) !important;
-  height:330px !important;
-  transform:translateY(-50%) !important;
-  flex-direction:column !important;
-  align-items:flex-end !important;
-  justify-content:center !important;
-  gap:0 !important;
-  padding:0 10px !important;
-  box-sizing:border-box !important;
-  pointer-events:none !important;
-}
-
+.hero-arabic-rule{display:none !important;}
+.hero-arabic-signature{display:none !important;}
 .hero-arabic-signature:before,
-.hero-arabic-word:after{
-  display:none !important;
-  content:none !important;
-}
+.hero-arabic-word:after{display:none !important;content:none !important;}
+.hero-arabic-word{display:none !important;}
 
-.hero-arabic-signature:before{
-  position:static !important;
-  width:auto !important;
-  height:auto !important;
-  margin:0 !important;
-  border:0 !important;
-  box-shadow:none !important;
-  background:none !important;
-  transform:none !important;
-  font-family:inherit !important;
-  font-size:0 !important;
-  color:transparent !important;
-}
-
-.hero-arabic-word{
-  display:none !important;
-}
-
+/* Product story plaque: restore the rectangular box treatment used on the homepage. */
 .product-story-visual{
   background:var(--p-cream) !important;
   background-image:none !important;
   border:1px solid rgba(199,154,59,.38) !important;
-  border-radius:50% !important;
+  border-radius:0 !important;
   overflow:hidden !important;
   transform:translateX(-13%) !important;
   box-shadow:0 24px 55px rgba(35,24,17,.12),inset 0 1px 0 rgba(255,255,255,.7) !important;
 }
-
 .product-story-visual:before,
 .product-story-visual:after{display:none !important;content:none !important;}
-
 .product-story-visual img{
   content:url("assets/logo-crystal-4k.png") !important;
   width:190px !important;
@@ -75,7 +32,7 @@
   filter:drop-shadow(0 18px 28px rgba(0,0,0,.28)) !important;
 }
 
-/* Experimental category-header treatment: warm terracotta, edge-to-edge. */
+/* Keep the approved terracotta category bars. */
 .category-heading{
   width:calc(100% + 12%) !important;
   margin-left:-6% !important;
@@ -84,56 +41,30 @@
   padding:24px 6% !important;
   border-radius:0 !important;
 }
-
 .category-heading h2,
-.category-heading p{
-  color:#fffaf2 !important;
-}
+.category-heading p{color:#fffaf2 !important;}
+.category-heading h2 em{color:var(--atelier-gold-soft) !important;}
+.category-heading p{color:#f4e8dc !important;}
+.category-number{background:var(--atelier-terracotta) !important;color:var(--atelier-gold-soft) !important;}
 
-.category-heading h2 em{
-  color:var(--atelier-gold-soft) !important;
-}
-
-.category-heading p{
-  color:#f4e8dc !important;
-}
-
-.category-number{
-  background:var(--atelier-terracotta) !important;
-  color:var(--atelier-gold-soft) !important;
-}
-
-/* TEST: same warm terracotta as the category headings on the real products-page header. */
+/* Restore the original black-cocoa header. */
 .products-header{
-  background:var(--atelier-terracotta) !important;
-  border-bottom-color:rgba(225,201,143,.55) !important;
-  box-shadow:0 10px 35px rgba(53,24,17,.18) !important;
+  background:var(--atelier-espresso) !important;
+  border-bottom-color:rgba(225,201,143,.28) !important;
+  box-shadow:0 10px 35px rgba(0,0,0,.24) !important;
 }
-.products-main-nav a{
-  color:#fffaf2 !important;
-}
+.products-main-nav a{color:#fffaf2 !important;}
 .products-header-contact{
-  border-color:rgba(255,250,242,.68) !important;
+  border-color:rgba(255,250,242,.42) !important;
   color:#fffaf2 !important;
-  background:rgba(255,250,242,.06) !important;
+  background:rgba(255,250,242,.04) !important;
 }
-.menu-toggle span{
-  background:#fffaf2 !important;
-}
+.menu-toggle span{background:#fffaf2 !important;}
 
 @media(max-width:900px){
-  .hero-arabic-signature{right:calc(-3% - 6cm) !important;top:calc(40% - 1cm) !important;width:44vw !important;height:280px !important;padding:0 6px !important;}
-  .hero-arabic-signature:before{font-size:clamp(74px,8.2vw,98px) !important;transform:translateX(3cm) !important;}
-  .hero-arabic-word:after{font-size:clamp(49px,6.1vw,72px) !important;}
-  .hero-arabic-word{transform:translateX(-55px) !important;}
   .product-story-visual{transform:translateX(-9%) !important;}
 }
-
 @media(max-width:650px){
-  .hero-arabic-signature{position:relative !important;right:auto !important;top:auto !important;transform:none !important;width:100% !important;height:auto !important;min-height:210px !important;margin-top:-10px !important;padding:0 4% !important;}
-  .hero-arabic-signature:before{font-size:76px !important;transform:translateX(3cm) !important;}
-  .hero-arabic-word:after{font-size:54px !important;}
-  .hero-arabic-word{transform:translateX(-35px) !important;}
   .product-story-visual{transform:translateX(-5%) !important;}
   .product-story-visual img{width:160px !important;height:160px !important;}
 }
