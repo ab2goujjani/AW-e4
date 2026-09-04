@@ -613,3 +613,21 @@
   .products-hero:before{right:-12%;width:82vw;height:82vw;opacity:.5;}
   .products-hero:after{right:8%;width:43vw;height:43vw;opacity:.65;}
 }
+
+/* FINAL FIX — HOMEPAGE ONLY: match the two logo plaques to the Products-page cream. */
+.story-visual,
+.partner-card{
+  background:#f7f1e7 !important;
+  background-image:none !important;
+}
+.story-visual:before,
+.partner-card:before,
+.story-visual:after,
+.partner-card:after{
+  display:none !important;
+}
+.story-visual img,
+.partner-card>img{
+  opacity:1 !important;
+  filter:drop-shadow(0 18px 28px rgba(0,0,0,.28)) !important;
+}
