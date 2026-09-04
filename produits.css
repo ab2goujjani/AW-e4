@@ -8,7 +8,7 @@
 }
 
 .hero-arabic-signature{
-  right:calc(-3.5% - 3cm) !important;
+  right:calc(-3.5% - 6cm) !important;
   top:calc(40% - 1cm) !important;
   width:min(450px,40vw) !important;
   height:330px !important;
@@ -105,7 +105,7 @@
 
 @media(max-width:900px){
   .hero-arabic-signature{
-    right:calc(-3% - 3cm) !important;
+    right:calc(-3% - 6cm) !important;
     top:calc(40% - 1cm) !important;
     width:44vw !important;
     height:280px !important;
