@@ -134,4 +134,108 @@ $('#contactForm')?.addEventListener('submit', e => {
   });
   grid.querySelectorAll('.catalog-added-item .format-button:not(.custom-format)').forEach(b=>b.addEventListener('click',()=>{b.classList.add('selected');setTimeout(()=>b.classList.remove('selected'),650);}));
 })();
+
+/* Shared header-action repair. */
+(function repairHeaderActions(){
+  const iconSearch = '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.2"></circle><path d="M15.4 15.4 21 21"></path></svg>';
+  const iconInstagram = '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.4" cy="6.7" r="1" class="fill"></circle></svg>';
+  const iconCart = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.1 10.1a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L20.5 8H6"></path><circle cx="9.5" cy="19" r="1.2" class="fill"></circle><circle cx="17.5" cy="19" r="1.2" class="fill"></circle></svg>';
+
+  const style = document.createElement('style');
+  style.textContent = `
+    .header-actions{display:flex !important;align-items:center !important;visibility:visible !important;opacity:1 !important;z-index:10003 !important;}
+    .header-actions .search-toggle,.header-actions .instagram-link,.header-actions .cart-link{display:grid !important;visibility:visible !important;opacity:1 !important;}
+    .header-actions .icon-button{position:relative !important;z-index:10004 !important;flex:0 0 auto !important;}
+    .site-header,.products-header{position:sticky !important;z-index:10000 !important;}
+    .site-header:after,.products-header:after{pointer-events:none !important;}
+    .products-header-actions{display:flex;align-items:center;gap:4px;margin-left:auto;position:relative;z-index:10004;}
+    .products-header-actions .products-action{display:grid;place-items:center;width:40px;height:40px;padding:0;border:0;background:transparent;color:#eadfce;cursor:pointer;position:relative;}
+    .products-header-actions .products-action svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.6;}
+    .products-header-actions .products-action .fill{fill:currentColor;stroke:none;}
+    .products-header-actions .products-cart-badge{position:absolute;top:0;right:0;width:14px;height:14px;border-radius:50%;display:grid;place-items:center;background:#c7a15a;color:#211713;font:700 8px/1 Poppins,Arial,sans-serif;border:2px solid #211713;}
+    .products-header-search{position:absolute;right:5.8%;top:92px;width:min(500px,90vw);opacity:0;visibility:hidden;transform:translateY(-8px);transition:.22s ease;z-index:10005;}
+    .products-header-search.open{opacity:1;visibility:visible;transform:none;}
+    .products-header-search-inner{display:flex;align-items:center;gap:10px;background:#fffaf2;border:1px solid rgba(33,23,19,.13);border-radius:4px;padding:10px 12px;box-shadow:0 18px 50px rgba(0,0,0,.22);}
+    .products-header-search-inner svg{width:21px;height:21px;fill:none;stroke:#a67f3e;stroke-width:1.7;flex:0 0 auto;}
+    .products-header-search-inner input{border:0;outline:0;background:transparent;color:#211713;width:100%;font:13px Poppins,Arial,sans-serif;}
+    .products-header-search-inner button{border:0;background:none;color:#6d5e51;font-size:24px;line-height:1;cursor:pointer;}
+    @media(max-width:900px){
+      .site-header{padding-left:5% !important;padding-right:5% !important;gap:0 !important;}
+      .header-actions{margin-left:auto !important;right:auto !important;position:relative !important;gap:1px !important;}
+      .header-actions .icon-button{width:32px !important;height:36px !important;padding:0 !important;}
+      .header-actions .icon-button svg{width:20px !important;height:20px !important;}
+      .header-actions .cart-badge{width:13px !important;height:13px !important;font-size:8px !important;top:1px !important;right:0 !important;}
+      .products-header{padding-left:5% !important;padding-right:5% !important;gap:0 !important;}
+      .products-header-actions{gap:0;margin-left:auto;}
+      .products-header-actions .products-action{width:32px;height:36px;}
+      .products-header-actions .products-action svg{width:20px;height:20px;}
+      .products-header-actions .products-cart-badge{width:13px;height:13px;font-size:7px;top:1px;right:0;}
+      .products-header-search{top:76px;right:5%;width:90%;}
+    }
+    @media(max-width:520px){
+      .brand-logo{width:108px !important;}
+      .header-actions .icon-button{width:29px !important;}
+      .products-logo{max-width:108px;}
+      .products-header-actions .products-action{width:29px;}
+    }
+  `;
+  document.head.appendChild(style);
+
+  const homeActions = document.querySelector('.site-header .header-actions');
+  if(homeActions){
+    homeActions.style.display='flex';
+    homeActions.style.visibility='visible';
+    homeActions.style.opacity='1';
+    homeActions.style.zIndex='10003';
+    homeActions.querySelectorAll('.icon-button').forEach(el=>{
+      el.style.visibility='visible';
+      el.style.opacity='1';
+      el.style.position='relative';
+      el.style.zIndex='10004';
+    });
+  }
+
+  const productsHeader = document.querySelector('.products-header');
+  if(!productsHeader || productsHeader.querySelector('.products-header-actions')) return;
+
+  const actions = document.createElement('div');
+  actions.className='products-header-actions';
+  actions.innerHTML = `
+    <button class="products-action products-search-toggle" type="button" aria-label="Rechercher" aria-expanded="false">${iconSearch}</button>
+    <a class="products-action" href="https://www.instagram.com/" aria-label="Instagram">${iconInstagram}</a>
+    <a class="products-action" href="#contact" aria-label="Produits et contact">${iconCart}<span class="products-cart-badge">0</span></a>
+  `;
+  const contact = productsHeader.querySelector('.products-header-contact');
+  const menuButton = productsHeader.querySelector('.menu-toggle');
+  if(contact) productsHeader.insertBefore(actions, contact);
+  else if(menuButton) productsHeader.insertBefore(actions, menuButton);
+  else productsHeader.appendChild(actions);
+
+  const panel = document.createElement('div');
+  panel.className='products-header-search';
+  panel.setAttribute('aria-hidden','true');
+  panel.innerHTML=`<div class="products-header-search-inner">${iconSearch}<input id="productsHeaderSearch" type="search" placeholder="Rechercher un produit..." aria-label="Rechercher un produit"><button type="button" aria-label="Fermer la recherche">×</button></div>`;
+  productsHeader.appendChild(panel);
+
+  const toggle = actions.querySelector('.products-search-toggle');
+  const input = panel.querySelector('#productsHeaderSearch');
+  const close = panel.querySelector('button');
+  const productItems = $$('.product-item');
+  const normalize = value => (value || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+  const setProductSearch = open => {
+    panel.classList.toggle('open',open);
+    panel.setAttribute('aria-hidden',String(!open));
+    toggle.setAttribute('aria-expanded',String(open));
+    if(open) setTimeout(()=>input.focus(),80);
+  };
+  toggle.addEventListener('click',()=>setProductSearch(!panel.classList.contains('open')));
+  close.addEventListener('click',()=>{input.value='';productItems.forEach(item=>item.style.display='');setProductSearch(false);});
+  input.addEventListener('input',()=>{
+    const q=normalize(input.value.trim());
+    productItems.forEach(item=>{
+      const match=!q || normalize(item.textContent).includes(q);
+      item.style.display=match?'':'none';
+    });
+  });
+})();
 })();
