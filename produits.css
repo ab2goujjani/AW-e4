@@ -23,7 +23,7 @@
   pointer-events:none !important;
 }
 
-/* Upper line stays on the RIGHT. */
+/* Upper line stays on the RIGHT and is moved 3cm further right independently. */
 .hero-arabic-signature:before{
   content:"الروعة" !important;
   position:static !important;
@@ -33,7 +33,7 @@
   border:0 !important;
   box-shadow:none !important;
   background:none !important;
-  transform:none !important;
+  transform:translateX(3cm) !important;
   font-family:"Amiri Quran","Amiri",serif !important;
   font-size:clamp(84px,7.6vw,120px) !important;
   font-weight:400 !important;
@@ -112,7 +112,10 @@
     padding:0 6px !important;
   }
 
-  .hero-arabic-signature:before{font-size:clamp(74px,8.2vw,98px) !important;}
+  .hero-arabic-signature:before{
+    font-size:clamp(74px,8.2vw,98px) !important;
+    transform:translateX(3cm) !important;
+  }
   .hero-arabic-word:after{font-size:clamp(49px,6.1vw,72px) !important;}
   .hero-arabic-word{transform:translateX(-55px) !important;}
   .product-story-visual{transform:translateX(-9%) !important;}
@@ -132,7 +135,10 @@
     align-items:flex-end !important;
   }
 
-  .hero-arabic-signature:before{font-size:76px !important;}
+  .hero-arabic-signature:before{
+    font-size:76px !important;
+    transform:translateX(3cm) !important;
+  }
   .hero-arabic-word:after{font-size:54px !important;}
   .hero-arabic-word{transform:translateX(-35px) !important;}
   .product-story-visual{transform:translateX(-5%) !important;}
