@@ -1,6 +1,6 @@
 @import url("produits-original.css");
 
-/* Products hero — Arabic brand signature balanced across the full hero. */
+/* Products hero — Arabic brand signature stacked, with each line on its own side. */
 .products-hero:before,
 .products-hero:after,
 .hero-arabic-rule{
@@ -20,19 +20,19 @@
   isolation:isolate !important;
 }
 
-/* Brand name — independently positioned on the LEFT. */
+/* Brand name — LEFT, while staying above the second Arabic line. */
 .hero-arabic-signature:before{
   content:"الروعة" !important;
   position:absolute !important;
   left:5% !important;
-  top:40% !important;
+  top:34% !important;
   width:auto !important;
   height:auto !important;
   margin:0 !important;
   border:0 !important;
   box-shadow:none !important;
   background:none !important;
-  transform:translateY(-50%) !important;
+  transform:none !important;
   font-family:"Amiri Quran","Amiri",serif !important;
   font-size:clamp(84px,7.6vw,120px) !important;
   font-weight:400 !important;
@@ -44,11 +44,11 @@
   text-align:left !important;
 }
 
-/* Arabic equivalent of "Nos produits." — independently positioned on the RIGHT. */
+/* Arabic equivalent of "Nos produits." — RIGHT, directly below the brand name. */
 .hero-arabic-word{
   position:absolute !important;
   right:5% !important;
-  top:40% !important;
+  top:51% !important;
   width:auto !important;
   margin:0 !important;
   padding:0 !important;
@@ -56,7 +56,7 @@
   line-height:1 !important;
   color:var(--atelier-espresso) !important;
   text-shadow:none !important;
-  transform:translateY(-50%) !important;
+  transform:none !important;
   white-space:nowrap !important;
   text-align:right !important;
 }
@@ -102,12 +102,12 @@
 @media(max-width:900px){
   .hero-arabic-signature:before{
     left:4% !important;
-    top:40% !important;
+    top:34% !important;
     font-size:clamp(74px,8.2vw,98px) !important;
   }
   .hero-arabic-word{
     right:4% !important;
-    top:40% !important;
+    top:51% !important;
   }
   .hero-arabic-word:after{font-size:clamp(49px,6.1vw,72px) !important;}
   .product-story-visual{transform:translateX(-9%) !important;}
@@ -124,12 +124,12 @@
   }
   .hero-arabic-signature:before{
     left:4% !important;
-    top:50% !important;
+    top:28% !important;
     font-size:58px !important;
   }
   .hero-arabic-word{
     right:4% !important;
-    top:50% !important;
+    top:55% !important;
   }
   .hero-arabic-word:after{font-size:42px !important;}
   .product-story-visual{transform:translateX(-5%) !important;}
