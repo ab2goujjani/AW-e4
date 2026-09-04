@@ -50,34 +50,37 @@
 .category-heading p{color:#e9ded2 !important;}
 .category-number{background:#211713 !important;color:var(--atelier-gold-soft) !important;}
 
-/* Black-cocoa shine: one restrained light sweep across each full band. */
+/* Visible moving light sweep shared by every black-cocoa band on this page. */
 @keyframes ara-cocoa-shine{
-  0%{transform:translateX(-145%) skewX(-18deg);opacity:0;}
-  12%{opacity:.12;}
-  38%{opacity:.48;}
-  52%{opacity:.48;}
-  88%{opacity:.12;}
-  100%{transform:translateX(345%) skewX(-18deg);opacity:0;}
+  0%{left:-45%;opacity:0;}
+  8%{opacity:.9;}
+  42%{opacity:.95;}
+  50%{opacity:.95;}
+  92%{opacity:.9;}
+  100%{left:145%;opacity:0;}
 }
-.category-heading:after{
+.category-heading:after,
+.products-header:after{
   content:"" !important;
   position:absolute !important;
-  top:-20% !important;
-  bottom:-20% !important;
-  left:0 !important;
-  width:22% !important;
-  background:linear-gradient(90deg,transparent 0%,rgba(225,201,143,.08) 25%,rgba(255,250,242,.34) 50%,rgba(225,201,143,.08) 75%,transparent 100%) !important;
-  transform:translateX(-145%) skewX(-18deg) !important;
+  top:-35% !important;
+  bottom:-35% !important;
+  left:-45% !important;
+  width:16% !important;
+  background:linear-gradient(90deg,transparent 0%,rgba(225,201,143,.2) 28%,rgba(255,255,255,.92) 50%,rgba(225,201,143,.2) 72%,transparent 100%) !important;
+  transform:skewX(-20deg) !important;
   opacity:0 !important;
   pointer-events:none !important;
-  z-index:0 !important;
-  animation:ara-cocoa-shine 5.5s ease-in-out infinite !important;
+  z-index:5 !important;
+  animation:ara-cocoa-shine 3.8s linear infinite !important;
 }
-.category-heading > *{position:relative !important;z-index:1 !important;}
+.category-heading > *{position:relative !important;z-index:6 !important;}
 
-/* Clean black-cocoa products header with the same moving shine. */
+/* Black-cocoa products header stays visible while scrolling. */
 .products-header{
-  position:relative !important;
+  position:sticky !important;
+  top:0 !important;
+  z-index:9999 !important;
   isolation:isolate !important;
   overflow:hidden !important;
   background:#211713 !important;
@@ -94,23 +97,9 @@
   height:1px !important;
   background:rgba(255,250,242,.12) !important;
   pointer-events:none !important;
-  z-index:0 !important;
+  z-index:4 !important;
 }
-.products-header:after{
-  content:"" !important;
-  position:absolute !important;
-  top:-20% !important;
-  bottom:-20% !important;
-  left:0 !important;
-  width:22% !important;
-  background:linear-gradient(90deg,transparent 0%,rgba(225,201,143,.08) 25%,rgba(255,250,242,.34) 50%,rgba(225,201,143,.08) 75%,transparent 100%) !important;
-  transform:translateX(-145%) skewX(-18deg) !important;
-  opacity:0 !important;
-  pointer-events:none !important;
-  z-index:0 !important;
-  animation:ara-cocoa-shine 5.5s ease-in-out infinite !important;
-}
-.products-header > *{position:relative !important;z-index:1 !important;}
+.products-header > *{position:relative !important;z-index:6 !important;}
 .products-main-nav a{color:#fffaf2 !important;}
 .products-header-contact{
   border-color:rgba(255,250,242,.42) !important;
