@@ -30,10 +30,10 @@
 .product-category-nav button:hover,.product-category-nav button.active{background:var(--p-burgundy) !important;color:#fff8ed !important;border-color:var(--p-burgundy) !important;}
 
 /* Keep the "Nos univers" intro in the teal family. */
-.products-intro{position:relative;isolation:isolate;color:#f3ead5;background:#123d43 !important;width:100%;max-width:none;padding-left:6%;padding-right:6%;}
-.products-intro:before,.products-intro:after{content:"";position:absolute;top:38px;bottom:18px;width:38%;z-index:-1;opacity:.55;background:repeating-conic-gradient(from 22.5deg at 50% 50%,rgba(199,154,59,.16) 0deg 2.5deg,transparent 2.5deg 45deg);background-size:74px 74px;}
-.products-intro:before{left:0;mask-image:linear-gradient(90deg,#000,transparent);}
-.products-intro:after{right:0;transform:scaleX(-1);mask-image:linear-gradient(90deg,#000,transparent);}
+.products-intro{position:relative;isolation:isolate;color:#f3ead5;background:#123d43 !important;background-image:radial-gradient(circle at 50% 18%,rgba(223,244,230,.18),transparent 34%),linear-gradient(90deg,rgba(7,34,37,.20),transparent 24%,transparent 76%,rgba(7,34,37,.20)),repeating-conic-gradient(from 22.5deg at 50% 50%,rgba(199,154,59,.24) 0deg 2.5deg,transparent 2.5deg 45deg),repeating-conic-gradient(from 0deg at 50% 50%,transparent 0deg 42deg,rgba(235,211,137,.07) 42deg 45deg) !important;background-size:auto,auto,86px 86px,86px 86px;width:100%;max-width:none;padding-left:6%;padding-right:6%;}
+.products-intro:before,.products-intro:after{content:"";position:absolute;top:0;bottom:0;width:100%;left:0;right:0;z-index:-1;opacity:1;background:none;}
+.products-intro:before{display:none;}
+.products-intro:after{content:"";position:absolute;inset:0;z-index:0;background:linear-gradient(105deg,transparent 0%,rgba(255,255,255,.06) 28%,rgba(255,255,255,.16) 38%,transparent 48%,transparent 70%,rgba(255,255,255,.05) 80%,transparent 88%);pointer-events:none;mix-blend-mode:screen;}
 .products-intro .eyebrow{color:#e3c263 !important;}
 .products-intro h2{color:#f5ead8 !important;}
 .products-intro h2 em{color:#f0d27c !important;}
@@ -41,7 +41,7 @@
 .products-intro strong{color:#f0d27c !important;}
 
 /* Bottom footer: keep the same blue/teal material beside the logo, navigation and univers links. */
-.footer{background:#0e3338 !important;background-image:radial-gradient(circle at 50% 0%,rgba(223,244,230,.10),transparent 38%),repeating-conic-gradient(from 22.5deg at 50% 50%,rgba(199,154,59,.12) 0deg 2.5deg,transparent 2.5deg 45deg) !important;background-size:auto,88px 88px;border-top:1px solid rgba(224,193,104,.24);}
+.footer{background-color:#123d43 !important;background-image:radial-gradient(circle at 50% 18%,rgba(223,244,230,.18),transparent 34%),linear-gradient(90deg,rgba(7,34,37,.20),transparent 24%,transparent 76%,rgba(7,34,37,.20)),repeating-conic-gradient(from 22.5deg at 50% 50%,rgba(199,154,59,.24) 0deg 2.5deg,transparent 2.5deg 45deg),repeating-conic-gradient(from 0deg at 50% 50%,transparent 0deg 42deg,rgba(235,211,137,.07) 42deg 45deg),linear-gradient(105deg,transparent 0%,rgba(255,255,255,.04) 28%,rgba(255,255,255,.12) 38%,transparent 48%,transparent 70%,rgba(255,255,255,.035) 80%,transparent 88%) !important;background-size:auto,auto,86px 86px,86px 86px,100% 100% !important;border-top:1px solid rgba(224,193,104,.30);}
 .footer-nav strong{color:#e3c263 !important;}
 .footer-nav a{color:#cfd8d4 !important;}
 .footer-brand p{color:#d1d9d5 !important;}
@@ -50,3 +50,463 @@
 @media(max-width:1150px){.category-pantry .product-items{grid-template-columns:repeat(3,1fr);}}
 @media(max-width:850px){.category-pantry .category-heading{align-items:flex-start;flex-direction:column;gap:15px;}.category-pantry .product-items{grid-template-columns:1fr 1fr;}}
 @media(max-width:560px){.product-story-visual img{width:160px;height:160px;}.category-pantry .product-items{grid-template-columns:1fr;}}
+
+/* ================================================================
+   ATELIER LUXURY — PRODUCTS PAGE MATCH
+   Bring the full catalogue page into the same visual language as
+   the homepage experiment. CSS-only: no HTML / JS / asset changes.
+   ================================================================ */
+:root{
+  --atelier-espresso:#211713;
+  --atelier-espresso-2:#2b1d18;
+  --atelier-cream:#f5eee3;
+  --atelier-paper:#fffaf2;
+  --atelier-gold:#c7a15a;
+  --atelier-gold-soft:#e1c98f;
+  --atelier-terracotta:#9f4933;
+  --atelier-terracotta-deep:#7e3827;
+  --atelier-ink:#2a201b;
+  --atelier-muted:#6d5e51;
+}
+
+.products-page{background:var(--atelier-cream) !important;color:var(--atelier-ink) !important;}
+
+/* Header: quiet architectural bar, no generic cream nav. */
+.products-header{
+  background:rgba(33,23,19,.97) !important;
+  border-bottom:1px solid rgba(199,161,90,.42) !important;
+  box-shadow:0 10px 35px rgba(25,15,11,.16) !important;
+}
+.products-header:after{
+  content:"";position:absolute;left:5%;right:5%;bottom:-1px;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(225,201,143,.75) 18%,rgba(225,201,143,.75) 82%,transparent);
+  opacity:.35;pointer-events:none;
+}
+.products-logo{position:relative;z-index:2;}
+.products-main-nav a{color:#eadfce !important;}
+.products-main-nav a:after{background:var(--atelier-gold-soft) !important;}
+.products-header-contact{
+  border-color:rgba(225,201,143,.72) !important;
+  color:var(--atelier-gold-soft) !important;
+  border-radius:3px !important;
+  background:rgba(225,201,143,.035) !important;
+}
+.menu-toggle span{background:#eadfce !important;}
+
+/* Hero: dark atelier field, using geometry rather than wallpaper. */
+.products-hero{
+  min-height:500px !important;
+  background-color:var(--atelier-espresso) !important;
+  background-image:
+    radial-gradient(circle at 78% 42%,rgba(199,161,90,.13),transparent 25%),
+    radial-gradient(circle at 15% 80%,rgba(159,73,51,.08),transparent 28%),
+    linear-gradient(90deg,#211713 0%,#211713 48%,rgba(33,23,19,.92) 100%) !important;
+  border-bottom:1px solid rgba(199,161,90,.42) !important;
+}
+.products-hero:before{
+  right:8% !important;top:50% !important;width:min(37vw,500px) !important;height:min(37vw,500px) !important;
+  border-radius:0 !important;transform:translateY(-50%) rotate(45deg) !important;
+  border:1px solid rgba(199,161,90,.26) !important;
+  box-shadow:0 0 0 18px rgba(199,161,90,.035),0 0 0 19px rgba(199,161,90,.10) !important;
+}
+.products-hero:after{
+  right:calc(8% + 68px) !important;top:50% !important;width:260px !important;height:260px !important;
+  border-radius:50% !important;transform:translateY(-50%) !important;
+  border:1px solid rgba(159,73,51,.35) !important;
+  background:
+    linear-gradient(90deg,transparent 49.7%,rgba(225,201,143,.12) 50%,transparent 50.3%),
+    linear-gradient(0deg,transparent 49.7%,rgba(225,201,143,.09) 50%,transparent 50.3%) !important;
+}
+.products-hero-copy{padding:82px 0 !important;}
+.products-hero-eyebrow{color:var(--atelier-gold-soft) !important;letter-spacing:4.5px !important;}
+.products-hero h1{color:#f6ecdd !important;letter-spacing:-2.8px !important;}
+.products-hero h1 em{color:#d98b70 !important;}
+.products-hero p{color:#cfc3b5 !important;}
+.products-hero-rule{background:var(--atelier-gold-soft) !important;width:72px !important;height:1px !important;}
+
+/* Category rail: espresso with a thin gold spine. */
+.product-categories{
+  background:var(--atelier-espresso-2) !important;
+  border-top:1px solid rgba(225,201,143,.14) !important;
+  border-bottom:1px solid rgba(225,201,143,.28) !important;
+  box-shadow:0 12px 30px rgba(24,15,11,.16) !important;
+}
+.product-category-nav button{
+  border-radius:3px !important;
+  border-color:rgba(225,201,143,.22) !important;
+  background:transparent !important;
+  color:#e5d9c9 !important;
+}
+.product-category-nav button:hover,.product-category-nav button.active{
+  background:var(--atelier-terracotta) !important;
+  border-color:var(--atelier-terracotta) !important;
+  color:#fffaf2 !important;
+}
+
+/* Intro: ivory, editorial, with a single architectural rule. */
+.products-intro{
+  width:100% !important;max-width:none !important;padding:88px 10% 62px !important;
+  background:var(--atelier-cream) !important;color:var(--atelier-ink) !important;
+  border-bottom:1px solid rgba(33,23,19,.10) !important;
+  position:relative;isolation:isolate;
+}
+.products-intro:before{
+  display:block !important;content:"" !important;position:absolute;left:10%;right:10%;top:0;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(199,161,90,.65) 20%,rgba(199,161,90,.65) 80%,transparent);
+  opacity:.65;z-index:0;
+}
+.products-intro:after{
+  display:block !important;content:"01" !important;position:absolute;right:8%;bottom:-24px;
+  font-family:"Cormorant Garamond",serif;font-size:110px;line-height:1;color:rgba(159,73,51,.045);
+  z-index:-1;pointer-events:none;background:none !important;mix-blend-mode:normal !important;
+}
+.products-intro .eyebrow{color:var(--atelier-terracotta) !important;letter-spacing:4.5px !important;}
+.products-intro h2{color:var(--atelier-espresso) !important;font-size:56px !important;letter-spacing:-1px !important;}
+.products-intro h2 em{color:var(--atelier-terracotta) !important;}
+.products-intro p{color:var(--atelier-muted) !important;max-width:720px;margin-left:auto;margin-right:auto;}
+.products-intro strong{color:#a67f3e !important;}
+
+/* Every category becomes a clean catalogue chapter. */
+.product-category-section,.category-pantry{
+  width:100% !important;max-width:none !important;margin:0 !important;padding:74px 6% 100px !important;
+  background:var(--atelier-cream) !important;
+}
+.product-category-section:nth-of-type(odd),.category-pantry:nth-of-type(odd){background:#fffaf2 !important;}
+.category-spices{background:#eee3d2 !important;padding:78px 0 105px !important;}
+.category-spices .category-inner{width:88% !important;}
+.category-heading{
+  width:min(1380px,100%);margin:0 auto 36px !important;padding-bottom:22px !important;
+  border-bottom:1px solid rgba(33,23,19,.12) !important;
+}
+.category-heading-left{gap:17px !important;}
+.category-number{
+  width:44px !important;height:44px !important;border-radius:3px !important;
+  background:var(--atelier-espresso) !important;color:var(--atelier-gold-soft) !important;
+  border:1px solid rgba(199,161,90,.45) !important;
+  box-shadow:4px 4px 0 rgba(159,73,51,.13) !important;
+}
+.category-heading h2{color:var(--atelier-espresso) !important;font-size:44px !important;letter-spacing:-.8px !important;}
+.category-heading h2 em{color:var(--atelier-terracotta) !important;}
+.category-heading p{color:var(--atelier-muted) !important;}
+.category-heading .product-item-tag{color:#a67f3e !important;}
+.spice-note{
+  border-radius:3px !important;background:rgba(33,23,19,.035) !important;
+  border-color:rgba(199,161,90,.32) !important;color:#6d5e51 !important;
+}
+.spice-note strong{color:var(--atelier-terracotta) !important;}
+.pantry-intro p{color:var(--atelier-muted) !important;}
+
+/* Product cards: sharp catalogue plaques, not rounded UI cards. */
+.product-items{gap:22px !important;}
+.product-item{
+  border-radius:3px !important;background:var(--atelier-paper) !important;
+  border:1px solid rgba(33,23,19,.10) !important;
+  box-shadow:0 15px 35px rgba(47,31,23,.075) !important;
+}
+.product-item:hover{
+  transform:translateY(-7px) !important;
+  border-color:rgba(199,161,90,.62) !important;
+  box-shadow:0 25px 52px rgba(47,31,23,.12) !important;
+}
+.product-item-image{
+  background:linear-gradient(145deg,#fffaf2,#e4d5c1) !important;
+  border-bottom:1px solid rgba(199,161,90,.14);
+}
+.product-item-image:after{background:linear-gradient(145deg,rgba(255,255,255,.34),transparent 48%,rgba(20,15,12,.06)) !important;}
+.product-placeholder{
+  border-radius:2px !important;background:linear-gradient(155deg,#2b201b,#17110f) !important;
+  border-color:rgba(225,201,143,.50) !important;
+  box-shadow:10px 16px 28px rgba(35,24,17,.17) !important;
+}
+.product-placeholder:before{border-radius:0 !important;border-color:rgba(225,201,143,.25) !important;}
+.product-placeholder span{color:var(--atelier-gold-soft) !important;}
+.product-placeholder small{color:#d9cdbd !important;}
+.product-item-content{padding:19px !important;border-top:0 !important;}
+.product-item-tag{color:#a67f3e !important;}
+.product-item h3{color:var(--atelier-espresso) !important;}
+.product-item p{color:var(--atelier-muted) !important;}
+.product-formats{border-top-color:rgba(199,161,90,.20) !important;}
+.formats-label{color:#8f7652 !important;}
+.format-button{border-radius:2px !important;background:#fffaf2 !important;color:var(--atelier-ink) !important;}
+.format-button:hover,.format-button.selected{background:var(--atelier-terracotta) !important;border-color:var(--atelier-terracotta) !important;color:#fff !important;}
+.format-button.custom-format{color:var(--atelier-terracotta) !important;border-color:rgba(199,161,90,.55) !important;}
+
+/* Story: full-width atelier composition, matching the homepage's premium dark section. */
+.product-story{
+  background:var(--atelier-espresso) !important;
+  padding:105px 0 !important;
+  border-top:1px solid rgba(199,161,90,.35);
+  border-bottom:1px solid rgba(199,161,90,.25);
+}
+.product-story-inner{width:min(1380px,88%) !important;gap:78px !important;}
+.product-story-visual{
+  height:510px !important;border-radius:3px !important;
+  background:#17110f !important;border:1px solid rgba(199,161,90,.45) !important;
+  box-shadow:0 25px 60px rgba(0,0,0,.22) !important;
+}
+.product-story-visual:before{
+  content:"";position:absolute;inset:18px;border:1px solid rgba(225,201,143,.28);z-index:2;pointer-events:none;
+}
+.product-story-visual img{object-fit:cover !important;filter:sepia(.10) saturate(.82) brightness(.78) !important;}
+.product-story-overlay{background:linear-gradient(180deg,transparent 42%,rgba(22,12,9,.84)) !important;}
+.product-story-label{left:32px !important;bottom:30px !important;color:#eadfce !important;}
+.product-story-copy .eyebrow{color:var(--atelier-gold-soft) !important;}
+.product-story-copy h2{color:#f5eadb !important;font-size:58px !important;letter-spacing:-1px !important;}
+.product-story-copy h2 em{color:var(--atelier-gold-soft) !important;}
+.product-story-copy>p{color:#cfc3b5 !important;}
+.process-list{gap:0 !important;margin-top:35px !important;}
+.process-step{padding:15px 0;border-top:1px solid rgba(225,201,143,.16);}
+.process-step-number{border-radius:3px !important;color:var(--atelier-gold-soft) !important;border-color:rgba(225,201,143,.42) !important;}
+.process-step strong{color:#f5eadb !important;}
+.process-step span{color:#bdb1a2 !important;}
+
+/* Origin: warm paper with restrained gold rules. */
+.origin-section{background:#eee3d2 !important;padding:92px 0 !important;border-bottom:1px solid rgba(33,23,19,.10);}
+.origin-inner h2{color:var(--atelier-espresso) !important;font-size:56px !important;letter-spacing:-1px !important;}
+.origin-inner h2 em{color:var(--atelier-terracotta) !important;}
+.origin-inner>p{color:var(--atelier-muted) !important;}
+.origin-points{gap:28px !important;}
+.origin-point{border-top-color:rgba(199,161,90,.48) !important;}
+.origin-point strong{color:#a67f3e !important;}
+.origin-point b{color:var(--atelier-espresso) !important;}
+.origin-point span{color:#75685b !important;}
+
+/* CTA: the single strong terracotta moment. */
+.products-cta{
+  background:var(--atelier-terracotta) !important;
+  color:#fffaf2 !important;
+  padding:100px 6% !important;
+  position:relative;overflow:hidden;isolation:isolate;
+}
+.products-cta:after{
+  content:"";position:absolute;right:-90px;top:50%;width:420px;height:420px;
+  border:1px solid rgba(255,246,229,.18);transform:translateY(-50%) rotate(45deg);z-index:-1;
+}
+.products-cta .eyebrow{color:#f0d6b4 !important;}
+.products-cta h2{color:#fffaf2 !important;font-size:58px !important;}
+.products-cta h2 em{color:#f1d28d !important;}
+.products-cta p{color:#f0dfd0 !important;}
+.cta-button{
+  border-radius:3px !important;background:#f1d28d !important;color:var(--atelier-espresso) !important;
+  box-shadow:0 14px 30px rgba(53,24,17,.20) !important;
+}
+
+/* Footer: same atelier finish as homepage. */
+.footer{
+  background:var(--atelier-espresso) !important;
+  background-image:radial-gradient(circle at 50% 0%,rgba(199,161,90,.10),transparent 38%) !important;
+  border-top:1px solid rgba(199,161,90,.48) !important;
+}
+.footer:before{content:"";display:block;position:absolute;left:6%;right:6%;top:0;height:1px;background:linear-gradient(90deg,transparent,#e1c98f 20%,#e1c98f 80%,transparent);opacity:.38;}
+.footer-nav strong{color:var(--atelier-gold-soft) !important;}
+.footer-nav a,.footer-brand p{color:#cfc3b5 !important;}
+.footer-bottom{border-top-color:rgba(225,201,143,.24) !important;color:#a99b8a !important;}
+
+/* Modal follows the same material language. */
+.format-modal-box{border-radius:3px !important;background:var(--atelier-cream) !important;border:1px solid rgba(199,161,90,.38);}
+.format-modal-box input{border-radius:2px !important;background:var(--atelier-paper) !important;}
+.format-modal-box input:focus{border-color:var(--atelier-gold) !important;}
+.format-confirmation{color:var(--atelier-terracotta) !important;}
+
+@media(max-width:900px){
+  .products-hero:before{right:4% !important;width:56vw !important;height:56vw !important;}
+  .products-hero:after{right:calc(4% + 7vw) !important;width:31vw !important;height:31vw !important;}
+}
+@media(max-width:850px){
+  .products-main-nav{background:var(--atelier-espresso) !important;border-bottom:1px solid rgba(225,201,143,.20) !important;}
+  .products-main-nav a{color:#eadfce !important;}
+  .product-category-section,.category-pantry{padding-left:6% !important;padding-right:6% !important;}
+  .products-intro{padding-left:7% !important;padding-right:7% !important;}
+}
+@media(max-width:560px){
+  .products-hero{min-height:410px !important;}
+  .products-hero-copy{padding:65px 0 !important;}
+  .products-hero:before{right:-15% !important;width:78vw !important;height:78vw !important;opacity:.45;}
+  .products-hero:after{right:10% !important;width:42vw !important;height:42vw !important;opacity:.55;}
+  .products-intro{padding-top:70px !important;}
+  .products-intro h2{font-size:45px !important;}
+  .category-heading h2{font-size:38px !important;}
+  .product-story{padding:80px 0 !important;}
+  .product-story-copy h2{font-size:46px !important;}
+  .origin-inner h2,.products-cta h2{font-size:46px !important;}
+}
+/* ================================================================
+   ARABIC ARCHITECTURAL SIGNATURE — placed in the EMPTY RIGHT SIDE
+   of the same "Nos produits" hero. Exact word: الروعة.
+   ================================================================ */
+.products-hero-inner{position:relative !important;}
+.hero-arabic-signature{
+  position:absolute;
+  right:1.5%;
+  top:50%;
+  width:min(430px,38vw);
+  height:330px;
+  transform:translateY(-50%);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:4;
+  pointer-events:none;
+  isolation:isolate;
+}
+.hero-arabic-signature:before{
+  content:"";
+  position:absolute;
+  width:250px;
+  height:250px;
+  border:1px solid rgba(225,201,143,.26);
+  transform:rotate(45deg);
+  box-shadow:0 0 0 14px rgba(225,201,143,.025),0 0 0 15px rgba(225,201,143,.08);
+}
+.hero-arabic-signature:after{
+  content:"";
+  position:absolute;
+  width:300px;
+  height:1px;
+  background:linear-gradient(90deg,transparent,rgba(225,201,143,.52),transparent);
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  opacity:.55;
+}
+.hero-arabic-kicker{
+  position:absolute;
+  top:37px;
+  font-family:"Amiri Quran", serif;
+  font-size:10px;
+  font-weight:500;
+  letter-spacing:0;
+  color:#d98b70;
+  opacity:.9;
+}
+.hero-arabic-word{
+  position:relative;
+  z-index:2;
+  font-family:"Amiri Quran", serif;
+  font-size:clamp(72px,7.2vw,112px);
+  font-weight:400;
+  line-height:1.05;
+  letter-spacing:0;
+  color:#f6ecdd;
+  text-shadow:0 2px 0 rgba(0,0,0,.12),0 12px 32px rgba(0,0,0,.22);
+  white-space:nowrap;
+}
+.hero-arabic-rule{
+  position:absolute;
+  bottom:48px;
+  width:92px;
+  height:1px;
+  background:linear-gradient(90deg,transparent,#e1c98f,transparent);
+}
+.hero-arabic-rule:after{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:7px;
+  height:7px;
+  transform:translate(-50%,-50%) rotate(45deg);
+  background:var(--atelier-espresso);
+  border:1px solid #e1c98f;
+}
+@media(max-width:900px){
+  .hero-arabic-signature{right:0;width:38vw;opacity:.88;}
+  .products-hero-copy{max-width:55%;}
+  .hero-arabic-word{font-size:clamp(48px,6vw,70px);}
+  .hero-arabic-signature:before{width:190px;height:190px;}
+}
+@media(max-width:650px){
+  .products-hero-copy{max-width:100%;}
+  .hero-arabic-signature{position:relative;right:auto;top:auto;transform:none;width:100%;height:210px;margin-top:-10px;opacity:1;}
+  .hero-arabic-signature:before{width:160px;height:160px;}
+  .hero-arabic-kicker{top:30px;}
+  .hero-arabic-word{font-size:54px;}
+  .hero-arabic-rule{bottom:24px;}
+}
+
+
+/* FINAL TONE — cream hero + cream category rail */
+.products-hero{
+  background:var(--atelier-cream) !important;
+  background-image:
+    radial-gradient(circle at 82% 42%,rgba(199,161,90,.10),transparent 25%),
+    radial-gradient(circle at 12% 78%,rgba(159,73,51,.045),transparent 28%) !important;
+  border-bottom:1px solid rgba(33,23,19,.12) !important;
+}
+.products-hero:before{
+  border-color:rgba(159,73,51,.16) !important;
+  box-shadow:0 0 0 18px rgba(199,161,90,.025),0 0 0 19px rgba(199,161,90,.07) !important;
+}
+.products-hero:after{
+  border-color:rgba(159,73,51,.18) !important;
+  background:
+    linear-gradient(90deg,transparent 49.7%,rgba(33,23,19,.08) 50%,transparent 50.3%),
+    linear-gradient(0deg,transparent 49.7%,rgba(33,23,19,.06) 50%,transparent 50.3%) !important;
+}
+.products-hero-eyebrow{color:var(--atelier-terracotta) !important;}
+.products-hero h1{color:var(--atelier-espresso) !important;}
+.products-hero h1 em{color:var(--atelier-terracotta) !important;}
+.products-hero p{color:var(--atelier-muted) !important;}
+.products-hero-rule{background:var(--atelier-gold) !important;}
+.hero-arabic-word{color:var(--atelier-espresso) !important;text-shadow:none !important;}
+.hero-arabic-kicker{color:var(--atelier-terracotta) !important;}
+.hero-arabic-signature:before{border-color:rgba(159,73,51,.16) !important;box-shadow:0 0 0 14px rgba(199,161,90,.025),0 0 0 15px rgba(199,161,90,.07) !important;}
+.hero-arabic-signature:after{background:linear-gradient(90deg,transparent,rgba(159,73,51,.25),transparent) !important;}
+.hero-arabic-rule{background:linear-gradient(90deg,transparent,var(--atelier-gold),transparent) !important;}
+.hero-arabic-rule:after{background:var(--atelier-cream) !important;border-color:var(--atelier-gold) !important;}
+
+.product-categories{
+  background:var(--atelier-espresso) !important;
+  background-image:none !important;
+  border-top:1px solid rgba(225,201,143,.10) !important;
+  border-bottom:1px solid rgba(225,201,143,.14) !important;
+  box-shadow:none !important;
+}
+.product-category-nav button{
+  border-color:rgba(225,201,143,.22) !important;
+  background:rgba(255,255,255,.035) !important;
+  color:var(--atelier-cream) !important;
+}
+.product-category-nav button:hover,.product-category-nav button.active{
+  background:var(--atelier-terracotta) !important;
+  border-color:var(--atelier-terracotta) !important;
+  color:#fffaf2 !important;
+}
+
+/* Final precision pass: remove the small duplicate Arabic signature. */
+.hero-arabic-kicker{display:none !important;}
+
+/* FINAL ARABIC MARK — classical Quranic-inspired typography; no duplicate small word */
+.hero-arabic-kicker{display:none !important;}
+.hero-arabic-word{font-family:"Amiri Quran", serif !important;font-weight:400 !important;letter-spacing:0 !important;line-height:1.05 !important;}
+
+/* FINAL ARABIC SEAL — small, refined and optically centered inside the geometric mark */
+.hero-arabic-signature{
+  right:1.5% !important;
+  top:50% !important;
+  width:min(430px,38vw) !important;
+  height:330px !important;
+  transform:translateY(-50%) !important;
+}
+.hero-arabic-signature:after{display:none !important;}
+.hero-arabic-word{
+  font-family:"Amiri Quran", "Amiri", serif !important;
+  font-size:clamp(32px,3vw,48px) !important;
+  font-weight:400 !important;
+  line-height:1 !important;
+  color:var(--atelier-espresso) !important;
+  text-shadow:none !important;
+  transform:translateY(-1px) !important;
+  z-index:5 !important;
+}
+.hero-arabic-rule{display:none !important;}
+@media(max-width:900px){
+  .hero-arabic-signature{right:0 !important;width:38vw !important;height:280px !important;}
+  .hero-arabic-signature:before{width:210px !important;height:210px !important;}
+  .hero-arabic-word{font-size:36px !important;}
+}
+@media(max-width:650px){
+  .hero-arabic-signature{width:100% !important;height:180px !important;margin-top:-8px !important;}
+  .hero-arabic-signature:before{width:150px !important;height:150px !important;}
+  .hero-arabic-word{font-size:34px !important;}
+}

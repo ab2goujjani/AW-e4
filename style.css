@@ -4,7 +4,7 @@
 .hero-visual .hero-arch,
 .hero-visual .visual-frame{display:none !important;}
 .hero-lead{font-size:0;max-width:640px;}
-.hero-lead:before{content:"Café, épices, fruits secs, épicerie et huile d’argan : une sélection inspirée par la richesse du terroir marocain, présentée avec une identité premium.";font-size:15px;line-height:1.9;color:var(--ink-soft);}
+.hero-lead:before{content:"Café, épices, fruits secs, épicerie et huile d’argan : une sélection inspirée par la richesse du terroir marocain, présentée avec une identité premium.";font-size:15px;line-height:1.9;color:#171513 !important;}
 
 /* Story square: let the visual sit naturally in the same warm cream as the page background. */
 .story-visual img{content:url("assets/logo-crystal-4k.png");width:190px;height:190px;object-fit:contain;opacity:1;position:relative;z-index:1;filter:drop-shadow(0 18px 28px rgba(0,0,0,.28));}
@@ -20,43 +20,596 @@
 .partner-card strong,.partner-card>span,.partner-tags{display:none !important;}
 .partner-card>img{position:relative;z-index:2;width:190px;height:190px;object-fit:contain;opacity:1;filter:drop-shadow(0 18px 28px rgba(0,0,0,.28));}
 
-/* Homepage header: warm charcoal/champagne — understated luxury instead of a saturated block. */
-.site-header{background:linear-gradient(115deg,#24211E 0%,#2D2924 48%,#3A3025 100%) !important;border-bottom:1px solid rgba(226,189,105,.34);box-shadow:0 10px 30px rgba(0,0,0,.18),inset 0 1px 0 rgba(255,255,255,.035);backdrop-filter:blur(14px);}
-.site-header:before,.site-header:after{display:none !important;}
-.site-header>*{position:relative;z-index:2;}
-.site-header.scrolled{background:linear-gradient(115deg,#24211E 0%,#2D2924 48%,#3A3025 100%) !important;box-shadow:0 14px 38px rgba(0,0,0,.26),inset 0 1px 0 rgba(255,255,255,.04);}
-.main-nav a{color:#f7f0e4 !important;text-shadow:none;}
-.main-nav a:hover,.main-nav a.active{color:var(--gold-light) !important;}
-.main-nav a:after{background:var(--gold-light) !important;box-shadow:none;}
-.icon-button{color:var(--gold-light) !important;}
-.header-contact{border-color:rgba(226,189,105,.58) !important;color:#f7eddb !important;background:transparent;box-shadow:none;}
-.header-contact:hover{background:var(--gold-light) !important;color:var(--ink) !important;border-color:var(--gold-light) !important;}
-.cart-badge{background:var(--gold-light) !important;color:var(--burgundy-deep) !important;border-color:#24211E !important;}
-.menu-toggle span{background:#f7eddb !important;}
-/* Anchor the search / Instagram / cart / contact cluster to the right side of the header. */
+/* =========================================================
+   ARRAOUA PREMIUM — HOMEPAGE / PRODUCTS-PAGE VISUAL LANGUAGE
+   V3: shared ivory + petrol teal + antique gold + burgundy
+   The original repository is not touched. This is the working copy.
+   ========================================================= */
+
+/* Shared palette */
+:root{
+  --ara-ivory:#f7f1e7;
+  --ara-ivory-soft:#fffdf8;
+  --ara-petrol:#123d43;
+  --ara-petrol-deep:#0d3035;
+  --ara-petrol-shadow:#09282d;
+  --ara-gold:#c79a3b;
+  --ara-gold-light:#e3c263;
+  --ara-burgundy:#8b1018;
+}
+
+/* ---------- Announcement: cream strip ---------- */
+.announcement{
+  background:var(--ara-ivory) !important;
+  color:#f7f1e7 !important;
+}
+.announcement .dot{background:var(--ara-gold) !important;}
+.announcement-separator{color:var(--ara-burgundy) !important;}
+.announcement-socials a{color:var(--ara-burgundy) !important;}
+
+/* ---------- HEADER: petrol blue language ---------- */
+.site-header{
+  background-color:var(--ara-petrol) !important;
+  background-image:
+    radial-gradient(circle at 50% 18%,rgba(223,244,230,.18),transparent 34%),
+    linear-gradient(90deg,rgba(7,34,37,.20),transparent 24%,transparent 76%,rgba(7,34,37,.20)),
+    repeating-conic-gradient(from 22.5deg at 50% 50%,rgba(199,154,59,.24) 0deg 2.5deg,transparent 2.5deg 45deg),
+    repeating-conic-gradient(from 0deg at 50% 50%,transparent 0deg 42deg,rgba(235,211,137,.07) 42deg 45deg) !important;
+  background-size:auto,auto,86px 86px,86px 86px !important;
+  border-bottom:1px solid rgba(226,193,104,.30) !important;
+  box-shadow:0 8px 28px rgba(0,0,0,.18) !important;
+  backdrop-filter:blur(12px);
+  overflow:hidden;
+}
+.site-header.scrolled{
+  background-color:var(--ara-petrol-deep) !important;
+  background-image:
+    radial-gradient(circle at 50% 18%,rgba(223,244,230,.16),transparent 34%),
+    linear-gradient(90deg,rgba(7,34,37,.24),transparent 24%,transparent 76%,rgba(7,34,37,.24)),
+    repeating-conic-gradient(from 22.5deg at 50% 50%,rgba(199,154,59,.22) 0deg 2.5deg,transparent 2.5deg 45deg),
+    repeating-conic-gradient(from 0deg at 50% 50%,transparent 0deg 42deg,rgba(235,211,137,.06) 42deg 45deg) !important;
+  background-size:auto,auto,86px 86px,86px 86px !important;
+  box-shadow:0 12px 32px rgba(0,0,0,.22) !important;
+}
+.site-header:before{display:none !important;}
+.site-header:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(105deg,transparent 0%,rgba(255,255,255,.04) 28%,rgba(255,255,255,.12) 38%,transparent 48%,transparent 70%,rgba(255,255,255,.035) 80%,transparent 88%);
+  pointer-events:none;
+  mix-blend-mode:screen;
+}
+
+.main-nav a{
+  color:#f7f1e7 !important;
+  text-shadow:none !important;
+  font-size:10px !important;
+  text-transform:uppercase;
+  letter-spacing:1.2px;
+  font-weight:500;
+}
+.main-nav a:hover,
+.main-nav a.active{color:var(--ara-gold-light) !important;}
+.main-nav a:after{
+  background:var(--ara-gold) !important;
+  box-shadow:none !important;
+  height:1px !important;
+}
+.icon-button{color:var(--ara-gold-light) !important;}
+.header-contact{
+  border:1px solid var(--ara-gold) !important;
+  color:var(--ara-gold-light) !important;
+  background:transparent !important;
+  box-shadow:none !important;
+  font-size:9px !important;
+  padding:10px 17px !important;
+}
+.header-contact:hover{
+  background:var(--ara-gold) !important;
+  color:var(--ara-petrol-deep) !important;
+  border-color:var(--ara-gold) !important;
+}
+.cart-badge{
+  background:var(--ara-burgundy) !important;
+  color:#fff8ed !important;
+  border-color:var(--ara-ivory) !important;
+}
+.menu-toggle span{background:#302a25 !important;}
 .header-actions{position:absolute;right:5.8%;margin-left:0;transform:none;}
 .search-panel{top:94px;right:5.8%;}
 
-/* Top-bar WhatsApp icon: recognizable WhatsApp logo in its original green. */
-.announcement-socials a[aria-label="WhatsApp"]{color:#25D366 !important;font-size:0;width:22px;height:22px;display:inline-flex;align-items:center;justify-content:center;background-color:#25D366;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M20.52 3.48A11.83 11.83 0 0 0 12.08.01C5.54.01.22 5.33.22 11.87c0 2.09.55 4.13 1.59 5.93L.12 23.88l6.22-1.63a11.8 11.8 0 0 0 5.73 1.46h.01c6.54 0 11.86-5.32 11.86-11.86 0-3.17-1.23-6.15-3.42-8.37ZM12.08 21.7h-.01a9.8 9.8 0 0 1-5-1.37l-.36-.21-3.69.97.99-3.6-.23-.37a9.8 9.8 0 1 1 8.3 4.58Zm5.38-7.35c-.29-.15-1.72-.85-1.99-.95-.27-.1-.46-.15-.66.15-.19.29-.75.95-.92 1.14-.17.19-.34.22-.63.07-.29-.15-1.24-.46-2.36-1.47-.87-.78-1.46-1.74-1.63-2.03-.17-.29-.02-.45.13-.6.13-.13.29-.34.44-.51.15-.17.19-.29.29-.49.1-.19.05-.37-.02-.52-.07-.15-.66-1.58-.9-2.16-.24-.57-.48-.5-.66-.51h-.56c-.19 0-.49.07-.75.37-.26.29-1 0.98-1 2.4s1.02 2.78 1.16 2.97c.15.19 2 3.05 4.84 4.28.68.22 1.3.19 1.79.12.55-.08 1.72-.7 1.97-1.37.24-.67.24-1.25.17-1.37-.07-.12-.26-.19-.55-.34Z'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M20.52 3.48A11.83 11.83 0 0 0 12.08.01C5.54.01.22 5.33.22 11.87c0 2.09.55 4.13 1.59 5.93L.12 23.88l6.22-1.63a11.8 11.8 0 0 0 5.73 1.46h.01c6.54 0 11.86-5.32 11.86-11.86 0-3.17-1.23-6.15-3.42-8.37ZM12.08 21.7h-.01a9.8 9.8 0 0 1-5-1.37l-.36-.21-3.69.97.99-3.6.23-.37a9.8 9.8 0 1 1 8.3 4.58Zm5.38-7.35c-.29-.15-1.72-.85-1.99-.95-.27-.1-.46-.15-.66.15-.19.29-.75.95-.92 1.14-.17.19-.34.22-.63.07-.29-.15-1.24-.46-2.36-1.47-.87-.78-1.46-1.74-1.63-2.03-.17-.29-.02-.45.13-.6.13-.13.29-.34.44-.51.15-.17.19-.29.29-.49.1-.19.05-.37-.02-.52-.07-.15-.66-1.58-.9-2.16-.24-.57-.48-.5-.66-.51h-.56c-.19 0-.49.07-.75.37-.26.29-1 0.98-1 2.4s1.02 2.78 1.16 2.97c.15.19 2 3.05 4.84 4.28.68.22 1.3.19 1.79.12.55-.08 1.72-.7 1.97-1.37.24-.67.24-1.25.17-1.37-.07-.12-.26-.19-.55-.34Z'/%3E%3C/svg%3E") center/contain no-repeat;}
+/* ---------- HERO: same petrol / zellij field as products page ---------- */
+.hero{
+  background-color:var(--ara-ivory) !important;
+  background-image:none !important;
+  color:#171513;
+}
+.hero:before{display:none !important;}
+.hero-backdrop{
+  background:radial-gradient(circle at 72% 42%,rgba(199,154,59,.08),transparent 32%) !important;
+}
+.hero:after{display:none !important;}
+.hero-copy{z-index:2;}
+.hero .eyebrow{color:var(--ara-petrol) !important;}
+.hero h1{
+  color:#171513 !important;
+  font-family:"Cormorant Garamond",serif !important;
+}
+.hero h1 em{color:var(--ara-petrol) !important;}
+.hero-lead{
+  color:#302a25 !important;
+  font-family:Poppins,sans-serif !important;
+}
+.button-primary{
+  background:var(--ara-gold-light) !important;
+  color:var(--ara-petrol-deep) !important;
+  border-color:var(--ara-gold-light) !important;
+  box-shadow:0 10px 28px rgba(0,0,0,.14);
+}
+.button-primary:hover{
+  background:#f0d27c !important;
+  color:var(--ara-petrol-deep) !important;
+}
+.button-quiet{
+  color:#f5ead8 !important;
+  border-color:rgba(240,210,124,.55) !important;
+  background:rgba(7,34,37,.14) !important;
+}
+.button-quiet:hover{
+  background:rgba(240,210,124,.10) !important;
+  border-color:#f0d27c !important;
+}
 
-/* Floating WhatsApp icon only: green. The separate back-to-top button keeps its existing color. */
-.whatsapp{background:#25D366 !important;color:#fff !important;border-color:#25D366 !important;}
-.whatsapp svg{color:#fff !important;fill:none !important;stroke:#fff !important;}
+/* Product-stage image stays intact; only its surrounding field changes. */
+.hero-visual .hero-arch{display:none !important;}
+.hero-visual .visual-frame{
+  border-color:rgba(199,154,59,.30) !important;
+  box-shadow:0 28px 70px rgba(0,0,0,.30) !important;
+}
 
-/* Quality band: warm charcoal with a subtle champagne-toned gradient. */
-.quality-strip{background:linear-gradient(115deg,#29251F 0%,#302B25 52%,#3A3025 100%) !important;color:#fff !important;border:0;box-shadow:inset 0 1px 0 rgba(226,189,105,.07),inset 0 -1px 0 rgba(0,0,0,.12);}
-.quality-item b{color:#fff !important;}
-.quality-item small{color:#d9d1c6 !important;}
-.quality-icon{border-color:rgba(226,189,105,.8) !important;color:var(--gold-light) !important;box-shadow:0 0 22px rgba(226,189,105,.06) !important;}
-.quality-mark:before{background:#57070D !important;border-color:rgba(226,189,105,.8) !important;box-shadow:0 0 0 14px rgba(41,37,31,.9) !important;}
+/* ---------- QUALITY BAND: petrol blue + zellij + subtle shine ---------- */
+.quality-strip{
+  background-color:var(--ara-petrol) !important;
+  background-image:
+    radial-gradient(circle at 50% 18%,rgba(223,244,230,.18),transparent 34%),
+    linear-gradient(90deg,rgba(7,34,37,.20),transparent 24%,transparent 76%,rgba(7,34,37,.20)),
+    repeating-conic-gradient(from 22.5deg at 50% 50%,rgba(199,154,59,.24) 0deg 2.5deg,transparent 2.5deg 45deg),
+    repeating-conic-gradient(from 0deg at 50% 50%,transparent 0deg 42deg,rgba(235,211,137,.07) 42deg 45deg) !important;
+  background-size:auto,auto,86px 86px,86px 86px !important;
+  border-top:1px solid rgba(224,193,104,.30) !important;
+  border-bottom:1px solid rgba(224,193,104,.30) !important;
+  color:#f5ead8 !important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.05),inset 0 -1px 0 rgba(0,0,0,.18);
+}
+.quality-strip:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(105deg,transparent 0%,rgba(255,255,255,.05) 28%,rgba(255,255,255,.13) 38%,transparent 48%,transparent 70%,rgba(255,255,255,.04) 80%,transparent 88%);
+  pointer-events:none;
+  mix-blend-mode:screen;
+}
+.quality-item b{color:#f5ead8 !important;}
+.quality-item small{color:#d7ddd8 !important;}
+.quality-icon{
+  border-color:rgba(226,193,104,.88) !important;
+  color:var(--ara-gold-light) !important;
+  background:rgba(7,34,37,.22) !important;
+  box-shadow:0 0 20px rgba(226,193,104,.08) !important;
+}
+.quality-mark:before{
+  background:var(--ara-petrol) !important;
+  border:1px solid rgba(199,154,59,.86) !important;
+  box-shadow:0 0 0 14px rgba(18,61,67,.92),0 0 0 15px rgba(199,154,59,.16) !important;
+}
 
-/* Bottom footer: same blue/teal material as the navigation + univers area. */
-.footer{background:#0e3338 !important;background-image:radial-gradient(circle at 50% 0%,rgba(223,244,230,.10),transparent 38%),repeating-conic-gradient(from 22.5deg at 50% 50%,rgba(199,154,59,.12) 0deg 2.5deg,transparent 2.5deg 45deg) !important;background-size:auto,88px 88px;border-top:1px solid rgba(224,193,104,.24);}
-.footer-nav strong{color:#e3c263 !important;}
-.footer-nav a{color:#cfd8d4 !important;}
-.footer-brand p{color:#d1d9d5 !important;}
-.footer-bottom{border-top-color:rgba(224,193,104,.20) !important;color:#aebbb6 !important;}
+/* ---------- PRODUCTS SECTION: return to the same ivory canvas ---------- */
+.products{
+  background:var(--ara-ivory) !important;
+  color:#171513;
+}
+.section-heading h2{
+  font-family:"Cormorant Garamond",serif !important;
+  color:#171513 !important;
+}
+.section-heading h2 em{color:var(--ara-burgundy) !important;}
+.section-heading>p:last-child{color:#75695d !important;}
+.section-rule{background:var(--ara-gold) !important;}
+.filter-chip{
+  border-color:rgba(23,21,19,.16) !important;
+  color:#302a25 !important;
+  background:transparent !important;
+}
+.filter-chip:hover,
+.filter-chip.active{
+  background:var(--ara-burgundy) !important;
+  border-color:var(--ara-burgundy) !important;
+  color:#fff8ed !important;
+}
 
-@media(max-width:900px){.header-actions{position:relative;right:auto;transform:none;margin-left:auto;}.search-panel{right:5.8%;}}
-@media(max-width:720px){.story-visual img{width:160px;height:160px;}.partner-card>img{width:160px;height:160px;}}
+/* ---------- STORY: ivory section, restrained gold/burgundy accents ---------- */
+.story{background:var(--ara-ivory) !important;}
+.story-copy h2,
+.partner-copy h2{
+  font-family:"Cormorant Garamond",serif !important;
+  color:#171513 !important;
+}
+.story-copy h2 em,
+.partner-copy h2 em{color:var(--ara-burgundy) !important;}
+.story-copy>p:not(.eyebrow),
+.partner-copy>p:not(.eyebrow){color:#6f6357 !important;}
+.story-visual{
+  background:var(--ara-ivory) !important;
+  border:1px solid rgba(199,154,59,.38) !important;
+}
+.story-visual img{
+  content:url("assets/logo-crystal-4k.png");
+  width:190px;height:190px;object-fit:contain;opacity:1;
+  filter:drop-shadow(0 18px 28px rgba(0,0,0,.28));
+}
+.story-visual:after,.story-badge{display:none !important;}
+
+/* ---------- VALUES: same petrol field, with the same zellij language ---------- */
+.values{
+  background-color:var(--ara-petrol) !important;
+  background-image:
+    repeating-conic-gradient(from 22.5deg at 50% 50%,rgba(199,154,59,.16) 0deg 2.5deg,transparent 2.5deg 45deg),
+    linear-gradient(90deg,rgba(7,34,37,.25),transparent 30%,transparent 70%,rgba(7,34,37,.25)) !important;
+  background-size:74px 74px,100% 100% !important;
+  color:#fff !important;
+}
+.section-heading-light h2{color:#f5ead8 !important;}
+.section-heading-light h2 em{color:#f0d27c !important;}
+.section-heading-light>p:last-child{color:#d7ddd8 !important;}
+.value-card{
+  border-color:rgba(226,193,104,.25) !important;
+  background:rgba(7,34,37,.18) !important;
+}
+.value-card:hover{
+  background:rgba(7,34,37,.30) !important;
+  border-color:rgba(226,193,104,.60) !important;
+}
+.value-card>span,.value-icon{color:var(--ara-gold-light) !important;}
+.value-card h3{
+  font-family:"Cormorant Garamond",serif !important;
+  color:#f5ead8 !important;
+}
+.value-card p{color:#d7ddd8 !important;}
+
+/* ---------- PARTNERS: ivory + crystal mark, matching catalogue language ---------- */
+.partners{background:var(--ara-ivory) !important;}
+.partner-card{
+  background:var(--ara-ivory) !important;
+  border:1px solid rgba(199,154,59,.42) !important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.65),0 24px 55px rgba(35,24,17,.10) !important;
+}
+.partner-card:before,.partner-card:after,
+.partner-card .partner-ring,
+.partner-card .partner-ring:before,.partner-card .partner-ring:after,
+.partner-card strong,.partner-card>span,.partner-tags{display:none !important;}
+.partner-card>img{
+  width:190px;height:190px;object-fit:contain;
+  filter:drop-shadow(0 18px 28px rgba(0,0,0,.28));
+}
+
+/* ---------- FOOTER: same petrol/zellij material + shine as the header ---------- */
+.footer{
+  background-color:var(--ara-petrol) !important;
+  background-image:
+    radial-gradient(circle at 50% 18%,rgba(223,244,230,.18),transparent 34%),
+    linear-gradient(90deg,rgba(7,34,37,.20),transparent 24%,transparent 76%,rgba(7,34,37,.20)),
+    repeating-conic-gradient(from 22.5deg at 50% 50%,rgba(199,154,59,.24) 0deg 2.5deg,transparent 2.5deg 45deg),
+    repeating-conic-gradient(from 0deg at 50% 50%,transparent 0deg 42deg,rgba(235,211,137,.07) 42deg 45deg),
+    linear-gradient(105deg,transparent 0%,rgba(255,255,255,.04) 28%,rgba(255,255,255,.12) 38%,transparent 48%,transparent 70%,rgba(255,255,255,.035) 80%,transparent 88%) !important;
+  background-size:auto,auto,86px 86px,86px 86px,100% 100% !important;
+  border-top:1px solid rgba(226,193,104,.30) !important;
+}
+.footer-nav strong{color:var(--ara-gold-light) !important;}
+.footer-nav a{color:#d7ddd8 !important;}
+.footer-brand p{color:#d4ddd7 !important;}
+.footer-bottom{
+  border-top-color:rgba(226,193,104,.38) !important;
+  color:#b8c8be !important;
+  position:relative;
+}
+.footer-bottom:before{
+  content:"";
+  position:absolute;
+  left:0;right:0;top:-1px;height:1px;
+  background:linear-gradient(90deg,transparent,#e5c56d 20%,#e5c56d 80%,transparent);
+  opacity:.45;
+}
+
+/* Floating actions keep their functionality but use the site accent. */
+.whatsapp{
+  background:#25D366 !important;
+  border-color:#25D366 !important;
+}
+.to-top{
+  background:var(--ara-ivory-soft) !important;
+  color:var(--ara-burgundy) !important;
+}
+
+/* Mobile header follows the products page: ivory, compact and clean. */
+@media(max-width:720px){
+  .site-header{background:var(--ara-petrol) !important;}
+  .main-nav{
+    background:var(--ara-ivory) !important;
+    border-top:1px solid rgba(23,21,19,.10) !important;
+    border-bottom:1px solid rgba(23,21,19,.12) !important;
+  }
+  .main-nav a{color:#302a25 !important;}
+  .main-nav a:hover,.main-nav a.active{color:var(--ara-burgundy) !important;}
+  .hero-copy{text-align:left;}
+  .hero-actions{align-items:stretch;}
+}
+@media(max-width:900px){
+  .header-actions{position:relative;right:auto;transform:none;margin-left:auto;}
+  .search-panel{right:5.8%;}
+}
+@media(max-width:720px){
+  .story-visual img{width:160px;height:160px;}
+  .partner-card>img{width:160px;height:160px;}
+}
+
+/* STEP 3 — HERO TYPOGRAPHY ONLY */
+.hero .eyebrow{color:var(--ara-gold) !important;}
+.hero h1{color:#171513 !important;}
+.hero h1 em{color:var(--ara-burgundy) !important;}
+
+/* ---------- STEP 5: hero secondary CTA + centered logo ---------- */
+.button-quiet{
+  background:var(--ara-burgundy) !important;
+  border-color:var(--ara-burgundy) !important;
+  color:#fff8ed !important;
+  box-shadow:0 12px 30px rgba(87,7,13,.20) !important;
+}
+.button-quiet:hover{
+  background:#57070d !important;
+  border-color:#57070d !important;
+  color:#fff8ed !important;
+}
+.quality-mark:before{
+  background:var(--ara-ivory) !important;
+}
+
+/* STEP 8 FIX: announcement text visible on cream */
+.announcement, .announcement-inner, .announcement-inner span, .announcement-socials span { color:#171513 !important; }
+
+/* =========================================================
+   ARRAOUA — ATELIER LUXURY EXPERIMENT
+   Design-only layer: no HTML, JS or asset changes.
+   ========================================================= */
+:root{
+  --atelier-espresso:#211713;
+  --atelier-espresso-2:#2d1d18;
+  --atelier-cream:#f5eee3;
+  --atelier-paper:#fffaf2;
+  --atelier-gold:#c7a15a;
+  --atelier-gold-soft:#e1c98f;
+  --atelier-terracotta:#9f4933;
+  --atelier-olive:#46513a;
+  --atelier-line:rgba(33,23,19,.13);
+}
+
+/* Header: architectural, not patterned. */
+.site-header{
+  background:linear-gradient(180deg,rgba(33,23,19,.985),rgba(33,23,19,.965)) !important;
+  border-bottom:1px solid rgba(199,161,90,.42) !important;
+  box-shadow:0 10px 35px rgba(25,15,10,.16) !important;
+  backdrop-filter:blur(14px);
+}
+.site-header:after{
+  content:"";position:absolute;left:5.8%;right:5.8%;bottom:-1px;height:1px;
+  background:linear-gradient(90deg,transparent,#c7a15a 16%,#e1c98f 50%,#c7a15a 84%,transparent);
+  opacity:.65;pointer-events:none;mix-blend-mode:normal;
+}
+.site-header.scrolled{background:rgba(33,23,19,.99) !important;}
+.main-nav a{color:#eadfce !important;position:relative;}
+.main-nav a:after{background:var(--atelier-gold) !important;}
+.header-contact{color:#e1c98f !important;border-color:rgba(199,161,90,.42) !important;}
+.icon-button{color:#eadfce !important;border-color:rgba(199,161,90,.35) !important;background:rgba(255,250,242,.025) !important;}
+.icon-button:hover{background:rgba(199,161,90,.12) !important;color:#fff !important;}
+
+/* Announcement: quiet luxury strip. */
+.announcement{
+  background:var(--atelier-cream) !important;
+  color:var(--atelier-espresso) !important;
+  border-bottom:1px solid rgba(33,23,19,.10);
+}
+.announcement .dot{background:var(--atelier-terracotta) !important;}
+.announcement-separator{color:var(--atelier-gold) !important;}
+.announcement-socials a{color:var(--atelier-terracotta) !important;}
+
+/* Hero: warm canvas + a large abstract Moroccan arch built entirely in CSS. */
+.hero{
+  background:var(--atelier-cream) !important;
+  color:var(--atelier-espresso) !important;
+  isolation:isolate;
+}
+.hero:before{
+  width:760px;height:760px;left:-510px;top:-300px;
+  background:radial-gradient(circle,rgba(255,255,255,.92) 0 30%,rgba(255,255,255,.25) 55%,transparent 72%) !important;
+  filter:none !important;
+}
+.hero-backdrop{
+  background:linear-gradient(90deg,rgba(245,238,227,.98) 0%,rgba(245,238,227,.82) 52%,rgba(245,238,227,.15) 100%) !important;
+}
+.hero:after{
+  content:"";position:absolute;z-index:0;right:5.5%;top:58px;width:min(41vw,570px);height:570px;
+  border:1px solid rgba(159,73,51,.23);
+  border-bottom:0;border-radius:290px 290px 0 0;
+  box-shadow:0 0 0 22px rgba(199,161,90,.055),0 0 0 23px rgba(199,161,90,.16);
+  background:
+    radial-gradient(circle at 50% 22%,rgba(199,161,90,.16),transparent 24%),
+    linear-gradient(90deg,transparent 49.7%,rgba(199,161,90,.18) 50%,transparent 50.3%),
+    linear-gradient(0deg,transparent 49.7%,rgba(199,161,90,.12) 50%,transparent 50.3%);
+  pointer-events:none;
+}
+.hero-copy{z-index:3;}
+.hero h1{color:var(--atelier-espresso) !important;letter-spacing:-2.6px !important;}
+.hero h1 em{color:var(--atelier-terracotta) !important;}
+.hero .eyebrow{color:var(--atelier-terracotta) !important;letter-spacing:4.5px !important;}
+.hero-lead:before{color:#5b4c41 !important;}
+.hero-signature{color:#7d6b5c !important;}
+.hero-signature span{background:var(--atelier-gold) !important;}
+.button-primary{background:var(--atelier-terracotta) !important;border-color:var(--atelier-terracotta) !important;box-shadow:0 14px 30px rgba(159,73,51,.18) !important;}
+.button-primary:hover{background:#803826 !important;border-color:#803826 !important;}
+.button-quiet{background:transparent !important;border-color:rgba(33,23,19,.28) !important;color:var(--atelier-espresso) !important;box-shadow:none !important;}
+.button-quiet:hover{background:#fffaf2 !important;border-color:var(--atelier-gold) !important;}
+
+/* Quality band: no wallpaper. One strong atelier panel with fine geometry. */
+.quality-strip{
+  background:var(--atelier-espresso) !important;
+  color:#f6ecdd !important;
+  background-image:
+    linear-gradient(90deg,rgba(255,255,255,.025),transparent 25%,transparent 75%,rgba(255,255,255,.025)) !important;
+  border-top:1px solid rgba(199,161,90,.45) !important;
+  border-bottom:1px solid rgba(199,161,90,.45) !important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.04),inset 0 -1px 0 rgba(0,0,0,.25) !important;
+}
+.quality-strip:after{display:none !important;}
+.quality-item{position:relative;}
+.quality-item:not(.quality-mark):before{content:"";position:absolute;left:0;top:50%;width:1px;height:36px;background:rgba(199,161,90,.26);transform:translateY(-50%);}
+.quality-icon{border-color:rgba(225,201,143,.78) !important;color:var(--atelier-gold-soft) !important;background:transparent !important;box-shadow:none !important;}
+.quality-item b{color:#f4eadb !important;}
+.quality-item small{color:#cfc3b3 !important;}
+.quality-mark:before{
+  background:var(--atelier-cream) !important;
+  border:1px solid var(--atelier-gold) !important;
+  box-shadow:0 0 0 13px var(--atelier-espresso),0 0 0 14px rgba(199,161,90,.42) !important;
+}
+
+/* Products: catalogue cards become quieter, flatter and more premium. */
+.products{background:var(--atelier-cream) !important;}
+.section-heading h2,.story-copy h2,.partner-copy h2{color:var(--atelier-espresso) !important;}
+.section-heading h2 em,.story-copy h2 em,.partner-copy h2 em{color:var(--atelier-terracotta) !important;}
+.section-heading>p:last-child,.story-copy>p:not(.eyebrow),.partner-copy>p:not(.eyebrow){color:#6d5e51 !important;}
+.section-rule{background:var(--atelier-gold) !important;width:70px !important;}
+.filter-chip{border-radius:3px !important;background:rgba(255,250,242,.28) !important;color:#4c3e34 !important;}
+.filter-chip:hover,.filter-chip.active{background:var(--atelier-terracotta) !important;border-color:var(--atelier-terracotta) !important;}
+.product-card{
+  border-radius:4px !important;
+  background:var(--atelier-paper) !important;
+  border:1px solid rgba(33,23,19,.10) !important;
+  box-shadow:0 15px 35px rgba(47,31,23,.075) !important;
+}
+.product-card:hover{transform:translateY(-6px) !important;border-color:rgba(199,161,90,.65) !important;box-shadow:0 25px 50px rgba(47,31,23,.12) !important;}
+.product-image{background:linear-gradient(145deg,#fffaf2,#e7d8c4) !important;}
+.product-number{border-radius:3px !important;background:#fffaf2 !important;color:var(--atelier-terracotta) !important;border-color:rgba(199,161,90,.45) !important;}
+.product-content{border-top:1px solid rgba(199,161,90,.14);}
+.product-kicker{color:#a67f3e !important;}
+.product-content h3{color:var(--atelier-espresso) !important;}
+.product-link{color:var(--atelier-terracotta) !important;}
+
+/* Story: turn the visual block into an atelier plaque. */
+.story{background:#fffaf2 !important;}
+.story-visual{border-radius:4px !important;background:var(--atelier-espresso) !important;border:1px solid rgba(199,161,90,.45) !important;box-shadow:0 22px 55px rgba(40,26,20,.14) !important;}
+.story-visual:before{content:"";position:absolute;inset:18px;border:1px solid rgba(225,201,143,.32);z-index:2;pointer-events:none;}
+.story-visual img{filter:drop-shadow(0 22px 30px rgba(0,0,0,.35)) !important;}
+.story-points div{border-top-color:rgba(199,161,90,.30) !important;}
+.story-points strong{color:#a67f3e !important;}
+.story-points span{color:var(--atelier-terracotta) !important;}
+
+/* Values: deep espresso field, with large quiet numerals and no zellij wallpaper. */
+.values{
+  background:var(--atelier-espresso) !important;
+  background-image:radial-gradient(circle at 50% 0%,rgba(199,161,90,.10),transparent 36%) !important;
+  position:relative;isolation:isolate;
+}
+.values:after{content:"ARRAOUA";position:absolute;right:-45px;bottom:-55px;font-family:"Cormorant Garamond",serif;font-size:150px;letter-spacing:18px;color:rgba(225,201,143,.035);z-index:-1;pointer-events:none;}
+.section-heading-light h2{color:#f5eadb !important;}
+.section-heading-light h2 em{color:var(--atelier-gold-soft) !important;}
+.value-card{border-radius:4px !important;background:rgba(255,250,242,.025) !important;border-color:rgba(225,201,143,.20) !important;}
+.value-card:hover{background:rgba(255,250,242,.055) !important;border-color:rgba(225,201,143,.52) !important;}
+.value-card>span,.value-icon{color:var(--atelier-gold-soft) !important;}
+.value-card h3{color:#f5eadb !important;}
+.value-card p{color:#cfc3b5 !important;}
+
+/* Partners: square plaque, thin frame. */
+.partners{background:var(--atelier-cream) !important;}
+.partner-card{border-radius:4px !important;background:var(--atelier-espresso) !important;border:1px solid rgba(199,161,90,.50) !important;box-shadow:0 24px 55px rgba(40,26,20,.14) !important;}
+.partner-card:before{inset:17px !important;border-radius:0 !important;border-color:rgba(225,201,143,.30) !important;}
+
+/* Contact: editorial form instead of rounded UI blocks. */
+.contact{background:#fffaf2 !important;}
+.contact-form{border-radius:4px !important;background:#fffdf8 !important;border-color:rgba(33,23,19,.12) !important;box-shadow:0 18px 45px rgba(47,31,23,.07) !important;}
+.contact-form input,.contact-form textarea,.contact-form select{border-radius:2px !important;background:#fffaf2 !important;}
+.contact-form input:focus,.contact-form textarea:focus,.contact-form select:focus{border-color:var(--atelier-gold) !important;}
+.contact-highlight{border-radius:4px !important;background:var(--atelier-terracotta) !important;}
+
+/* Footer: solid atelier material with a single gold horizon line. */
+.footer{
+  background:var(--atelier-espresso) !important;
+  background-image:radial-gradient(circle at 50% 0%,rgba(199,161,90,.10),transparent 38%) !important;
+  border-top:1px solid rgba(199,161,90,.48) !important;
+}
+.footer:before{content:"";display:block;position:absolute;left:6%;right:6%;top:0;height:1px;background:linear-gradient(90deg,transparent,#e1c98f 20%,#e1c98f 80%,transparent);opacity:.38;}
+.footer-nav strong{color:var(--atelier-gold-soft) !important;}
+.footer-nav a,.footer-brand p{color:#cfc3b5 !important;}
+.footer-bottom{border-top-color:rgba(225,201,143,.24) !important;color:#a99b8a !important;}
+
+/* Products page — same atelier language, with a different composition. */
+.products-hero{
+  background-color:var(--atelier-espresso) !important;
+  background-image:
+    radial-gradient(circle at 75% 35%,rgba(199,161,90,.16),transparent 27%),
+    linear-gradient(90deg,var(--atelier-espresso) 0%,rgba(33,23,19,.96) 48%,rgba(33,23,19,.72) 100%) !important;
+  border-bottom:1px solid rgba(199,161,90,.42) !important;
+}
+.products-hero:before{content:"";position:absolute;right:7%;top:50%;width:min(38vw,500px);height:500px;transform:translateY(-50%);border:1px solid rgba(199,161,90,.26);border-radius:50%;box-shadow:0 0 0 22px rgba(199,161,90,.045),0 0 0 23px rgba(199,161,90,.11);}
+.products-hero:after{content:"" !important;position:absolute;right:calc(7% + 105px);top:50%;width:290px;height:290px;transform:translateY(-50%);border:1px solid rgba(159,73,51,.32);border-radius:50%;background:linear-gradient(90deg,transparent 49.7%,rgba(225,201,143,.13) 50%,transparent 50.3%);pointer-events:none;mix-blend-mode:normal !important;}
+.products-hero-copy{z-index:3;}
+.products-hero-eyebrow{color:var(--atelier-gold-soft) !important;}
+.products-hero h1{color:#f6ecdd !important;}
+.products-hero h1 em{color:#d98b70 !important;}
+.products-hero p{color:#cfc3b5 !important;}
+.products-hero-rule{background:var(--atelier-gold-soft) !important;}
+.product-categories{background:var(--atelier-cream) !important;border-color:rgba(33,23,19,.10) !important;}
+.product-category-nav button{border-radius:3px !important;background:transparent !important;color:var(--atelier-espresso) !important;}
+.product-category-nav button:hover,.product-category-nav button.active{background:var(--atelier-terracotta) !important;border-color:var(--atelier-terracotta) !important;color:#fff !important;}
+.category-pantry{background:var(--atelier-cream) !important;}
+.category-pantry .category-heading{border-bottom-color:rgba(199,161,90,.28) !important;}
+.category-number{border-radius:3px !important;background:var(--atelier-espresso) !important;color:var(--atelier-gold-soft) !important;}
+.category-heading h2{color:var(--atelier-espresso) !important;}
+.category-heading h2 em{color:var(--atelier-terracotta) !important;}
+.category-heading p{color:#6d5e51 !important;}
+.product-item{border-radius:4px !important;background:var(--atelier-paper) !important;box-shadow:0 13px 32px rgba(47,31,23,.07) !important;}
+.product-item:hover{border-color:rgba(199,161,90,.62) !important;}
+.product-item-image{background:linear-gradient(145deg,#fffaf2,#e7d8c4) !important;}
+.product-placeholder{border-radius:4px !important;background:linear-gradient(155deg,#2c211d,#17110f) !important;border-color:rgba(225,201,143,.50) !important;}
+.product-item-tag{color:#a67f3e !important;}
+.product-item h3{color:var(--atelier-espresso) !important;}
+.product-item p{color:#6d5e51 !important;}
+.product-formats{border-top-color:rgba(199,161,90,.22) !important;}
+.format-button{border-radius:2px !important;background:#fffaf2 !important;}
+.format-button:hover,.format-button.selected{background:var(--atelier-terracotta) !important;border-color:var(--atelier-terracotta) !important;}
+.format-button.custom-format{color:var(--atelier-terracotta) !important;border-color:rgba(199,161,90,.55) !important;}
+.product-story{background:var(--atelier-espresso) !important;}
+.product-story-visual{border-radius:4px !important;border:1px solid rgba(199,161,90,.45) !important;}
+.product-story-copy h2 em{color:var(--atelier-gold-soft) !important;}
+.products-intro{background:var(--atelier-cream) !important;color:var(--atelier-espresso) !important;border-top:1px solid rgba(33,23,19,.08);border-bottom:1px solid rgba(33,23,19,.08);}
+.products-intro:after{display:none !important;}
+.products-intro .eyebrow{color:var(--atelier-terracotta) !important;}
+.products-intro h2{color:var(--atelier-espresso) !important;}
+.products-intro h2 em{color:var(--atelier-terracotta) !important;}
+.products-intro p{color:#6d5e51 !important;}
+.products-intro strong{color:#a67f3e !important;}
+
+@media(max-width:900px){
+  .hero:after{right:2%;width:58vw;height:58vw;top:95px;opacity:.8;}
+  .products-hero:before{right:4%;width:58vw;height:58vw;}
+  .products-hero:after{right:calc(4% + 9vw);width:32vw;height:32vw;}
+}
+@media(max-width:720px){
+  .site-header:after{left:5%;right:5%;}
+  .main-nav{background:var(--atelier-espresso) !important;border-color:rgba(199,161,90,.22) !important;}
+  .main-nav a{color:#eadfce !important;}
+  .hero:after{right:-12%;top:75px;width:74vw;height:74vw;opacity:.42;}
+  .hero-backdrop{background:linear-gradient(90deg,rgba(245,238,227,.99),rgba(245,238,227,.86)) !important;}
+  .quality-item:not(.quality-mark):before{display:none;}
+  .values:after{font-size:78px;right:-22px;bottom:-20px;}
+  .products-hero:before{right:-12%;width:82vw;height:82vw;opacity:.5;}
+  .products-hero:after{right:8%;width:43vw;height:43vw;opacity:.65;}
+}
