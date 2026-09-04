@@ -1,6 +1,6 @@
 @import url("produits-original.css");
 
-/* Products hero — Arabic brand signature split across both sides. */
+/* Products hero — Arabic brand signature balanced across the full hero. */
 .products-hero:before,
 .products-hero:after,
 .hero-arabic-rule{
@@ -8,34 +8,31 @@
 }
 
 .hero-arabic-signature{
-  right:-1.5% !important;
-  top:40% !important;
-  width:min(560px,48vw) !important;
-  height:250px !important;
-  transform:translateY(-50%) !important;
-  display:flex !important;
-  flex-direction:row !important;
-  align-items:center !important;
-  justify-content:space-between !important;
-  gap:24px !important;
-  padding:0 10px !important;
+  position:absolute !important;
+  inset:0 !important;
+  width:100% !important;
+  height:100% !important;
+  transform:none !important;
+  display:block !important;
+  padding:0 !important;
   box-sizing:border-box !important;
   pointer-events:none !important;
   isolation:isolate !important;
-  direction:ltr !important;
 }
 
-/* Brand name — now deliberately anchored on the LEFT side. */
+/* Brand name — independently positioned on the LEFT. */
 .hero-arabic-signature:before{
   content:"الروعة" !important;
-  position:static !important;
+  position:absolute !important;
+  left:5% !important;
+  top:40% !important;
   width:auto !important;
   height:auto !important;
   margin:0 !important;
   border:0 !important;
   box-shadow:none !important;
   background:none !important;
-  transform:none !important;
+  transform:translateY(-50%) !important;
   font-family:"Amiri Quran","Amiri",serif !important;
   font-size:clamp(84px,7.6vw,120px) !important;
   font-weight:400 !important;
@@ -44,15 +41,14 @@
   letter-spacing:0 !important;
   opacity:1 !important;
   white-space:nowrap !important;
-  order:1 !important;
-  flex:0 0 auto !important;
   text-align:left !important;
 }
 
-/* Arabic equivalent of "Nos produits." — now deliberately anchored on the RIGHT side. */
+/* Arabic equivalent of "Nos produits." — independently positioned on the RIGHT. */
 .hero-arabic-word{
-  position:static !important;
-  order:2 !important;
+  position:absolute !important;
+  right:5% !important;
+  top:40% !important;
   width:auto !important;
   margin:0 !important;
   padding:0 !important;
@@ -60,10 +56,9 @@
   line-height:1 !important;
   color:var(--atelier-espresso) !important;
   text-shadow:none !important;
-  transform:none !important;
+  transform:translateY(-50%) !important;
   white-space:nowrap !important;
   text-align:right !important;
-  flex:0 0 auto !important;
 }
 .hero-arabic-word:after{
   content:"منتجاتنا." !important;
@@ -105,15 +100,15 @@
 }
 
 @media(max-width:900px){
-  .hero-arabic-signature{
-    right:-1% !important;
+  .hero-arabic-signature:before{
+    left:4% !important;
     top:40% !important;
-    width:50vw !important;
-    height:220px !important;
-    gap:16px !important;
-    padding:0 6px !important;
+    font-size:clamp(74px,8.2vw,98px) !important;
   }
-  .hero-arabic-signature:before{font-size:clamp(74px,8.2vw,98px) !important;}
+  .hero-arabic-word{
+    right:4% !important;
+    top:40% !important;
+  }
   .hero-arabic-word:after{font-size:clamp(49px,6.1vw,72px) !important;}
   .product-story-visual{transform:translateX(-9%) !important;}
 }
@@ -121,20 +116,21 @@
 @media(max-width:650px){
   .hero-arabic-signature{
     position:relative !important;
-    right:auto !important;
-    top:auto !important;
-    transform:none !important;
+    inset:auto !important;
     width:100% !important;
     height:auto !important;
     min-height:210px !important;
     margin-top:-10px !important;
-    padding:0 4% !important;
-    flex-direction:row !important;
-    align-items:center !important;
-    justify-content:space-between !important;
-    gap:12px !important;
   }
-  .hero-arabic-signature:before{font-size:58px !important;}
+  .hero-arabic-signature:before{
+    left:4% !important;
+    top:50% !important;
+    font-size:58px !important;
+  }
+  .hero-arabic-word{
+    right:4% !important;
+    top:50% !important;
+  }
   .hero-arabic-word:after{font-size:42px !important;}
   .product-story-visual{transform:translateX(-5%) !important;}
   .product-story-visual img{width:160px !important;height:160px !important;}
