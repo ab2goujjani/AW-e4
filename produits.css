@@ -94,10 +94,21 @@
 /* Remove the old decorative line/diamond completely. */
 .hero-arabic-rule{display:none !important;}
 
-/* Story / brand box — use the same creamy page background. */
+/* Story / brand box — match the homepage exactly. */
 .product-story-visual{
-  background:var(--atelier-cream) !important;
+  background:var(--p-cream) !important;
   background-image:none !important;
+  border:1px solid rgba(199,154,59,.38) !important;
+}
+.product-story-visual img{
+  content:url("assets/logo-crystal-4k.png") !important;
+  width:190px !important;
+  height:190px !important;
+  object-fit:contain !important;
+  opacity:1 !important;
+  position:relative !important;
+  z-index:1 !important;
+  filter:drop-shadow(0 18px 28px rgba(0,0,0,.28)) !important;
 }
 
 @media(max-width:900px){
@@ -126,4 +137,5 @@
   }
   .hero-arabic-word:after{font-size:54px !important;}
   .hero-arabic-signature:after{font-size:16px !important;max-width:100% !important;}
+  .product-story-visual img{width:160px !important;height:160px !important;}
 }
