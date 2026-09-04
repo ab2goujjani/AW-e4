@@ -47,14 +47,20 @@
 .category-heading p{color:#f4e8dc !important;}
 .category-number{background:var(--atelier-terracotta) !important;color:var(--atelier-gold-soft) !important;}
 
-/* Black-cocoa products header with a restrained premium light sweep. */
+/* TRUE black-cocoa products header. Explicitly clear inherited backgrounds. */
 .products-header{
   position:relative !important;
   isolation:isolate !important;
   overflow:hidden !important;
-  background:var(--atelier-espresso) !important;
-  border-bottom-color:rgba(225,201,143,.28) !important;
-  box-shadow:0 10px 35px rgba(0,0,0,.24) !important;
+  background:#211713 !important;
+  background-color:#211713 !important;
+  background-image:none !important;
+  border-bottom:1px solid rgba(225,201,143,.28) !important;
+  box-shadow:0 10px 35px rgba(0,0,0,.28) !important;
+}
+.products-header:before{
+  content:none !important;
+  display:none !important;
 }
 .products-header:after{
   content:"" !important;
@@ -70,10 +76,7 @@
   z-index:0 !important;
   animation:productsHeaderShine 7s ease-in-out infinite !important;
 }
-.products-header > *{
-  position:relative !important;
-  z-index:1 !important;
-}
+.products-header > *{position:relative !important;z-index:1 !important;}
 .products-main-nav a{color:#fffaf2 !important;}
 .products-header-contact{
   border-color:rgba(255,250,242,.42) !important;
@@ -88,9 +91,7 @@
   68%,100%{transform:rotate(18deg) translateX(560%);opacity:0;}
 }
 
-@media(max-width:900px){
-  .product-story-visual{transform:translateX(-9%) !important;}
-}
+@media(max-width:900px){.product-story-visual{transform:translateX(-9%) !important;}}
 @media(max-width:650px){
   .product-story-visual{transform:translateX(-5%) !important;}
   .product-story-visual img{width:160px !important;height:160px !important;}
