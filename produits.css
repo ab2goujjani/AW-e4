@@ -36,6 +36,7 @@
 .category-heading{
   position:relative !important;
   overflow:hidden !important;
+  isolation:isolate !important;
   width:calc(100% + 12%) !important;
   margin-left:-6% !important;
   background:#211713 !important;
@@ -50,32 +51,31 @@
 .category-heading p{color:#e9ded2 !important;}
 .category-number{background:#211713 !important;color:var(--atelier-gold-soft) !important;}
 
-/* One shared, clearly visible light sweep for every cocoa band on this page. */
+/* Shared cocoa light sweep: wide, bright and visibly moving back and forth. */
 @keyframes ara-cocoa-shine{
-  0%{transform:translateX(-170%) skewX(-18deg);opacity:0;}
-  12%{opacity:.95;}
-  38%{opacity:1;}
-  52%{opacity:1;}
-  88%{opacity:.95;}
-  100%{transform:translateX(620%) skewX(-18deg);opacity:0;}
+  0%{transform:translateX(-150%) skewX(-16deg);}
+  100%{transform:translateX(430%) skewX(-16deg);}
 }
 .category-heading:after,
 .products-header:after,
 .footer:after{
   content:"" !important;
   position:absolute !important;
-  top:-60% !important;
-  bottom:-60% !important;
-  left:-22% !important;
-  width:15% !important;
-  background:linear-gradient(90deg,transparent 0%,rgba(225,201,143,.18) 24%,rgba(255,255,255,.95) 50%,rgba(225,201,143,.18) 76%,transparent 100%) !important;
-  transform:translateX(-170%) skewX(-18deg) !important;
-  opacity:0 !important;
+  top:-80% !important;
+  bottom:-80% !important;
+  left:-30% !important;
+  width:30% !important;
+  background:linear-gradient(90deg,transparent 0%,rgba(225,201,143,.20) 20%,rgba(255,255,255,.92) 50%,rgba(225,201,143,.20) 80%,transparent 100%) !important;
+  transform:translateX(-150%) skewX(-16deg) !important;
+  opacity:.88 !important;
   pointer-events:none !important;
-  z-index:20 !important;
-  animation:ara-cocoa-shine 3.8s linear infinite !important;
+  z-index:30 !important;
+  will-change:transform !important;
+  animation:ara-cocoa-shine 3.2s ease-in-out infinite alternate !important;
 }
-.category-heading > *{position:relative !important;z-index:21 !important;}
+.category-heading > *,
+.products-header > *,
+.footer > *{position:relative !important;z-index:31 !important;}
 
 /* Black-cocoa products header stays visible while scrolling. */
 .products-header{
@@ -98,9 +98,8 @@
   height:1px !important;
   background:rgba(255,250,242,.12) !important;
   pointer-events:none !important;
-  z-index:19 !important;
+  z-index:29 !important;
 }
-.products-header > *{position:relative !important;z-index:21 !important;}
 .products-main-nav a{color:#fffaf2 !important;}
 .products-header-contact{
   border-color:rgba(255,250,242,.42) !important;
@@ -115,7 +114,6 @@
   isolation:isolate !important;
   overflow:hidden !important;
 }
-.footer > *{position:relative !important;z-index:21 !important;}
 
 @media(prefers-reduced-motion:reduce){
   .category-heading:after,
