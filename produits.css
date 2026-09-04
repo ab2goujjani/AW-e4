@@ -9,7 +9,7 @@
 .hero-arabic-word:after{display:none !important;content:none !important;}
 .hero-arabic-word{display:none !important;}
 
-/* Product story plaque: restore the rectangular box treatment used on the homepage. */
+/* Product story plaque: rectangular box treatment used on the homepage. */
 .product-story-visual{
   background:var(--p-cream) !important;
   background-image:none !important;
@@ -32,7 +32,7 @@
   filter:drop-shadow(0 18px 28px rgba(0,0,0,.28)) !important;
 }
 
-/* Keep the approved terracotta category bars. */
+/* Approved terracotta category bars. */
 .category-heading{
   width:calc(100% + 12%) !important;
   margin-left:-6% !important;
@@ -47,55 +47,51 @@
 .category-heading p{color:#f4e8dc !important;}
 .category-number{background:var(--atelier-terracotta) !important;color:var(--atelier-gold-soft) !important;}
 
-/* TRUE black-cocoa products header. Explicitly clear inherited backgrounds. */
+/* Clean black-cocoa products header. No gradients, wallpaper, or decorative geometry. */
 .products-header{
   position:relative !important;
   isolation:isolate !important;
   overflow:hidden !important;
   background:#211713 !important;
-  background-color:#211713 !important;
   background-image:none !important;
-  border-bottom:1px solid rgba(225,201,143,.28) !important;
-  box-shadow:0 10px 35px rgba(0,0,0,.28) !important;
+  border-bottom:1px solid rgba(225,201,143,.34) !important;
+  box-shadow:0 8px 28px rgba(0,0,0,.22) !important;
 }
 .products-header:before{
-  content:none !important;
-  display:none !important;
+  content:"" !important;
+  position:absolute !important;
+  left:0 !important;
+  right:0 !important;
+  top:0 !important;
+  height:1px !important;
+  background:rgba(255,250,242,.12) !important;
+  pointer-events:none !important;
+  z-index:0 !important;
 }
 .products-header:after{
   content:"" !important;
   position:absolute !important;
-  top:-70% !important;
-  left:-35% !important;
-  width:26% !important;
-  height:240% !important;
-  transform:rotate(18deg) translateX(-180%) !important;
-  background:linear-gradient(90deg,transparent 0%,rgba(255,250,242,.015) 25%,rgba(225,201,143,.16) 50%,rgba(255,250,242,.025) 75%,transparent 100%) !important;
-  filter:blur(2px) !important;
+  left:8% !important;
+  right:8% !important;
+  bottom:0 !important;
+  height:1px !important;
+  background:linear-gradient(90deg,transparent 0%,rgba(225,201,143,.12) 12%,rgba(225,201,143,.55) 50%,rgba(225,201,143,.12) 88%,transparent 100%) !important;
   pointer-events:none !important;
   z-index:0 !important;
-  animation:productsHeaderShine 7s ease-in-out infinite !important;
 }
 .products-header > *{position:relative !important;z-index:1 !important;}
 .products-main-nav a{color:#fffaf2 !important;}
 .products-header-contact{
   border-color:rgba(255,250,242,.42) !important;
   color:#fffaf2 !important;
-  background:rgba(255,250,242,.04) !important;
+  background:rgba(255,250,242,.035) !important;
 }
 .menu-toggle span{background:#fffaf2 !important;}
-@keyframes productsHeaderShine{
-  0%,22%{transform:rotate(18deg) translateX(-180%);opacity:0;}
-  30%{opacity:1;}
-  58%{transform:rotate(18deg) translateX(560%);opacity:.9;}
-  68%,100%{transform:rotate(18deg) translateX(560%);opacity:0;}
-}
 
-@media(max-width:900px){.product-story-visual{transform:translateX(-9%) !important;}}
+@media(max-width:900px){
+  .product-story-visual{transform:translateX(-9%) !important;}
+}
 @media(max-width:650px){
   .product-story-visual{transform:translateX(-5%) !important;}
   .product-story-visual img{width:160px !important;height:160px !important;}
-}
-@media(prefers-reduced-motion:reduce){
-  .products-header:after{animation:none !important;opacity:.5 !important;transform:rotate(18deg) translateX(80%) !important;}
 }
