@@ -8,8 +8,8 @@
 }
 
 .hero-arabic-signature{
-  right:-1.5% !important;
-  top:40% !important;
+  right:-3.5% !important;
+  top:calc(40% - 2cm) !important;
   width:min(450px,40vw) !important;
   height:330px !important;
   transform:translateY(-50%) !important;
@@ -105,8 +105,8 @@
 
 @media(max-width:900px){
   .hero-arabic-signature{
-    right:-1% !important;
-    top:40% !important;
+    right:-3% !important;
+    top:calc(40% - 2cm) !important;
     width:44vw !important;
     height:280px !important;
     padding:0 6px !important;
