@@ -1,6 +1,6 @@
 @import url("produits-original.css");
 
-/* Products hero — preserve the original right-side composition. */
+/* Final page-specific corrections. Keep these rules limited to elements that are intentionally different from the base catalogue. */
 .products-hero:before,
 .products-hero:after,
 .hero-arabic-rule{
@@ -23,7 +23,6 @@
   pointer-events:none !important;
 }
 
-/* Upper line stays on the RIGHT and is moved 3cm further right independently. */
 .hero-arabic-signature:before{
   content:"الروعة" !important;
   position:static !important;
@@ -45,7 +44,6 @@
   order:1 !important;
 }
 
-/* Lower line stays underneath, but is shifted LEFT within the same block. */
 .hero-arabic-word{
   position:static !important;
   order:2 !important;
@@ -75,7 +73,6 @@
   white-space:nowrap !important;
 }
 
-/* Product story logo — keep the approved cream circle and left shift. */
 .product-story-visual{
   background:var(--p-cream) !important;
   background-image:none !important;
@@ -87,10 +84,7 @@
 }
 
 .product-story-visual:before,
-.product-story-visual:after{
-  display:none !important;
-  content:none !important;
-}
+.product-story-visual:after{display:none !important;content:none !important;}
 
 .product-story-visual img{
   content:url("assets/logo-crystal-4k.png") !important;
@@ -104,41 +98,16 @@
 }
 
 @media(max-width:900px){
-  .hero-arabic-signature{
-    right:calc(-3% - 6cm) !important;
-    top:calc(40% - 1cm) !important;
-    width:44vw !important;
-    height:280px !important;
-    padding:0 6px !important;
-  }
-
-  .hero-arabic-signature:before{
-    font-size:clamp(74px,8.2vw,98px) !important;
-    transform:translateX(3cm) !important;
-  }
+  .hero-arabic-signature{right:calc(-3% - 6cm) !important;top:calc(40% - 1cm) !important;width:44vw !important;height:280px !important;padding:0 6px !important;}
+  .hero-arabic-signature:before{font-size:clamp(74px,8.2vw,98px) !important;transform:translateX(3cm) !important;}
   .hero-arabic-word:after{font-size:clamp(49px,6.1vw,72px) !important;}
   .hero-arabic-word{transform:translateX(-55px) !important;}
   .product-story-visual{transform:translateX(-9%) !important;}
 }
 
 @media(max-width:650px){
-  .hero-arabic-signature{
-    position:relative !important;
-    right:auto !important;
-    top:auto !important;
-    transform:none !important;
-    width:100% !important;
-    height:auto !important;
-    min-height:210px !important;
-    margin-top:-10px !important;
-    padding:0 4% !important;
-    align-items:flex-end !important;
-  }
-
-  .hero-arabic-signature:before{
-    font-size:76px !important;
-    transform:translateX(3cm) !important;
-  }
+  .hero-arabic-signature{position:relative !important;right:auto !important;top:auto !important;transform:none !important;width:100% !important;height:auto !important;min-height:210px !important;margin-top:-10px !important;padding:0 4% !important;}
+  .hero-arabic-signature:before{font-size:76px !important;transform:translateX(3cm) !important;}
   .hero-arabic-word:after{font-size:54px !important;}
   .hero-arabic-word{transform:translateX(-35px) !important;}
   .product-story-visual{transform:translateX(-5%) !important;}
