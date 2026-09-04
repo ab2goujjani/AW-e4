@@ -75,18 +75,6 @@
   white-space:nowrap !important;
 }
 
-/* Matching accent line directly beneath the Arabic pair. */
-.hero-arabic-signature:after{
-  content:"" !important;
-  display:block !important;
-  order:3 !important;
-  width:50px !important;
-  height:2px !important;
-  margin:18px 72px 0 0 !important;
-  background:var(--p-gold) !important;
-  flex:0 0 auto !important;
-}
-
 /* Product story logo — keep the approved cream circle and left shift. */
 .product-story-visual{
   background:var(--p-cream) !important;
@@ -130,7 +118,6 @@
   }
   .hero-arabic-word:after{font-size:clamp(49px,6.1vw,72px) !important;}
   .hero-arabic-word{transform:translateX(-55px) !important;}
-  .hero-arabic-signature:after{margin-right:55px !important;}
   .product-story-visual{transform:translateX(-9%) !important;}
 }
 
@@ -154,7 +141,6 @@
   }
   .hero-arabic-word:after{font-size:54px !important;}
   .hero-arabic-word{transform:translateX(-35px) !important;}
-  .hero-arabic-signature:after{margin-right:35px !important;}
   .product-story-visual{transform:translateX(-5%) !important;}
   .product-story-visual img{width:160px !important;height:160px !important;}
 }
