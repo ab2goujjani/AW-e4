@@ -94,6 +94,12 @@
 /* Remove the old decorative line/diamond completely. */
 .hero-arabic-rule{display:none !important;}
 
+/* Story / brand box — use the same creamy page background. */
+.product-story-visual{
+  background:var(--atelier-cream) !important;
+  background-image:none !important;
+}
+
 @media(max-width:900px){
   .hero-arabic-signature{
     right:0 !important;
