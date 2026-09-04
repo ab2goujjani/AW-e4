@@ -9,7 +9,7 @@
 
 .hero-arabic-signature{
   right:1.5% !important;
-  top:50% !important;
+  top:44% !important;
   width:min(430px,38vw) !important;
   height:330px !important;
   transform:translateY(-50%) !important;
@@ -17,26 +17,26 @@
   flex-direction:column !important;
   align-items:flex-end !important;
   justify-content:center !important;
-  gap:4px !important;
+  gap:0 !important;
   padding:0 10px !important;
   box-sizing:border-box !important;
   pointer-events:none !important;
   isolation:isolate !important;
 }
 
-/* Arabic ARAOUAA brand name — prominent, elegant and correctly written. */
+/* Brand name — same Amiri treatment as the Arabic title beneath it. */
 .hero-arabic-signature:before{
   content:"الروعة" !important;
   position:static !important;
   width:auto !important;
   height:auto !important;
-  margin:0 0 2px !important;
+  margin:0 0 0 !important;
   border:0 !important;
   box-shadow:none !important;
   background:none !important;
   transform:none !important;
   font-family:"Amiri Quran","Amiri",serif !important;
-  font-size:clamp(76px,7vw,112px) !important;
+  font-size:clamp(82px,7.4vw,118px) !important;
   font-weight:400 !important;
   line-height:.9 !important;
   color:#171513 !important;
@@ -51,7 +51,7 @@
   position:static !important;
   order:2 !important;
   width:100% !important;
-  margin:0 !important;
+  margin:-2px 0 0 !important;
   padding:0 !important;
   font-size:0 !important;
   line-height:1 !important;
@@ -74,13 +74,14 @@
   white-space:nowrap !important;
 }
 
-/* Product story logo — same cream background, now with a clean circular silhouette. */
+/* Product story logo — same cream background, shifted left for better composition. */
 .product-story-visual{
   background:var(--p-cream) !important;
   background-image:none !important;
   border:1px solid rgba(199,154,59,.38) !important;
   border-radius:50% !important;
   overflow:hidden !important;
+  transform:translateX(-7%) !important;
   box-shadow:0 24px 55px rgba(35,24,17,.12),inset 0 1px 0 rgba(255,255,255,.7) !important;
 }
 .product-story-visual:before,
@@ -102,12 +103,14 @@
 @media(max-width:900px){
   .hero-arabic-signature{
     right:0 !important;
+    top:44% !important;
     width:42vw !important;
     height:280px !important;
     padding:0 6px !important;
   }
-  .hero-arabic-signature:before{font-size:clamp(68px,8vw,92px) !important;}
+  .hero-arabic-signature:before{font-size:clamp(72px,8vw,96px) !important;}
   .hero-arabic-word:after{font-size:clamp(48px,6vw,70px) !important;}
+  .product-story-visual{transform:translateX(-5%) !important;}
 }
 
 @media(max-width:650px){
@@ -125,5 +128,6 @@
   }
   .hero-arabic-signature:before{font-size:76px !important;}
   .hero-arabic-word:after{font-size:54px !important;}
+  .product-story-visual{transform:translateX(-3%) !important;}
   .product-story-visual img{width:160px !important;height:160px !important;}
 }
