@@ -1,6 +1,6 @@
 @import url("produits-original.css");
 
-/* Products hero — refined Arabic brand signature and title. */
+/* Products hero — Arabic brand signature split across both sides. */
 .products-hero:before,
 .products-hero:after,
 .hero-arabic-rule{
@@ -10,21 +10,22 @@
 .hero-arabic-signature{
   right:-1.5% !important;
   top:40% !important;
-  width:min(450px,40vw) !important;
-  height:330px !important;
+  width:min(560px,48vw) !important;
+  height:250px !important;
   transform:translateY(-50%) !important;
   display:flex !important;
-  flex-direction:column !important;
-  align-items:flex-end !important;
-  justify-content:center !important;
-  gap:0 !important;
+  flex-direction:row !important;
+  align-items:center !important;
+  justify-content:space-between !important;
+  gap:24px !important;
   padding:0 10px !important;
   box-sizing:border-box !important;
   pointer-events:none !important;
   isolation:isolate !important;
+  direction:ltr !important;
 }
 
-/* Brand name — deliberately matched to the Arabic title typography beneath it. */
+/* Brand name — now deliberately anchored on the LEFT side. */
 .hero-arabic-signature:before{
   content:"الروعة" !important;
   position:static !important;
@@ -44,14 +45,16 @@
   opacity:1 !important;
   white-space:nowrap !important;
   order:1 !important;
+  flex:0 0 auto !important;
+  text-align:left !important;
 }
 
-/* Arabic equivalent of "Nos produits." — directly underneath the brand name. */
+/* Arabic equivalent of "Nos produits." — now deliberately anchored on the RIGHT side. */
 .hero-arabic-word{
   position:static !important;
   order:2 !important;
-  width:100% !important;
-  margin:-5px 0 0 !important;
+  width:auto !important;
+  margin:0 !important;
   padding:0 !important;
   font-size:0 !important;
   line-height:1 !important;
@@ -60,6 +63,7 @@
   transform:none !important;
   white-space:nowrap !important;
   text-align:right !important;
+  flex:0 0 auto !important;
 }
 .hero-arabic-word:after{
   content:"منتجاتنا." !important;
@@ -104,8 +108,9 @@
   .hero-arabic-signature{
     right:-1% !important;
     top:40% !important;
-    width:44vw !important;
-    height:280px !important;
+    width:50vw !important;
+    height:220px !important;
+    gap:16px !important;
     padding:0 6px !important;
   }
   .hero-arabic-signature:before{font-size:clamp(74px,8.2vw,98px) !important;}
@@ -124,10 +129,13 @@
     min-height:210px !important;
     margin-top:-10px !important;
     padding:0 4% !important;
-    align-items:flex-end !important;
+    flex-direction:row !important;
+    align-items:center !important;
+    justify-content:space-between !important;
+    gap:12px !important;
   }
-  .hero-arabic-signature:before{font-size:76px !important;}
-  .hero-arabic-word:after{font-size:54px !important;}
+  .hero-arabic-signature:before{font-size:58px !important;}
+  .hero-arabic-word:after{font-size:42px !important;}
   .product-story-visual{transform:translateX(-5%) !important;}
   .product-story-visual img{width:160px !important;height:160px !important;}
 }
