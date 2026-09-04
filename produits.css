@@ -97,11 +97,11 @@
   filter:drop-shadow(0 18px 28px rgba(0,0,0,.28)) !important;
 }
 
-/* Experimental test: match every category heading to the dark header color. Product listings remain untouched. */
+/* Experimental category-header treatment: warm terracotta, edge-to-edge. */
 .category-heading{
   width:calc(100% + 12%) !important;
   margin-left:-6% !important;
-  background:var(--atelier-espresso) !important;
+  background:var(--atelier-terracotta) !important;
   border-bottom:0 !important;
   padding:24px 6% !important;
   border-radius:0 !important;
@@ -123,6 +123,25 @@
 .category-number{
   background:var(--atelier-terracotta) !important;
   color:var(--atelier-gold-soft) !important;
+}
+
+/* TEST: apply that same warm terracotta to the REAL products-page header
+   (the bar containing the logo on the left and navigation on the right). */
+.products-header{
+  background:var(--atelier-terracotta) !important;
+  border-bottom-color:rgba(225,201,143,.55) !important;
+  box-shadow:0 10px 35px rgba(53,24,17,.18) !important;
+}
+.products-main-nav a{
+  color:#fffaf2 !important;
+}
+.products-header-contact{
+  border-color:rgba(255,250,242,.68) !important;
+  color:#fffaf2 !important;
+  background:rgba(255,250,242,.06) !important;
+}
+.menu-toggle span{
+  background:#fffaf2 !important;
 }
 
 @media(max-width:900px){
