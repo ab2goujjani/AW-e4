@@ -128,6 +128,41 @@ $('#contactForm')?.addEventListener('submit',e=>{e.preventDefault();const msg=$(
   formats.forEach(button=>button.addEventListener('click',()=>{button.classList.add('selected');setTimeout(()=>button.classList.remove('selected'),650);}));
 })();
 
+(function addHoneyCategory(){
+  if(!document.body.classList.contains('products-page')) return;
+  const nav=document.querySelector('.product-category-nav');
+  const story=document.querySelector('.product-story');
+  if(!nav || !story || document.querySelector('[data-section="miels"]')) return;
+
+  const filter=document.createElement('button');
+  filter.className='catalog-filter';
+  filter.dataset.category='miels';
+  filter.textContent='Miels';
+  const oilFilter=nav.querySelector('[data-category="huiles-amlou"]');
+  nav.insertBefore(filter,oilFilter ? oilFilter.nextSibling : nav.querySelector('[data-category="autres"]'));
+
+  const section=document.createElement('section');
+  section.className='product-category-section category-honey';
+  section.dataset.section='miels';
+  section.id='miels';
+  section.innerHTML=`
+    <div class="category-heading"><div class="category-heading-left"><span class="category-number">09</span><div><span class="product-item-tag">UNIVERS ARAOUAA</span><h2>Miels <em>du Maroc</em></h2></div></div><p>Une sélection de miels marocains aux profils distincts, choisis pour leur origine florale, leur caractère et leur expression du terroir.</p></div>
+    <div class="pantry-intro"><p>Le miel « حر » désigne dans l’usage marocain un miel naturel, issu du travail des abeilles et proposé sans mélange de sirop ou de sucre ajouté. Les miels marocains comprennent notamment le Daghmous, le jujubier et le thym.</p></div>
+    <div class="product-items">
+      <article class="product-item" data-product-name="Miel حر naturel"><div class="product-item-image"><div class="product-placeholder"><span>ARAOUAA</span><strong>MIEL حر</strong><small>MIEL NATUREL</small></div></div><div class="product-item-content"><span class="product-item-tag">MIELS DU MAROC</span><h3>Miel حر naturel</h3><p>Un miel naturel au profil généreux, présenté comme une référence authentique de la collection.</p><div class="product-formats"><span class="formats-label">FORMATS DISPONIBLES</span><div class="format-list"><button class="format-button" data-weight="250 g">250 g</button><button class="format-button" data-weight="500 g">500 g</button><button class="format-button" data-weight="1 kg">1 kg</button><button class="format-button custom-format">+ Sur demande</button></div></div></div></article>
+      <article class="product-item" data-product-name="Miel de Daghmous"><div class="product-item-image"><div class="product-placeholder"><span>ARAOUAA</span><strong>DAGHMOUS</strong><small>EUPHORBE</small></div></div><div class="product-item-content"><span class="product-item-tag">MIELS DU MAROC</span><h3>Miel de Daghmous</h3><p>Un miel d’Euphorbe résinifère, reconnu pour sa couleur ambrée et son goût puissant, avec une finale poivrée et légèrement piquante.</p><div class="product-formats"><span class="formats-label">FORMATS DISPONIBLES</span><div class="format-list"><button class="format-button" data-weight="250 g">250 g</button><button class="format-button" data-weight="500 g">500 g</button><button class="format-button" data-weight="1 kg">1 kg</button><button class="format-button custom-format">+ Sur demande</button></div></div></div></article>
+      <article class="product-item" data-product-name="Miel de jujubier"><div class="product-item-image"><div class="product-placeholder"><span>ARAOUAA</span><strong>JUJUBIER</strong><small>SIDR · ZIZIPHUS</small></div></div><div class="product-item-content"><span class="product-item-tag">MIELS DU MAROC</span><h3>Miel de jujubier</h3><p>Un miel monofloral associé au jujubier (Ziziphus), apprécié pour son caractère riche et sa signature florale.</p><div class="product-formats"><span class="formats-label">FORMATS DISPONIBLES</span><div class="format-list"><button class="format-button" data-weight="250 g">250 g</button><button class="format-button" data-weight="500 g">500 g</button><button class="format-button" data-weight="1 kg">1 kg</button><button class="format-button custom-format">+ Sur demande</button></div></div></div></article>
+      <article class="product-item" data-product-name="Miel de thym"><div class="product-item-image"><div class="product-placeholder"><span>ARAOUAA</span><strong>MIEL DE THYM</strong><small>THYM</small></div></div><div class="product-item-content"><span class="product-item-tag">MIELS DU MAROC</span><h3>Miel de thym</h3><p>Un miel à dominante florale de thym, recherché pour son profil aromatique marqué et son caractère méditerranéen.</p><div class="product-formats"><span class="formats-label">FORMATS DISPONIBLES</span><div class="format-list"><button class="format-button" data-weight="250 g">250 g</button><button class="format-button" data-weight="500 g">500 g</button><button class="format-button" data-weight="1 kg">1 kg</button><button class="format-button custom-format">+ Sur demande</button></div></div></div></article>
+    </div>`;
+  story.parentNode.insertBefore(section,story);
+
+  const footerUnivers=document.querySelector('.footer-nav > div:nth-child(2)');
+  if(footerUnivers){const link=document.createElement('a');link.href='#miels';link.textContent='Miels';const oilLink=footerUnivers.querySelector('a[href="#huiles-amlou"]');footerUnivers.insertBefore(link,oilLink||footerUnivers.querySelector('a[href="#autres"]')||null);}
+
+  const formats=section.querySelectorAll('.format-button:not(.custom-format)');
+  formats.forEach(button=>button.addEventListener('click',()=>{button.classList.add('selected');setTimeout(()=>button.classList.remove('selected'),650);}));
+})();
+
 (function normalizeWhatsApp(){
   $$('a.whatsapp,button.whatsapp,[class*="whatsapp"],a[href*="wa.me"],a[href*="whatsapp"]').forEach(el=>{
     el.style.setProperty('background','#25D366','important');el.style.setProperty('background-color','#25D366','important');el.style.setProperty('border-color','#25D366','important');el.style.setProperty('color','#fff','important');
