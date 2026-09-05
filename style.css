@@ -6,6 +6,9 @@
 .hero-lead{font-size:0;max-width:640px;}
 .hero-lead:before{content:"Café, épices, fruits secs, épicerie… et bien plus à découvrir.\A Une sélection inspirée par la richesse du terroir marocain, présentée avec une identité premium.";white-space:pre-line;font-size:15px;line-height:1.9;color:#171513 !important;}
 
+/* Homepage product row — a subtle gateway to the wider ARAOUAA collection. */
+.product-filters:after{content:"＋ Et plus";display:inline-flex;align-items:center;justify-content:center;min-height:38px;padding:0 16px;border:1px solid rgba(199,161,90,.62);border-radius:999px;color:var(--atelier-gold);background:rgba(199,161,90,.06);font:500 10px/1 Poppins,sans-serif;letter-spacing:.8px;white-space:nowrap;}
+
 .story-visual img{content:url("assets/logo-crystal-4k.png");width:190px;height:190px;object-fit:contain;opacity:1;position:relative;z-index:1;filter:drop-shadow(0 18px 28px rgba(0,0,0,.28));}
 .story-visual:after{display:none !important;}
 .story-badge{display:none !important;}
