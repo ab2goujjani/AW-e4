@@ -42,10 +42,20 @@ body.products-page::before{
   background:rgba(199,161,90,.12) !important;
 }
 .product-site-header .instagram-link svg,
-.product-site-header .cart-link svg,
 .product-site-header .search-toggle svg{
   color:inherit !important;
   stroke:currentColor !important;
+}
+/* Use the exact same cart geometry as Accueil; the product page's old SVG had a different path. */
+.product-site-header .cart-link svg{display:none !important;}
+.product-site-header .cart-link::before{
+  content:"";
+  display:block;
+  width:24px;
+  height:24px;
+  background:currentColor;
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M3.5 4.5h2l2.3 12.2a2 2 0 0 0 2 1.65h7.35a2 2 0 0 0 1.97-1.65L20.5 8.3H6.2' fill='none' stroke='black' stroke-width='1.6'/%3E%3Ccircle cx='10.2' cy='20' r='1.35' fill='black'/%3E%3Ccircle cx='17' cy='20' r='1.35' fill='black'/%3E%3C/svg%3E") center/contain no-repeat;
+  mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M3.5 4.5h2l2.3 12.2a2 2 0 0 0 2 1.65h7.35a2 2 0 0 0 1.97-1.65L20.5 8.3H6.2' fill='none' stroke='black' stroke-width='1.6'/%3E%3Ccircle cx='10.2' cy='20' r='1.35' fill='black'/%3E%3Ccircle cx='17' cy='20' r='1.35' fill='black'/%3E%3C/svg%3E") center/contain no-repeat;
 }
 .product-site-header .cart-badge{display:none !important;}
 
