@@ -134,4 +134,122 @@ $('#contactForm')?.addEventListener('submit', e => {
   });
   grid.querySelectorAll('.catalog-added-item .format-button:not(.custom-format)').forEach(b=>b.addEventListener('click',()=>{b.classList.add('selected');setTimeout(()=>b.classList.remove('selected'),650);}));
 })();
+
+/* Shared mobile header correction. Kept in JS so both pages use one clean responsive rule-set. */
+(function setupProductsHeader(){
+  const productsHeader = document.querySelector('.products-header');
+  if(!productsHeader || productsHeader.dataset.headerFixed === 'true') return;
+  productsHeader.dataset.headerFixed = 'true';
+
+  const actions = document.createElement('div');
+  actions.className = 'products-header-actions';
+  actions.innerHTML = `
+    <button class="products-icon-button products-search-toggle" type="button" aria-label="Rechercher" aria-expanded="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m16.5 16.5 4.2 4.2"></path></svg>
+    </button>
+    <a class="products-icon-button products-instagram" href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.7" r=".8" class="fill"></circle></svg>
+    </a>`;
+
+  const contact = productsHeader.querySelector('.products-header-contact');
+  const menuButton = productsHeader.querySelector('.menu-toggle');
+  if(contact) productsHeader.insertBefore(actions, contact); else productsHeader.appendChild(actions);
+
+  const panel = document.createElement('div');
+  panel.className = 'products-search-panel';
+  panel.setAttribute('aria-hidden','true');
+  panel.innerHTML = `
+    <div class="products-search-inner">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m16.5 16.5 4.2 4.2"></path></svg>
+      <input type="search" aria-label="Rechercher un produit" placeholder="Rechercher un produit…" autocomplete="off">
+      <button type="button" class="products-search-close" aria-label="Fermer la recherche">×</button>
+    </div>`;
+  productsHeader.appendChild(panel);
+
+  const toggle = actions.querySelector('.products-search-toggle');
+  const input = panel.querySelector('input');
+  const close = panel.querySelector('.products-search-close');
+  const productItems = $$('.product-item');
+
+  const setOpen = open => {
+    panel.classList.toggle('open', open);
+    panel.setAttribute('aria-hidden', String(!open));
+    toggle.setAttribute('aria-expanded', String(open));
+    if(open) setTimeout(() => input.focus(), 50);
+  };
+  const normalize = value => value.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+
+  const runSearch = () => {
+    const query = normalize(input.value.trim());
+    productItems.forEach(item => {
+      const haystack = normalize(item.textContent + ' ' + (item.dataset.productName || ''));
+      item.style.display = !query || haystack.includes(query) ? '' : 'none';
+    });
+  };
+
+  toggle.addEventListener('click', () => setOpen(!panel.classList.contains('open')));
+  close.addEventListener('click', () => { input.value=''; runSearch(); setOpen(false); });
+  input.addEventListener('input', runSearch);
+
+  if(menuButton){
+    menuButton.addEventListener('click', () => {
+      const open = productsHeader.querySelector('.products-main-nav')?.classList.contains('open');
+      actions.classList.toggle('menu-open', !open);
+    });
+  }
+})();
+
+/* The homepage's base mobile rules previously hid/misplaced the action cluster.
+   These narrowly scoped rules keep search + Instagram visible without changing desktop layout. */
+(function injectMobileHeaderRules(){
+  if(document.getElementById('arraouaa-mobile-header-fix')) return;
+  const style = document.createElement('style');
+  style.id = 'arraouaa-mobile-header-fix';
+  style.textContent = `
+    @media (max-width:720px){
+      .site-header{height:78px;padding:0 14px;gap:8px;}
+      .site-header .brand-logo{width:118px;height:68px;flex:0 0 auto;}
+      .site-header .header-actions{display:flex!important;position:relative!important;right:auto!important;top:auto!important;transform:none!important;margin-left:auto!important;align-items:center;gap:3px;flex:0 0 auto;}
+      .site-header .header-actions .search-toggle,.site-header .header-actions .instagram-link{display:grid!important;width:34px;height:34px;}
+      .site-header .header-actions .cart-link,.site-header .header-actions .header-contact{display:none!important;}
+      .site-header .main-nav{display:none;}
+      .site-header .menu-toggle{display:flex!important;position:relative;order:3;flex:0 0 40px;margin-left:0;}
+      .site-header .search-panel{top:78px;left:12px;right:12px;width:auto;}
+    }
+    @media (max-width:390px){
+      .site-header .brand-logo{width:104px;}
+      .site-header .header-actions .search-toggle,.site-header .header-actions .instagram-link{width:32px;height:32px;}
+      .site-header .menu-toggle{width:34px;flex-basis:34px;}
+      .site-header .menu-toggle span{width:21px;}
+    }
+    .products-header-actions{display:flex;align-items:center;gap:4px;flex:0 0 auto;margin-left:auto;}
+    .products-icon-button{width:38px;height:38px;display:grid;place-items:center;border:0;background:transparent;color:var(--p-gold-light);cursor:pointer;padding:0;}
+    .products-icon-button svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.6;}
+    .products-icon-button svg .fill{fill:currentColor;stroke:none;}
+    .products-search-panel{position:absolute;top:78px;right:5%;width:min(420px,90vw);opacity:0;pointer-events:none;transform:translateY(-8px);transition:.22s ease;z-index:80;}
+    .products-search-panel.open{opacity:1;pointer-events:auto;transform:none;}
+    .products-search-inner{display:flex;align-items:center;gap:9px;background:var(--p-paper);border:1px solid var(--p-line);border-radius:13px;padding:9px 11px;box-shadow:0 18px 50px rgba(0,0,0,.18);}
+    .products-search-inner>svg{width:20px;height:20px;fill:none;stroke:var(--p-gold);stroke-width:1.7;flex:0 0 auto;}
+    .products-search-inner input{width:100%;border:0;outline:0;background:transparent;color:var(--p-ink);font-size:12px;min-width:0;}
+    .products-search-close{border:0;background:none;color:var(--p-muted);font-size:24px;line-height:1;cursor:pointer;padding:0 2px;}
+    @media (max-width:850px){
+      .products-header{height:78px;padding:0 14px;gap:4px;}
+      .products-logo{width:105px;}
+      .products-main-nav{top:78px;}
+      .products-header-contact{display:none!important;}
+      .products-header-actions{gap:1px;margin-left:auto;}
+      .products-icon-button{width:34px;height:34px;}
+      .products-search-panel{top:78px;left:12px;right:12px;width:auto;}
+      .products-header .menu-toggle{display:block;flex:0 0 40px;margin-left:0;}
+      .products-header .menu-toggle span{margin:5px auto;}
+    }
+    @media (max-width:390px){
+      .products-logo{width:96px;}
+      .products-icon-button{width:32px;height:32px;}
+      .products-header .menu-toggle{width:34px;flex-basis:34px;}
+      .products-header .menu-toggle span{width:21px;}
+    }
+  `;
+  document.head.appendChild(style);
+})();
 })();
