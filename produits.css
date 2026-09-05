@@ -32,6 +32,27 @@ body.products-page::before{
   padding:10px 17px !important;
 }
 
+/* Keep the utility icons visually identical to Accueil. */
+.product-site-header .icon-button{
+  color:#eadfce !important;
+  background:rgba(255,250,242,.025) !important;
+}
+.product-site-header .icon-button:hover{
+  color:#fff !important;
+  background:rgba(199,161,90,.12) !important;
+}
+.product-site-header .instagram-link svg,
+.product-site-header .cart-link svg,
+.product-site-header .search-toggle svg{
+  color:inherit !important;
+  stroke:currentColor !important;
+}
+.product-site-header .cart-badge{
+  background:#8b1018 !important;
+  color:#fff8ed !important;
+  border-color:#f7f1e7 !important;
+}
+
 /* Product-page visual corrections only. Header structure and behavior are handled by the shared product-header code. */
 .products-hero:before,
 .products-hero:after,
