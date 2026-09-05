@@ -6,7 +6,6 @@ function ensureProductHeader(){
   if(!document.body.classList.contains('products-page')) return;
   const oldHeader = $('.products-header');
   if(!oldHeader) return;
-
   const style = document.createElement('style');
   style.id = 'product-shared-header-style';
   style.textContent = `
@@ -37,7 +36,6 @@ function ensureProductHeader(){
     @media(max-width:520px){.product-site-header .brand-logo{width:108px;height:62px}.product-site-header .icon-button{width:29px}.product-site-header .menu-toggle{width:38px;margin-left:3px}}
   `;
   document.head.appendChild(style);
-
   const header = document.createElement('header');
   header.className = 'site-header product-site-header';
   header.id = 'siteHeader';
@@ -100,13 +98,11 @@ $('#contactForm')?.addEventListener('submit',e=>{e.preventDefault();const msg=$(
   const nav=document.querySelector('.product-category-nav');
   const story=document.querySelector('.product-story');
   if(!nav || !story || document.querySelector('[data-section="huiles-amlou"]')) return;
-
   const filter=document.createElement('button');
   filter.className='catalog-filter';
   filter.dataset.category='huiles-amlou';
   filter.textContent='Huiles & Amlou';
   nav.insertBefore(filter,nav.querySelector('[data-category="autres"]'));
-
   const section=document.createElement('section');
   section.className='product-category-section category-oils';
   section.dataset.section='huiles-amlou';
@@ -115,15 +111,16 @@ $('#contactForm')?.addEventListener('submit',e=>{e.preventDefault();const msg=$(
     <div class="category-heading"><div class="category-heading-left"><span class="category-number">08</span><div><span class="product-item-tag">UNIVERS ARAOUAA</span><h2>Huiles <em>&amp; Amlou</em></h2></div></div><p>Une sélection autour des huiles alimentaires et de l’Amlou, entre savoir-faire marocain, richesse du terroir et plaisir authentique.</p></div>
     <div class="pantry-intro"><p>L’Amlou est une spécialité traditionnelle du Souss préparée à partir d’amandes grillées, d’huile d’argan alimentaire et de miel.</p></div>
     <div class="product-items">
-      <article class="product-item" data-product-name="Huile d’argan alimentaire"><div class="product-item-image"><div class="product-placeholder"><img src="assets/argan-oil.png" alt="Huile d’argan alimentaire" style="max-width:78%;max-height:78%;object-fit:contain"><strong>HUILE D’ARGAN</strong><small>HUILE ALIMENTAIRE</small></div></div><div class="product-item-content"><span class="product-item-tag">HUILES &amp; AMLOU</span><h3>Huile d’argan alimentaire</h3><p>Une huile emblématique du terroir marocain, au caractère délicatement toasté et destinée aux usages culinaires.</p><div class="product-formats"><span class="formats-label">FORMATS DISPONIBLES</span><div class="format-list"><button class="format-button" data-weight="250 ml">250 ml</button><button class="format-button" data-weight="500 ml">500 ml</button><button class="format-button" data-weight="1 L">1 L</button><button class="format-button custom-format">+ Sur demande</button></div></div></div></article>
+      <article class="product-item" data-product-name="Huile d’argan"><div class="product-item-image"><div class="product-placeholder"><strong>HUILE D’ARGAN</strong><small>HUILE ALIMENTAIRE</small></div></div><div class="product-item-content"><span class="product-item-tag">HUILES &amp; AMLOU</span><h3>Huile d’argan</h3><p>Une huile emblématique du terroir marocain, au caractère délicatement toasté et destinée aux usages culinaires.</p><div class="product-formats"><span class="formats-label">FORMATS DISPONIBLES</span><div class="format-list"><button class="format-button" data-weight="250 ml">250 ml</button><button class="format-button" data-weight="500 ml">500 ml</button><button class="format-button" data-weight="1 L">1 L</button><button class="format-button custom-format">+ Sur demande</button></div></div></div></article>
       <article class="product-item" data-product-name="Huile d’olive"><div class="product-item-image"><div class="product-placeholder"><span>ARAOUAA</span><strong>HUILE D’OLIVE</strong><small>HUILE ALIMENTAIRE</small></div></div><div class="product-item-content"><span class="product-item-tag">HUILES &amp; AMLOU</span><h3>Huile d’olive</h3><p>Une huile alimentaire polyvalente, pensée pour accompagner les préparations et la cuisine du quotidien.</p><div class="product-formats"><span class="formats-label">FORMATS DISPONIBLES</span><div class="format-list"><button class="format-button" data-weight="250 ml">250 ml</button><button class="format-button" data-weight="500 ml">500 ml</button><button class="format-button" data-weight="1 L">1 L</button><button class="format-button custom-format">+ Sur demande</button></div></div></div></article>
       <article class="product-item" data-product-name="Amlou traditionnel"><div class="product-item-image"><div class="product-placeholder"><span>ARAOUAA</span><strong>AMLOU</strong><small>AMANDES · ARGAN · MIEL</small></div></div><div class="product-item-content"><span class="product-item-tag">HUILES &amp; AMLOU</span><h3>Amlou traditionnel</h3><p>Une pâte à tartiner du Souss associant amandes grillées, huile d’argan alimentaire et miel.</p><div class="product-formats"><span class="formats-label">FORMATS DISPONIBLES</span><div class="format-list"><button class="format-button" data-weight="100 g">100 g</button><button class="format-button" data-weight="250 g">250 g</button><button class="format-button" data-weight="500 g">500 g</button><button class="format-button" data-weight="1 kg">1 kg</button><button class="format-button custom-format">+ Sur demande</button></div></div></div></article>
+      <article class="product-item" data-product-name="Amlou aux noix de cajou"><div class="product-item-image"><div class="product-placeholder"><span>ARAOUAA</span><strong>AMLOU CAJOU</strong><small>CAJOU · ARGAN · MIEL</small></div></div><div class="product-item-content"><span class="product-item-tag">HUILES &amp; AMLOU</span><h3>Amlou aux noix de cajou</h3><p>Une variante gourmande à base de noix de cajou, d’huile d’argan alimentaire et de miel.</p><div class="product-formats"><span class="formats-label">FORMATS DISPONIBLES</span><div class="format-list"><button class="format-button" data-weight="100 g">100 g</button><button class="format-button" data-weight="250 g">250 g</button><button class="format-button" data-weight="500 g">500 g</button><button class="format-button" data-weight="1 kg">1 kg</button><button class="format-button custom-format">+ Sur demande</button></div></div></div></article>
+      <article class="product-item" data-product-name="Amlou aux noisettes"><div class="product-item-image"><div class="product-placeholder"><span>ARAOUAA</span><strong>AMLOU NOISETTE</strong><small>NOISETTES · ARGAN · MIEL</small></div></div><div class="product-item-content"><span class="product-item-tag">HUILES &amp; AMLOU</span><h3>Amlou aux noisettes</h3><p>Une interprétation plus pralinée de l’Amlou, avec noisettes torréfiées, huile d’argan et miel.</p><div class="product-formats"><span class="formats-label">FORMATS DISPONIBLES</span><div class="format-list"><button class="format-button" data-weight="100 g">100 g</button><button class="format-button" data-weight="250 g">250 g</button><button class="format-button" data-weight="500 g">500 g</button><button class="format-button" data-weight="1 kg">1 kg</button><button class="format-button custom-format">+ Sur demande</button></div></div></div></article>
+      <article class="product-item" data-product-name="Amlou aux cacahuètes"><div class="product-item-image"><div class="product-placeholder"><span>ARAOUAA</span><strong>AMLOU CACAHUÈTES</strong><small>CACAHUÈTES · MIEL</small></div></div><div class="product-item-content"><span class="product-item-tag">HUILES &amp; AMLOU</span><h3>Amlou aux cacahuètes</h3><p>Une version gourmande et plus accessible autour de la cacahuète, avec miel et notes de fruits secs grillés.</p><div class="product-formats"><span class="formats-label">FORMATS DISPONIBLES</span><div class="format-list"><button class="format-button" data-weight="100 g">100 g</button><button class="format-button" data-weight="250 g">250 g</button><button class="format-button" data-weight="500 g">500 g</button><button class="format-button" data-weight="1 kg">1 kg</button><button class="format-button custom-format">+ Sur demande</button></div></div></div></article>
     </div>`;
   story.parentNode.insertBefore(section,story);
-
   const footerUnivers=document.querySelector('.footer-nav > div:nth-child(2)');
   if(footerUnivers){const link=document.createElement('a');link.href='#huiles-amlou';link.textContent='Huiles & Amlou';const autres=footerUnivers.querySelector('a[href="#autres"]');footerUnivers.insertBefore(link,autres||null);}
-
   const formats=section.querySelectorAll('.format-button:not(.custom-format)');
   formats.forEach(button=>button.addEventListener('click',()=>{button.classList.add('selected');setTimeout(()=>button.classList.remove('selected'),650);}));
 })();
@@ -133,14 +130,12 @@ $('#contactForm')?.addEventListener('submit',e=>{e.preventDefault();const msg=$(
   const nav=document.querySelector('.product-category-nav');
   const story=document.querySelector('.product-story');
   if(!nav || !story || document.querySelector('[data-section="miels"]')) return;
-
   const filter=document.createElement('button');
   filter.className='catalog-filter';
   filter.dataset.category='miels';
   filter.textContent='Miels';
   const oilFilter=nav.querySelector('[data-category="huiles-amlou"]');
   nav.insertBefore(filter,oilFilter ? oilFilter.nextSibling : nav.querySelector('[data-category="autres"]'));
-
   const section=document.createElement('section');
   section.className='product-category-section category-honey';
   section.dataset.section='miels';
@@ -155,10 +150,8 @@ $('#contactForm')?.addEventListener('submit',e=>{e.preventDefault();const msg=$(
       <article class="product-item" data-product-name="Miel de thym"><div class="product-item-image"><div class="product-placeholder"><span>ARAOUAA</span><strong>MIEL DE THYM</strong><small>THYM</small></div></div><div class="product-item-content"><span class="product-item-tag">MIELS DU MAROC</span><h3>Miel de thym</h3><p>Un miel à dominante florale de thym, recherché pour son profil aromatique marqué et son caractère méditerranéen.</p><div class="product-formats"><span class="formats-label">FORMATS DISPONIBLES</span><div class="format-list"><button class="format-button" data-weight="250 g">250 g</button><button class="format-button" data-weight="500 g">500 g</button><button class="format-button" data-weight="1 kg">1 kg</button><button class="format-button custom-format">+ Sur demande</button></div></div></div></article>
     </div>`;
   story.parentNode.insertBefore(section,story);
-
   const footerUnivers=document.querySelector('.footer-nav > div:nth-child(2)');
   if(footerUnivers){const link=document.createElement('a');link.href='#miels';link.textContent='Miels';const oilLink=footerUnivers.querySelector('a[href="#huiles-amlou"]');footerUnivers.insertBefore(link,oilLink||footerUnivers.querySelector('a[href="#autres"]')||null);}
-
   const formats=section.querySelectorAll('.format-button:not(.custom-format)');
   formats.forEach(button=>button.addEventListener('click',()=>{button.classList.add('selected');setTimeout(()=>button.classList.remove('selected'),650);}));
 })();
