@@ -95,6 +95,39 @@ $('#contactForm')?.addEventListener('submit',e=>{e.preventDefault();const msg=$(
 
 (function addRequestedNutProducts(){const grid=document.querySelector('#noix-graines .product-items');if(!grid)return;const existing=[...grid.querySelectorAll('[data-product-name],h3')].map(el=>(el.dataset.productName||el.textContent).trim().toLowerCase());const requested=[['Amande grillée','AMANDE GRILLÉE'],['Amande effilée','AMANDE EFFILÉE'],['Amande hachée','AMANDE HACHÉE'],['Amande en poudre','AMANDE EN POUDRE'],['Arachides','ARACHIDES']];const makeCard=(name,label)=>{const article=document.createElement('article');article.className='product-item catalog-added-item';article.dataset.productName=name;article.innerHTML=`<div class="product-item-image"><div class="product-placeholder"><span>ARAOUAA</span><strong>${label}</strong><small>NOIX &amp; GRAINES</small></div></div><div class="product-item-content"><span class="product-item-tag">NOIX &amp; GRAINES</span><h3>${name}</h3><p>Une référence délicate au profil naturellement généreux et raffiné.</p><div class="product-formats"><span class="formats-label">FORMATS DISPONIBLES</span><div class="format-list"><button class="format-button" data-weight="50 g">50 g</button><button class="format-button" data-weight="100 g">100 g</button><button class="format-button" data-weight="250 g">250 g</button><button class="format-button" data-weight="500 g">500 g</button><button class="format-button" data-weight="1 kg">1 kg</button><button class="format-button" data-weight="5 kg">5 kg</button><button class="format-button custom-format">+ Sur demande</button></div></div></div>`;return article;};requested.forEach(([name,label])=>{if(!existing.includes(name.toLowerCase()))grid.appendChild(makeCard(name,label));});grid.querySelectorAll('.catalog-added-item .format-button:not(.custom-format)').forEach(b=>b.addEventListener('click',()=>{b.classList.add('selected');setTimeout(()=>b.classList.remove('selected'),650);}));})();
 
+(function addOilAmlouCategory(){
+  if(!document.body.classList.contains('products-page')) return;
+  const nav=document.querySelector('.product-category-nav');
+  const story=document.querySelector('.product-story');
+  if(!nav || !story || document.querySelector('[data-section="huiles-amlou"]')) return;
+
+  const filter=document.createElement('button');
+  filter.className='catalog-filter';
+  filter.dataset.category='huiles-amlou';
+  filter.textContent='Huiles & Amlou';
+  nav.insertBefore(filter,nav.querySelector('[data-category="autres"]'));
+
+  const section=document.createElement('section');
+  section.className='product-category-section category-oils';
+  section.dataset.section='huiles-amlou';
+  section.id='huiles-amlou';
+  section.innerHTML=`
+    <div class="category-heading"><div class="category-heading-left"><span class="category-number">08</span><div><span class="product-item-tag">UNIVERS ARAOUAA</span><h2>Huiles <em>&amp; Amlou</em></h2></div></div><p>Une sélection autour des huiles alimentaires et de l’Amlou, entre savoir-faire marocain, richesse du terroir et plaisir authentique.</p></div>
+    <div class="pantry-intro"><p>L’Amlou est une spécialité traditionnelle du Souss préparée à partir d’amandes grillées, d’huile d’argan alimentaire et de miel. citeturn0search9</p></div>
+    <div class="product-items">
+      <article class="product-item" data-product-name="Huile d’argan alimentaire"><div class="product-item-image"><div class="product-placeholder"><img src="assets/argan-oil.png" alt="Huile d’argan alimentaire" style="max-width:78%;max-height:78%;object-fit:contain"><strong>HUILE D’ARGAN</strong><small>HUILE ALIMENTAIRE</small></div></div><div class="product-item-content"><span class="product-item-tag">HUILES &amp; AMLOU</span><h3>Huile d’argan alimentaire</h3><p>Une huile emblématique du terroir marocain, au caractère délicatement toasté et destinée aux usages culinaires.</p><div class="product-formats"><span class="formats-label">FORMATS DISPONIBLES</span><div class="format-list"><button class="format-button" data-weight="250 ml">250 ml</button><button class="format-button" data-weight="500 ml">500 ml</button><button class="format-button" data-weight="1 L">1 L</button><button class="format-button custom-format">+ Sur demande</button></div></div></div></article>
+      <article class="product-item" data-product-name="Huile d’olive"><div class="product-item-image"><div class="product-placeholder"><span>ARAOUAA</span><strong>HUILE D’OLIVE</strong><small>HUILE ALIMENTAIRE</small></div></div><div class="product-item-content"><span class="product-item-tag">HUILES &amp; AMLOU</span><h3>Huile d’olive</h3><p>Une huile alimentaire polyvalente, pensée pour accompagner les préparations et la cuisine du quotidien.</p><div class="product-formats"><span class="formats-label">FORMATS DISPONIBLES</span><div class="format-list"><button class="format-button" data-weight="250 ml">250 ml</button><button class="format-button" data-weight="500 ml">500 ml</button><button class="format-button" data-weight="1 L">1 L</button><button class="format-button custom-format">+ Sur demande</button></div></div></div></article>
+      <article class="product-item" data-product-name="Amlou traditionnel"><div class="product-item-image"><div class="product-placeholder"><span>ARAOUAA</span><strong>AMLOU</strong><small>AMANDES · ARGAN · MIEL</small></div></div><div class="product-item-content"><span class="product-item-tag">HUILES &amp; AMLOU</span><h3>Amlou traditionnel</h3><p>Une pâte à tartiner du Souss associant amandes grillées, huile d’argan alimentaire et miel.</p><div class="product-formats"><span class="formats-label">FORMATS DISPONIBLES</span><div class="format-list"><button class="format-button" data-weight="100 g">100 g</button><button class="format-button" data-weight="250 g">250 g</button><button class="format-button" data-weight="500 g">500 g</button><button class="format-button" data-weight="1 kg">1 kg</button><button class="format-button custom-format">+ Sur demande</button></div></div></div></article>
+    </div>`;
+  story.parentNode.insertBefore(section,story);
+
+  const footerUnivers=document.querySelector('.footer-nav > div:nth-child(2)');
+  if(footerUnivers){const link=document.createElement('a');link.href='#huiles-amlou';link.textContent='Huiles & Amlou';const autres=footerUnivers.querySelector('a[href="#autres"]');footerUnivers.insertBefore(link,autres||null);}
+
+  const formats=section.querySelectorAll('.format-button:not(.custom-format)');
+  formats.forEach(button=>button.addEventListener('click',()=>{button.classList.add('selected');setTimeout(()=>button.classList.remove('selected'),650);}));
+})();
+
 (function normalizeWhatsApp(){
   $$('a.whatsapp,button.whatsapp,[class*="whatsapp"],a[href*="wa.me"],a[href*="whatsapp"]').forEach(el=>{
     el.style.setProperty('background','#25D366','important');el.style.setProperty('background-color','#25D366','important');el.style.setProperty('border-color','#25D366','important');el.style.setProperty('color','#fff','important');
