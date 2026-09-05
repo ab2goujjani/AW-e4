@@ -4,7 +4,7 @@
 .hero-visual .hero-arch,
 .hero-visual .visual-frame{display:none !important;}
 .hero-lead{font-size:0;max-width:640px;}
-.hero-lead:before{content:"Café, épices, fruits secs, épicerie… et bien plus à découvrir.";font-size:15px;line-height:1.9;color:#171513 !important;}
+.hero-lead:before{content:"Café, épices, fruits secs, épicerie… et bien plus à découvrir.\A Une sélection inspirée par la richesse du terroir marocain, présentée avec une identité premium.";white-space:pre-line;font-size:15px;line-height:1.9;color:#171513 !important;}
 
 .story-visual img{content:url("assets/logo-crystal-4k.png");width:190px;height:190px;object-fit:contain;opacity:1;position:relative;z-index:1;filter:drop-shadow(0 18px 28px rgba(0,0,0,.28));}
 .story-visual:after{display:none !important;}
