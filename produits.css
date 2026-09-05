@@ -1,5 +1,37 @@
 @import url("produits-original.css");
 
+/* Product page: keep the same top rhythm and header typography as Accueil. */
+body.products-page::before{
+  content:"Produits marocains sélectionnés avec soin   •   Qualité premium · Savoir-faire authentique";
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:40px;
+  padding:0 5.8%;
+  background:#f5eee3;
+  color:#211713;
+  border-bottom:1px solid rgba(33,23,19,.10);
+  font:500 10px/1 Poppins,Arial,sans-serif;
+  letter-spacing:.35px;
+  text-align:center;
+}
+.product-site-header .main-nav a{
+  font-size:10px !important;
+  font-weight:500 !important;
+  letter-spacing:1.2px !important;
+  text-transform:uppercase !important;
+}
+.product-site-header .header-actions{
+  position:absolute !important;
+  right:5.8% !important;
+  margin-left:0 !important;
+}
+.product-site-header .header-contact{
+  font-size:9px !important;
+  font-weight:600 !important;
+  padding:10px 17px !important;
+}
+
 /* Product-page visual corrections only. Header structure and behavior are handled by the shared product-header code. */
 .products-hero:before,
 .products-hero:after,
@@ -76,4 +108,9 @@
 
 @media(max-width:720px){
   .whatsapp{right:17px !important;bottom:17px !important;width:48px !important;height:48px !important;}
+  body.products-page::before{
+    min-height:40px;
+    padding:0 4%;
+    font-size:9px;
+  }
 }
